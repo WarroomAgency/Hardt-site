@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Only live URLs are listed. Each page is added here as it ships —
+     a sitemap full of 404s wastes crawl budget and reads as a broken site. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://hardtrealestate.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+</urlset>

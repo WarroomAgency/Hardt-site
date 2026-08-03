@@ -1,0 +1,380 @@
+/* ============================================================
+   HARDT — design system
+   Built from the locked brand, v1.0 (July 2026).
+
+   The 85/15 rule travels: cream leads, charcoal frames the one
+   moment that matters. If a layout is more than a third dark,
+   it's drifting off-brand.
+   ============================================================ */
+
+:root{
+  /* --- brand ink --- */
+  --charcoal:#1A1A1A;
+  --cream:#F0EBE4;
+  --bronze:#8B7355;          /* THE accent. Logo hairline is exactly this. Never recolored. */
+  --gray:#666666;
+  --white:#FFFFFF;
+
+  /* Derived bronze tints. #8B7355 on cream is 3.78:1 and fails AA for small
+     text, so small bronze copy uses these — same hue, adjusted lightness. */
+  --bronze-ink:#7D674C;      /* small bronze text on cream    — 4.52:1 */
+  --bronze-light:#9B815F;    /* small bronze text on charcoal — 4.72:1 */
+
+  --line:rgba(26,26,26,.12);
+  --line-dark:rgba(240,235,228,.16);
+
+  /* --- scale --- */
+  --measure:74ch;
+  --gutter:clamp(20px,5vw,32px);
+  --shell:1160px;
+  --band:clamp(64px,9vw,110px);   /* vertical rhythm between sections */
+  --radius:3px;
+
+  /* --- type --- */
+  --display:'Red Hat Display',system-ui,-apple-system,sans-serif;
+  --body:'DM Sans',system-ui,-apple-system,sans-serif;
+  --accent:'Source Serif 4',Georgia,'Times New Roman',serif;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+body{
+  margin:0;background:var(--cream);color:var(--charcoal);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+img,svg,video{display:block;max-width:100%;height:auto}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:900;letter-spacing:-.022em;line-height:1.08}
+p{margin:0 0 1.1em;max-width:var(--measure)}
+ul,ol{margin:0 0 1.1em;padding-left:1.15em;max-width:var(--measure)}
+li{margin-bottom:.42em}
+a{color:var(--bronze-ink);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{color:var(--charcoal)}
+
+/* Focus — visible, branded, never removed. */
+:focus-visible{outline:2px solid var(--bronze);outline-offset:3px;border-radius:2px}
+
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--charcoal);color:var(--cream);padding:14px 22px;
+  font-family:var(--display);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.1em;
+}
+.skip:focus{left:0}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.shell{max-width:var(--shell);margin-inline:auto;padding-inline:var(--gutter)}
+.shell--narrow{max-width:820px}
+.band{padding-block:var(--band)}
+.band--tight{padding-block:calc(var(--band) * .62)}
+
+/* The dark moments. Used sparingly — see the 85/15 rule. */
+.dark{background:var(--charcoal);color:var(--cream)}
+.dark h1,.dark h2,.dark h3,.dark h4{color:var(--cream)}
+.dark p{color:rgba(240,235,228,.74)}
+.dark a{color:var(--bronze-light)}
+.dark .eyebrow{color:var(--bronze-light)}
+.dark .rule{background:var(--line-dark)}
+
+.paper{background:var(--white)}
+
+.grid{display:grid;gap:clamp(18px,2.4vw,26px)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid--3,.grid--4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid--2,.grid--3,.grid--4{grid-template-columns:1fr}}
+
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,66px);align-items:center}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+
+.rule{height:1px;background:var(--line);border:0;margin:0}
+
+/* ============================================================
+   TYPE
+   ============================================================ */
+
+/* Eyebrow → Headline → Body → the one serif line.
+   That rhythm is the brand's typographic fingerprint. */
+.eyebrow{
+  font-family:var(--display);font-weight:800;font-size:11.5px;
+  text-transform:uppercase;letter-spacing:.2em;color:var(--bronze-ink);
+  margin:0 0 16px;
+}
+.h-hero{font-size:clamp(2.5rem,6.4vw,4.4rem);max-width:15ch}
+.h-sect{font-size:clamp(1.85rem,3.7vw,2.85rem);max-width:20ch}
+.h-card{font-family:var(--display);font-weight:900;font-size:1.24rem;letter-spacing:-.015em;line-height:1.2;margin:0 0 9px}
+.h-kicker{
+  font-family:var(--display);font-weight:800;font-size:12.5px;letter-spacing:.11em;
+  text-transform:uppercase;margin:0 0 11px;
+}
+
+.lede{font-size:clamp(1.06rem,1.7vw,1.22rem);color:var(--gray);max-width:62ch;margin:18px 0 0}
+.dark .lede{color:rgba(240,235,228,.72)}
+.small{font-size:.9rem;color:var(--gray)}
+.dark .small{color:rgba(240,235,228,.6)}
+
+/* THE SERIF RULE — one serif moment per surface. Never headlines,
+   never body copy. Sentence case, never bold, never caps. */
+.serif{font-family:var(--accent);font-style:italic;font-weight:500;letter-spacing:0}
+.tagline{font-size:clamp(1.5rem,3.4vw,2.15rem);line-height:1.34;max-width:22ch;color:var(--bronze-ink)}
+.dark .tagline{color:var(--bronze-light)}
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+.lockup{display:inline-flex;align-items:center;gap:14px;text-decoration:none}
+.lockup__hair{width:1px;height:26px;background:var(--bronze);flex:none}  /* part of the logo — always bronze */
+.lockup__word{
+  font-family:var(--display);font-weight:900;font-size:20px;letter-spacing:.27em;
+  padding-left:2px;color:var(--charcoal);line-height:1;
+}
+.dark .lockup__word,.site-head .lockup__word{color:inherit}
+.lockup svg{flex:none}
+
+/* ============================================================
+   BUTTONS — bronze only, per the brand book
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--display);font-weight:900;font-size:14px;letter-spacing:.045em;
+  text-transform:uppercase;text-decoration:none;cursor:pointer;
+  padding:17px 30px;border-radius:var(--radius);border:1px solid transparent;
+  transition:background-color .16s ease,color .16s ease,border-color .16s ease;
+  min-height:48px;                                  /* touch target */
+}
+.btn--primary{background:var(--bronze-ink);color:#fff}
+.btn--primary:hover{background:var(--charcoal);color:var(--cream)}
+.btn--ghost{background:transparent;color:var(--charcoal);border-color:rgba(26,26,26,.28)}
+.btn--ghost:hover{border-color:var(--charcoal);background:var(--charcoal);color:var(--cream)}
+.dark .btn--ghost{color:var(--cream);border-color:rgba(240,235,228,.34)}
+.dark .btn--ghost:hover{background:var(--cream);color:var(--charcoal);border-color:var(--cream)}
+.btn--lg{padding:20px 36px;font-size:15px}
+.btnrow{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:34px}
+
+/* Phone is a first-class CTA — many of these leads never fill a form. */
+.tel{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  font-family:var(--display);font-weight:900;font-size:15px;letter-spacing:.02em;color:var(--charcoal);
+}
+.tel:hover{color:var(--bronze-ink)}
+.dark .tel{color:var(--cream)}
+.dark .tel:hover{color:var(--bronze-light)}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-head{
+  position:sticky;top:0;z-index:80;
+  background:rgba(240,235,228,.94);backdrop-filter:saturate(1.6) blur(9px);
+  border-bottom:1px solid var(--line);
+}
+.site-head__in{display:flex;align-items:center;justify-content:space-between;gap:22px;padding-block:15px}
+.nav{display:flex;align-items:center;gap:clamp(16px,2.2vw,30px)}
+.nav a{
+  font-size:14.5px;font-weight:500;text-decoration:none;color:var(--charcoal);
+  padding-block:6px;border-bottom:1.5px solid transparent;
+}
+.nav a:hover,.nav a[aria-current="page"]{border-bottom-color:var(--bronze);color:var(--charcoal)}
+.head-actions{display:flex;align-items:center;gap:18px}
+@media(max-width:940px){.nav{display:none}}
+@media(max-width:520px){.head-actions .btn{display:none}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{padding-block:clamp(60px,10vw,118px) clamp(52px,8vw,92px)}
+.hero__promise{
+  font-size:clamp(1.08rem,1.9vw,1.28rem);color:var(--charcoal);
+  max-width:50ch;margin:22px 0 0;font-weight:500;line-height:1.55;
+}
+.hero__note{margin-top:26px;font-size:.94rem;color:var(--gray);max-width:52ch}
+
+/* Trust strip — only things that are true and documented. */
+.trust{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--line);margin-top:clamp(44px,6vw,68px)}
+.trust__i{flex:1 1 190px;padding:24px 26px 24px 0;border-right:1px solid var(--line)}
+.trust__i:last-child{border-right:0}
+.trust__k{
+  font-family:var(--display);font-weight:900;font-size:1.42rem;line-height:1.1;
+  display:block;margin-bottom:5px;letter-spacing:-.02em;
+}
+.trust__v{font-size:.88rem;color:var(--gray);line-height:1.45;display:block}
+@media(max-width:700px){.trust__i{flex:1 1 46%;border-right:0;padding-right:14px}}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(24px,2.7vw,32px);display:flex;flex-direction:column;
+}
+.card p{margin-bottom:0;font-size:.97rem;color:var(--gray)}
+.card__link{
+  margin-top:18px;font-family:var(--display);font-weight:800;font-size:12.5px;
+  letter-spacing:.09em;text-transform:uppercase;text-decoration:none;color:var(--bronze-ink);
+}
+.card__link::after{content:" \2192"}
+.card__link:hover{color:var(--charcoal)}
+a.card{text-decoration:none;color:inherit;transition:border-color .16s ease,transform .16s ease}
+a.card:hover{border-color:var(--bronze);transform:translateY(-2px)}
+.card--flush{background:transparent;border:0;padding:0}
+
+/* numbered step */
+.step__n{
+  font-family:var(--display);font-weight:900;font-size:12px;letter-spacing:.12em;
+  color:var(--bronze-ink);display:block;margin-bottom:13px;
+}
+
+/* ============================================================
+   COUNTY TILES
+   ============================================================ */
+.county{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 28px;text-decoration:none;color:inherit;display:block;
+  transition:border-color .16s ease,transform .16s ease;
+}
+.county:hover{border-color:var(--bronze);transform:translateY(-2px)}
+.county__name{font-family:var(--display);font-weight:900;font-size:1.16rem;margin-bottom:7px;letter-spacing:-.015em}
+.county__cities{font-size:.88rem;color:var(--gray);line-height:1.5}
+
+/* ============================================================
+   HONEST MATH / two-column compare
+   ============================================================ */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--white)}
+.compare__col{padding:clamp(24px,3vw,34px)}
+.compare__col + .compare__col{border-left:1px solid var(--line)}
+.compare__col ul{list-style:none;padding:0;margin:0}
+.compare__col li{position:relative;padding-left:22px;font-size:.96rem;color:var(--gray);margin-bottom:11px}
+.compare__col li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--bronze)}
+@media(max-width:700px){.compare{grid-template-columns:1fr}.compare__col + .compare__col{border-left:0;border-top:1px solid var(--line)}}
+
+/* ============================================================
+   QUOTE BAND — the charcoal moment
+   ============================================================ */
+.quote{text-align:center}
+.quote .tagline{margin-inline:auto}
+.quote__proof{
+  margin:30px auto 0;max-width:44ch;font-size:1.06rem;color:rgba(240,235,228,.86);
+}
+.quote__attr{
+  margin-top:22px;font-family:var(--display);font-weight:800;font-size:11px;
+  letter-spacing:.19em;text-transform:uppercase;color:var(--bronze-light);
+}
+
+/* ============================================================
+   IMAGE SLOTS
+   Brand rule: real projects, real people, warm daylight. Never stock.
+   Until Peter's photography lands these render as honest placeholders.
+   ============================================================ */
+.shot{
+  position:relative;background:#E6E0D7;border:1px solid var(--line);border-radius:var(--radius);
+  aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.shot--portrait{aspect-ratio:4/5}
+.shot img{width:100%;height:100%;object-fit:cover}
+.shot__ph{
+  font-family:var(--display);font-weight:800;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:#725E46;text-align:center;padding:20px;line-height:1.7;
+}
+
+/* ============================================================
+   FORM
+   ============================================================ */
+.form{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(26px,3.2vw,40px)}
+.field{margin-bottom:20px}
+.field:last-of-type{margin-bottom:0}
+.field label{display:block;font-weight:500;font-size:15px;margin-bottom:7px}
+.field .help{display:block;font-size:13.5px;color:var(--gray);margin:-3px 0 8px}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px 15px;font-size:16px;line-height:1.45;   /* 16px — stops iOS zoom on focus */
+}
+.field textarea{min-height:104px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--bronze);box-shadow:0 0 0 3px rgba(139,115,85,.14);background:var(--white);
+}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* trust rail beside the form */
+.rail{list-style:none;padding:0;margin:0}
+.rail li{position:relative;padding-left:26px;margin-bottom:16px;font-size:.97rem;color:rgba(240,235,228,.8)}
+.rail li::before{content:"";position:absolute;left:0;top:.6em;width:13px;height:1px;background:var(--bronze-light)}
+.rail strong{color:var(--cream);font-weight:700}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-foot{background:var(--charcoal);color:rgba(240,235,228,.62);padding-block:clamp(52px,7vw,76px) 34px;font-size:.92rem}
+.site-foot a{color:rgba(240,235,228,.62);text-decoration:none}
+.site-foot a:hover{color:var(--cream)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(24px,3.5vw,44px)}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
+.foot-h{
+  font-family:var(--display);font-weight:800;font-size:11px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--bronze-light);margin:0 0 15px;
+}
+.foot-list{list-style:none;padding:0;margin:0}
+.foot-list li{margin-bottom:9px}
+.foot-bottom{
+  margin-top:clamp(38px,5vw,58px);padding-top:26px;border-top:1px solid var(--line-dark);
+  display:flex;flex-wrap:wrap;gap:16px 30px;justify-content:space-between;font-size:.83rem;
+  color:rgba(240,235,228,.44);
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.stack > * + *{margin-top:var(--s,18px)}
+.center{text-align:center;margin-inline:auto}
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.nowrap{white-space:nowrap}
+
+@media print{
+  .site-head,.btn,.form{display:none}
+  body{background:#fff;font-size:11pt}
+  .dark{background:#fff!important;color:#000!important}
+}
+
+/* ------------------------------------------------------------
+   Tap targets. WCAG 2.2 AA (2.5.8) wants 24px minimum on
+   pointer targets; inline text links in dense lists are the
+   usual offenders, so they get vertical padding rather than
+   a forced 44px box that would wreck the footer rhythm.
+   ------------------------------------------------------------ */
+.foot-list a,.foot-bottom a{display:inline-block;padding-block:5px;min-height:24px}
+.foot-list li{margin-bottom:4px}
+.tel{padding-block:8px;min-height:32px}
+.lockup{padding-block:6px}
+.nav a{min-height:26px;display:inline-flex;align-items:center}
+
+/* Sticky header would otherwise sit on top of any anchor target. */
+html{scroll-padding-top:88px}
+[id]{scroll-margin-top:88px}
+
+/* Placeholder copy inside an image slot must not inherit the paragraph measure. */
+.shot__ph{margin:0;max-width:none}
+
+/* The form card is a light island inside a dark band — it must not
+   inherit the band's cream text colour or the labels vanish. */
+.dark .form{color:var(--charcoal)}
+.dark .form label{color:var(--charcoal)}
+.dark .form .help{color:var(--gray)}
+.dark .form p{color:var(--gray)}
+.dark .form .btn--primary{color:#fff}
+
+/* Native select needs its own affordance once we've restyled inputs. */
+.field select{
+  appearance:none;-webkit-appearance:none;padding-right:42px;cursor:pointer;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%237D674C' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;
+}
