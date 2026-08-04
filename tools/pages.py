@@ -10,12 +10,23 @@ from matrix import M, FAQ_EXTRA, NARR_EXTRA
 P = []
 
 
+def _srcset(slot, ext):
+    """1x always; 2x only when the file actually exists. A srcset that
+    promises a 2x that isn't there breaks the image entirely on retina
+    displays — the browser requests the 404 and renders nothing."""
+    import os
+    one = f"/assets/img/{slot}.{ext}"
+    two = f"/assets/img/{slot}@2x.{ext}"
+    return f"{one} 1x, {two} 2x" if os.path.exists(two.lstrip("/")) else one
+
+
 def hero_img():
     """Hero art is positioned by .hero__bg itself, so no .media wrapper."""
     import os
     if os.path.exists("assets/img/hero.webp"):
-        return ('<picture><source type="image/webp" srcset="/assets/img/hero.webp 1x, /assets/img/hero@2x.webp 2x">'
-                '<img src="/assets/img/hero.jpg" alt="" width="1800" height="1150" fetchpriority="high"></picture>')
+        return (f'<picture><source type="image/webp" srcset="{_srcset("hero", "webp")}">'
+                f'<img src="/assets/img/hero.jpg" srcset="{_srcset("hero", "jpg")}" '
+                'alt="" width="1800" height="1150" fetchpriority="high"></picture>')
     return '<img src="/assets/img/hero.svg" alt="" width="1800" height="1150" fetchpriority="high">'
 
 
@@ -25,7 +36,7 @@ def ba_img(slot, alt):
     cls = "ba__" + slot
     if os.path.exists(f"assets/img/{slot}.webp"):
         return (f'<img class="{cls}" src="/assets/img/{slot}.jpg" '
-                f'srcset="/assets/img/{slot}.jpg 1x, /assets/img/{slot}@2x.jpg 2x" '
+                f'srcset="{_srcset(slot, "jpg")}" '
                 f'alt="{alt}" width="1200" height="800">')
     return f'<img class="{cls}" src="/assets/img/{slot}.svg" alt="{alt}" width="1200" height="800">'
 
@@ -42,7 +53,7 @@ P.append(dict(
   <div class="shell" style="padding-block:clamp(66px,11vw,132px) clamp(56px,8vw,96px)">
     <p class="eyebrow">San&nbsp;Diego &middot; Riverside &middot; San&nbsp;Bernardino &middot; Kern</p>
     <h1 class="h-hero">Sell your house as&#8209;is, anywhere in Southern California.</h1>
-    <p class="hero__promise">One walkthrough. One honest number. And every option on the table &mdash; including the ones that don&rsquo;t involve me.</p>
+    <p class="hero__promise">One walkthrough. One honest number. And every option on the table, including the ones that don&rsquo;t involve me.</p>
     <p class="hero__note">No repairs, no cleaning out, no showings. Tenants in place is fine. So is a house full of forty years of somebody&rsquo;s life.</p>
     <div class="btnrow">
       <a class="btn btn--primary btn--lg" href="/contact/">Get my offer</a>
@@ -61,7 +72,7 @@ P.append(dict(
   <div class="shell">
     <p class="eyebrow" data-reveal>What we handle</p>
     <h2 class="h-sect" data-reveal>When a house becomes a problem, everyone shows up with an offer. Nobody shows up with a conversation.</h2>
-    <p class="lede" data-reveal>Four situations we deal with constantly. If yours isn&rsquo;t here, call anyway &mdash; it probably still has a way forward.</p>
+    <p class="lede" data-reveal>Four situations we deal with constantly. If yours isn&rsquo;t here, call anyway. It probably still has a way forward.</p>
     <div class="grid grid--4" style="margin-top:46px">
       <a class="card" href="/sell-my-house-fast/" data-reveal><h3 class="h-card">The house needs work</h3><p>Deferred maintenance, a failed inspection, damage you&rsquo;d rather not pay to fix. As&#8209;is means as&#8209;is.</p><span class="card__link">Selling as-is</span></a>
       <a class="card" href="/inherited-house/" data-reveal data-reveal-delay="80"><h3 class="h-card">You inherited it</h3><p>Probate, siblings, and a house that can come with everything still in it. We&rsquo;ll carry the heavy part.</p><span class="card__link">Inherited &amp; probate</span></a>
@@ -76,7 +87,7 @@ P.append(dict(
     <div>
       <p class="eyebrow" data-reveal>The work</p>
       <h2 class="h-sect" data-reveal>We buy the house, then we actually fix it.</h2>
-      <p data-reveal style="margin-top:22px">Every house we take on gets renovated and put back into use. That&rsquo;s the business &mdash; not paperwork, not flipping a contract to whoever answers first.</p>
+      <p data-reveal style="margin-top:22px">Every house we take on gets renovated and put back into use. That&rsquo;s the business, not paperwork, not flipping a contract to whoever answers first.</p>
       <p data-reveal>It also means the number we give you is real. We&rsquo;re pricing a project we have to finish ourselves, so there&rsquo;s no incentive to promise something now and renegotiate later.</p>
       <p data-reveal><a href="/what-we-buy/">See exactly what we buy &rarr;</a></p>
     </div>
@@ -88,7 +99,7 @@ P.append(dict(
         <button class="ba__handle" type="button" role="slider" tabindex="0"
           aria-label="Compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
       </div>
-      <p class="small" style="margin-top:12px">Drag to compare. Placeholder art &mdash; real project photography is being shot.</p>
+      <p class="small" style="margin-top:12px">Drag to compare. Placeholder art. Real project photography is being shot.</p>
     </div>
   </div>
 </section>
@@ -137,7 +148,7 @@ P.append(dict(
     <div>
       <p class="eyebrow" data-reveal>Who you&rsquo;re dealing with</p>
       <h2 class="h-sect" data-reveal>The name on the company is my name.</h2>
-      <p data-reveal style="margin-top:22px">Through my twenties I chased an Olympic dream in BMX racing. Real estate started as a detour &mdash; a way to buy the time and money to keep racing. What I found instead was the thing I&rsquo;d actually been missing: purpose, impact, and people.</p>
+      <p data-reveal style="margin-top:22px">Through my twenties I chased an Olympic dream in BMX racing. Real estate started as a detour: a way to buy the time and money to keep racing. What I found instead was the thing I&rsquo;d actually been missing: purpose, impact, and people.</p>
       <p data-reveal>I also found a corner of this business that nobody regulates, where distressed homeowners don&rsquo;t know what their options are, what questions to ask, or who to ask them to. I thought there could be a better way to do it.</p>
       <div class="btnrow"><a class="btn btn--ghost" href="/about/">More about Peter</a></div>
     </div>
@@ -149,7 +160,7 @@ P.append(dict(
   <div class="shell">
     <p class="eyebrow" data-reveal>Recent work</p>
     <h2 class="h-sect" data-reveal>Houses we bought, fixed, and put back into use.</h2>
-    <p class="lede" data-reveal>Five of the most recent. Photography from each of these is being prepared &mdash; the illustrations below are standing in until it lands.</p>
+    <p class="lede" data-reveal>Five of the most recent. Photography from each of these is being prepared: the illustrations below are standing in until it lands.</p>
     <div class="grid grid--4" style="margin-top:44px">
       <div class="card" style="padding:0;overflow:hidden" data-reveal>
         {pic("project-1","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
@@ -175,7 +186,7 @@ P.append(dict(
   <div class="shell">
     <p class="eyebrow" data-reveal>Where we buy</p>
     <h2 class="h-sect" data-reveal>Four counties, and I drive to all of them.</h2>
-    <p class="lede" data-reveal>Boots on the ground from the border to Bakersfield &mdash; and I do the walkthrough myself in every one of them.</p>
+    <p class="lede" data-reveal>Boots on the ground from the border to Bakersfield, and I do the walkthrough myself in every one of them.</p>
     <div class="grid grid--4" style="margin-top:42px">
       {"".join(f'''<a class="county" href="/{s}/" data-reveal data-reveal-delay="{i*70}" style="padding:0;overflow:hidden">
         {pic(f"county-{img}", f"A residential street in {n}", "media media--4x3", w=1000, h=750)}
@@ -191,11 +202,11 @@ P.append(dict(
 # ══════════════════════════════════════════════ HOW IT WORKS
 HOW_FAQ = [
         ("Do I need to clean or repair anything first?",
-         "<p>No. Leave it exactly as it is. You don't need to clear the house out, fix anything, or stage it. If there are contents you don't want, leave those too &mdash; we handle it.</p>"),
+         "<p>No. Leave it exactly as it is. You don't need to clear the house out, fix anything, or stage it. If there are contents you don't want, leave those too. We handle it.</p>"),
         ("How is the number worked out?",
          "<p>We look at what the house is worth once it's renovated, subtract what the renovation actually costs, subtract the cost of holding and reselling it, and leave a margin. We show you those figures. If you want to take them to an agent or a contractor to check, that's a reasonable thing to do.</p>"),
         ("How fast can this close?",
-         "<p>Around two weeks is typical from the first call. Faster is sometimes possible. Slower is completely fine &mdash; if you need sixty days to find your next place, we set the date for sixty days.</p>"),
+         "<p>Around two weeks is typical from the first call. Faster is sometimes possible. Slower is completely fine. If you need sixty days to find your next place, we set the date for sixty days.</p>"),
         ("What does it cost me?",
          "<p>Nothing. No commission, no fees to us, and we cover standard closing costs. What we offer is what you walk away with, minus anything owed on the property such as a mortgage payoff or liens.</p>"),
         ("Am I committed once I send the form?",
@@ -221,12 +232,12 @@ P.append(dict(
     <div class="grid grid--2" style="align-items:start">
       <div data-reveal>
         <span class="step__n">Step 01</span><h2 class="h-card" style="font-size:1.5rem">You tell me the situation</h2>
-        <p>Call, text, or send the form. We talk for ten minutes about the house and what's going on around it &mdash; a probate, a tenant, a job in another state, a repair bill you don't want.</p>
+        <p>Call, text, or send the form. We talk for ten minutes about the house and what's going on around it: a probate, a tenant, a job in another state, a repair bill you don't want.</p>
         <p>This is a conversation, not a qualification script. If it becomes clear a cash sale isn't your best move, I'll say so on this call rather than three weeks from now.</p>
       </div>
       <div data-reveal data-reveal-delay="90">
         <span class="step__n">Step 02</span><h2 class="h-card" style="font-size:1.5rem">One walkthrough, about half an hour</h2>
-        <p>I come and look at the house myself &mdash; not an inspector, not a photographer, not a team. You don't clean, fix, or move anything, and you don't need to be embarrassed about any of it. I've seen houses in every condition there is.</p>
+        <p>I come and look at the house myself, not an inspector, not a photographer, not a team. You don't clean, fix, or move anything, and you don't need to be embarrassed about any of it. I've seen houses in every condition there is.</p>
         <p>If the property is tenant-occupied we work around the tenant's schedule and their legal notice period.</p>
       </div>
       <div data-reveal>
@@ -236,7 +247,7 @@ P.append(dict(
       </div>
       <div data-reveal data-reveal-delay="90">
         <span class="step__n">Step 04</span><h2 class="h-card" style="font-size:1.5rem">You pick the closing date</h2>
-        <p>We open escrow with a title company and they handle the money and the paperwork. Title gets cleared &mdash; that's their job and ours, not yours.</p>
+        <p>We open escrow with a title company and they handle the money and the paperwork. Title gets cleared. That's their job and ours, not yours.</p>
         <p>About two weeks is typical. If you need longer to sort out your next place, say so and we set the date around you.</p>
       </div>
     </div>
@@ -272,7 +283,7 @@ P.append(dict(
 P.append(dict(
     url="/what-we-buy/", active="/what-we-buy/",
     trail=[("/what-we-buy/", "What we buy")],
-    title="What We Buy &mdash; And What We Don't | HARDT",
+    title="What We Buy, and What We Don't | HARDT",
     desc="Single and multi-family up to about $1.2M, in any condition, across four Southern California counties. Our buying criteria, published in full.",
     body=f"""
 <section class="band band--tight">
@@ -290,7 +301,7 @@ P.append(dict(
         <p class="h-kicker">I buy</p>
         <ul class="checks" style="margin-top:6px">
           <li>Single family and multi&#8209;family, up to about <strong>$1.2M</strong></li>
-          <li>Houses needing major work &mdash; including fire and water damage</li>
+          <li>Houses needing major work, including fire and water damage</li>
           <li>Inherited and probate property</li>
           <li>Pre&#8209;foreclosure, Notice of Default, liens and title problems</li>
           <li>Tenant&#8209;occupied rentals, mid&#8209;lease and Section 8</li>
@@ -311,7 +322,7 @@ P.append(dict(
         </ul>
       </div>
     </div>
-    <p class="small" style="margin-top:26px;max-width:62ch">That last one matters more than it sounds. If the title can&rsquo;t be cleared, you can&rsquo;t actually sell the house to anybody &mdash; and a buyer who tells you otherwise is setting up a problem for later.</p>
+    <p class="small" style="margin-top:26px;max-width:62ch">That last one matters more than it sounds. If the title can&rsquo;t be cleared, you can&rsquo;t actually sell the house to anybody, and a buyer who tells you otherwise is setting up a problem for later.</p>
   </div>
 </section>
 
@@ -337,8 +348,8 @@ P.append(dict(
 P.append(dict(
     url="/areas/", active="/areas/",
     trail=[("/areas/", "Where we buy")],
-    title="Where We Buy — Four Southern California Counties | HARDT",
-    desc="HARDT buys houses across San Diego, Riverside, San Bernardino and Kern counties — from the border up to Bakersfield, with the walkthrough done in person every time.",
+    title="Where We Buy: Four Southern California Counties | HARDT",
+    desc="HARDT buys houses across San Diego, Riverside, San Bernardino and Kern counties, from the border up to Bakersfield, with the walkthrough done in person every time.",
     body=f"""
 <section class="band band--tight">
   <div class="shell">
@@ -362,7 +373,7 @@ P.append(dict(
 <section class="band">
   <div class="shell shell--narrow">
     <h2 class="h-sect" data-reveal>Places I&rsquo;d rather be honest about</h2>
-    <p data-reveal style="margin-top:20px">There are mountain communities I don&rsquo;t buy in &mdash; Big Bear, Lake Arrowhead, Crestline, Bear Valley Springs, Frazier Park and Pine Mountain Club among them. The market up there behaves differently enough that I&rsquo;d be guessing, and guessing with somebody&rsquo;s house is how people get hurt.</p>
+    <p data-reveal style="margin-top:20px">There are mountain communities I don&rsquo;t buy in: Big Bear, Lake Arrowhead, Crestline, Bear Valley Springs, Frazier Park and Pine Mountain Club among them. The market up there behaves differently enough that I&rsquo;d be guessing, and guessing with somebody&rsquo;s house is how people get hurt.</p>
     <p data-reveal>If that&rsquo;s where your property is, tell me anyway. I&rsquo;d rather point you to someone who actually knows that market than pretend I do.</p>
   </div>
 </section>
@@ -375,7 +386,7 @@ P.append(dict(
     url="/about/", active="/about/", ogtype="profile",
     trail=[("/about/", "About Peter")],
     title="About Peter Eberhardt, Founder | HARDT",
-    desc="HARDT is founder-led. Peter Eberhardt buys, renovates and rebuilds houses across Southern California — and refuses to take advantage of people having a hard year.",
+    desc="HARDT is founder-led. Peter Eberhardt buys, renovates and rebuilds houses across Southern California, and refuses to take advantage of people having a hard year.",
     body=f"""
 <section class="band band--tight">
   <div class="shell split">
@@ -390,10 +401,10 @@ P.append(dict(
 
 <section class="band band--tight paper">
   <div class="shell shell--narrow">
-    <p data-reveal>Through my twenties I chased an Olympic dream in the sport of BMX racing. Getting into real estate started out as a short detour from that dream &mdash; a tool that would give me more time and money to chase the Olympic path.</p>
+    <p data-reveal>Through my twenties I chased an Olympic dream in the sport of BMX racing. Getting into real estate started out as a short detour from that dream: a tool that would give me more time and money to chase the Olympic path.</p>
     <p data-reveal>I realised fairly quickly that I was missing much more than time and money. I was missing purpose, impact, and relationships.</p>
     <p data-reveal>Getting into real estate, I also discovered how unregulated the space is where distressed homes get bought and sold. I watched homeowners in situations where they didn&rsquo;t know what all their options were, didn&rsquo;t know the right questions to ask, and didn&rsquo;t know who to ask them to.</p>
-    <p data-reveal>I wondered whether there could be a better way. A better service. A better impact &mdash; something that could actually get a homeowner out of the situation they were in and show them a way forward to the next chapter.</p>
+    <p data-reveal>I wondered whether there could be a better way. A better service. A better impact: something that could actually get a homeowner out of the situation they were in and show them a way forward to the next chapter.</p>
     <p data-reveal>That&rsquo;s what HARDT is. We refuse to take advantage of homeowners, and we believe every situation has a way forward.</p>
     <p class="serif" style="font-size:1.4rem;color:var(--bronze-ink);margin-top:32px" data-reveal>Every situation has a way forward.</p>
   </div>
@@ -406,7 +417,7 @@ P.append(dict(
     <div class="grid grid--2" style="margin-top:42px">
       <div data-reveal><h3 class="h-card">You talk to me</h3><p>Every enquiry comes to me directly. Not a call centre, not an acquisitions rep working a script, not a lead that gets sold to four investors at once.</p></div>
       <div data-reveal data-reveal-delay="80"><h3 class="h-card">We don&rsquo;t assign contracts</h3><p>Some buyers put a house under contract and then sell that contract on. We don&rsquo;t. If it doesn&rsquo;t close, I buy it myself.</p></div>
-      <div data-reveal><h3 class="h-card">The math is shown</h3><p>You see how the number was reached &mdash; finished value, cost of work, cost of holding and reselling, margin. Check it with anyone you like.</p></div>
+      <div data-reveal><h3 class="h-card">The math is shown</h3><p>You see how the number was reached: finished value, cost of work, cost of holding and reselling, margin. Check it with anyone you like.</p></div>
       <div data-reveal data-reveal-delay="80"><h3 class="h-card">Bad news arrives at the same volume</h3><p>If listing with an agent would put more money in your pocket, I&rsquo;ll say so on the first call. It costs me deals. It&rsquo;s still the right thing.</p></div>
     </div>
   </div>
@@ -417,7 +428,7 @@ P.append(dict(
     <p class="eyebrow" data-reveal>The business</p>
     <h2 class="h-sect" data-reveal>Plainly stated.</h2>
     <p data-reveal style="margin-top:22px">HARDT Real Estate is a d/b/a of Fluid Developments LLC, operating across San Diego, Riverside, San Bernardino and Kern counties since 2021. We buy houses with our own money, renovate them using local subcontractors, and put them back into use.</p>
-    <p data-reveal>We buy as a principal for our own account. We are not a licensed real estate brokerage, we don&rsquo;t represent buyers or sellers, and we don&rsquo;t give legal, tax or financial advice. When you need that kind of advice &mdash; and in a probate or a foreclosure you often do &mdash; we&rsquo;ll tell you to go get it.</p>
+    <p data-reveal>We buy as a principal for our own account. We are not a licensed real estate brokerage, we don&rsquo;t represent buyers or sellers, and we don&rsquo;t give legal, tax or financial advice. When you need that kind of advice, and in a probate or a foreclosure you often do. We&rsquo;ll tell you to go get it.</p>
   </div>
 </section>
 
@@ -429,7 +440,7 @@ P.append(dict(
     url="/contact/", active="/contact/",
     trail=[("/contact/", "Contact")],
     title="Get Your Offer | HARDT",
-    desc="Three questions and I'll be in touch — usually within 15 minutes between 8am and 6pm. No obligation, no pressure, and nobody else gets your information.",
+    desc="Three questions and I'll be in touch, usually within 15 minutes between 8am and 6pm. No obligation, no pressure, and nobody else gets your information.",
     body=f"""
 <section class="band dark" id="offer">
   <div class="shell split">
@@ -499,11 +510,11 @@ SVC = {
            "Hoarding situations and full contents"],
    faq=[("Is the house too far gone?","<p>Almost certainly not. Condition changes the number, not whether we're interested. The only real disqualifiers are on our <a href=\"/what-we-buy/\">what we buy</a> page, and none of them are about condition.</p>"),
         ("Do I have to clear it out?","<p>No. Take what matters to you and leave everything else, including furniture, tools and whatever's in the garage.</p>"),
-        ("Will you lowball me because it needs work?","<p>You'll see the math &mdash; finished value, cost of the work, cost of holding and reselling, and the margin. If the repair estimate looks high to you, get a contractor to check it. That's a reasonable thing to do and I'd rather you did.</p>")]),
+        ("Will you lowball me because it needs work?","<p>You'll see the math: finished value, cost of the work, cost of holding and reselling, and the margin. If the repair estimate looks high to you, get a contractor to check it. That's a reasonable thing to do and I'd rather you did.</p>")]),
  "inherited-house": dict(
    h1="You inherited a house. Now what?",
    title="Selling an Inherited House in California | HARDT",
-   desc="Probate-fluent, patient, and willing to carry the heavy part — including the contents. Sell an inherited house in Southern California without repairs or showings.",
+   desc="Probate-fluent, patient, and willing to carry the heavy part, including the contents. Sell an inherited house in Southern California without repairs or showings.",
    lede="Probate, siblings, and a house that can come with everything still in it. This is the situation we're asked about most, and the one people are least prepared for.",
    body_intro="<p>Inheriting a house usually arrives alongside a death, which means the paperwork lands at the worst possible time. Most people have never been through probate and don't know what they're allowed to do or when.</p><p>We deal with this constantly. There's rarely a rush from our side, and we're comfortable waiting for the court where waiting is what's needed.</p>",
    points=["Property still going through probate",
@@ -511,30 +522,30 @@ SVC = {
            "A house full of a lifetime of belongings",
            "Out-of-state executors who can't get here",
            "Deferred maintenance from the last years of someone's life"],
-   faq=[("Can I sell before probate finishes?","<p>Sometimes, depending on the authority the court has granted and how the property was held. It's a legal question, not a marketing one &mdash; the honest answer is that you should ask a probate attorney, and we'll work to whatever timeline they give you.</p>"),
+   faq=[("Can I sell before probate finishes?","<p>Sometimes, depending on the authority the court has granted and how the property was held. It's a legal question, not a marketing one: the honest answer is that you should ask a probate attorney, and we'll work to whatever timeline they give you.</p>"),
         ("What about everything still in the house?","<p>Leave it. Take the things that matter to your family and we'll deal with the rest. Nobody should have to empty a parent's house on a deadline.</p>"),
-        ("There are four of us and we don't agree. Can you help?","<p>We can be patient and we can put the same clear number in front of everyone, which sometimes helps. What we can't do is mediate &mdash; and if the disagreement is serious, that's a job for an attorney.</p>")]),
+        ("There are four of us and we don't agree. Can you help?","<p>We can be patient and we can put the same clear number in front of everyone, which sometimes helps. What we can't do is mediate, and if the disagreement is serious, that's a job for an attorney.</p>")]),
  "stop-foreclosure": dict(
    h1="A Notice of Default isn&rsquo;t the end of the road.",
    title="Facing Foreclosure in Southern California? | HARDT",
-   desc="Understand the California trustee-sale timeline and every option on the table — including the ones that don't involve selling. Straight information, no pressure.",
-   lede="If you're behind on payments, the most valuable thing you can have right now is accurate information about your options — not another offer.",
-   body_intro="<p>People in this situation usually get a stack of letters and a lot of pressure. What they rarely get is a plain explanation of how the process actually works and how much time is genuinely left.</p><p>So that's what this conversation is. Sometimes the answer is a reinstatement, a loan modification, or a short sale with your lender. Sometimes it's selling before the sale date. Occasionally it's letting it go &mdash; and if that's genuinely your best outcome, I'll say so.</p>",
+   desc="Understand the California trustee-sale timeline and every option on the table, including the ones that don't involve selling. Straight information, no pressure.",
+   lede="If you're behind on payments, the most valuable thing you can have right now is accurate information about your options, not another offer.",
+   body_intro="<p>People in this situation usually get a stack of letters and a lot of pressure. What they rarely get is a plain explanation of how the process actually works and how much time is genuinely left.</p><p>So that's what this conversation is. Sometimes the answer is a reinstatement, a loan modification, or a short sale with your lender. Sometimes it's selling before the sale date. Occasionally it's letting it go, and if that's genuinely your best outcome, I'll say so.</p>",
    points=["Behind on payments but not yet in default",
            "A Notice of Default has been recorded",
            "A trustee sale date has been set",
            "Property tax arrears or a tax lien",
            "Mechanic's liens or judgments clouding title"],
    faq=[("How much time do I actually have?","<p>California's non-judicial foreclosure process runs on statutory timelines from the recording of a Notice of Default through to a trustee's sale. The specifics depend on your lender and what's already been recorded, so the first thing to do is find out exactly where in that process you are.</p>"),
-        ("Will selling hurt my credit less than foreclosure?","<p>Often, yes &mdash; but this is a question for a HUD-approved housing counsellor or an attorney, not for a buyer. We're not going to advise you on your credit in order to buy your house.</p>"),
+        ("Will selling hurt my credit less than foreclosure?","<p>Often, yes, but this is a question for a HUD-approved housing counsellor or an attorney, not for a buyer. We're not going to advise you on your credit in order to buy your house.</p>"),
         ("Do you charge for this conversation?","<p>No, and we don't charge for anything else either. We're not foreclosure consultants and we don't take fees to help with a default. We buy houses. If buying yours is the right answer we'll make an offer; if it isn't, we'll tell you what we'd do.</p>")],
    legal="<p class=\"small\" style=\"margin-top:26px;max-width:70ch\">This page is general information, not legal or financial advice. California law regulates foreclosure consultants and equity purchasers. HARDT is not a foreclosure consultant, does not charge fees for foreclosure assistance, and buys property only as a principal. If you are facing foreclosure, speak with a HUD-approved housing counsellor or an attorney about your specific situation.</p>"),
  "sell-rental-property": dict(
    h1="Tenants in place is fine. Truly.",
    title="Sell a Rental Property With Tenants in Place | HARDT",
-   desc="Sell a tenant-occupied rental in Southern California as-is — mid-lease, Section 8, deferred maintenance and all. No showings, no evictions, no repairs.",
+   desc="Sell a tenant-occupied rental in Southern California as-is: mid-lease, Section 8, deferred maintenance and all. No showings, no evictions, no repairs.",
    lede="Most buyers want the property vacant, cleaned and repaired. That means evicting someone, and it means months of work before you can even list.",
-   body_intro="<p>The usual advice to a landlord who wants out is to get the tenant out first. That's slow, expensive, and hard on somebody who probably hasn't done anything wrong.</p><p>We buy occupied. The tenancy transfers with the property, and in many cases the tenant simply stays &mdash; which is better for everyone and considerably faster for you.</p>",
+   body_intro="<p>The usual advice to a landlord who wants out is to get the tenant out first. That's slow, expensive, and hard on somebody who probably hasn't done anything wrong.</p><p>We buy occupied. The tenancy transfers with the property, and in many cases the tenant simply stays, which is better for everyone and considerably faster for you.</p>",
    points=["Tenants mid-lease or month-to-month",
            "Section 8 and other assisted tenancies",
            "Non-paying tenants and eviction already in progress",
@@ -616,13 +627,13 @@ CTY = {
    "Coastal North County, the inland valleys and the East County foothills are three different housing markets wearing one county's name. A 1950s East County ranch and a 1990s Chula Vista tract house need completely different work, and the number reflects that."),
  "riverside-county": ("the corridor",
    "Riverside County runs from the Inland Empire down through the Temecula Valley, and I cover the western and southwestern side of it.",
-   "Newer subdivisions here often carry Mello-Roos assessments and solar or PACE liens attached to the property rather than the owner. Those don't stop a sale, but they have to be found early &mdash; they're a common reason a deal falls apart late with another buyer."),
+   "Newer subdivisions here often carry Mello-Roos assessments and solar or PACE liens attached to the property rather than the owner. Those don't stop a sale, but they have to be found early. They're a common reason a deal falls apart late with another buyer."),
  "san-bernardino-county": ("the inland empire",
    "From the older neighbourhoods of San Bernardino and Redlands out through Fontana, Rancho Cucamonga and Highland.",
-   "The housing stock varies enormously by decade here, which matters for what's behind the walls &mdash; galvanised plumbing, aluminium wiring and panels that no longer pass inspection are all common in the older parts of the county."),
+   "The housing stock varies enormously by decade here, which matters for what's behind the walls: galvanised plumbing, aluminium wiring and panels that no longer pass inspection are all common in the older parts of the county."),
  "kern-county": ("the north end",
    "Bakersfield and the surrounding towns are the northern end of what we cover. It's a long drive from the southern end of our territory, and I make it regularly.",
-   "Kern is where a good deal of our renovation work has been. Prices are lower than the coastal counties, which changes the arithmetic on what's worth doing to a house &mdash; a full renovation that pencils in Chula Vista may not pencil in Wasco, and vice versa."),
+   "Kern is where a good deal of our renovation work has been. Prices are lower than the coastal counties, which changes the arithmetic on what's worth doing to a house: a full renovation that pencils in Chula Vista may not pencil in Wasco, and vice versa."),
 }
 
 for slug, name, img, cities in COUNTIES:
@@ -630,7 +641,7 @@ for slug, name, img, cities in COUNTIES:
     cfaq = [(f"Which {name.replace(' County','')} cities do you buy in?",
              f"<p>{cities}, plus the smaller communities around them. If you're not sure whether you're in range, send the address and I'll tell you in one message.</p>"),
             ("Do you buy houses that need work here?",
-             "<p>Yes &mdash; that's most of what we do. Condition changes the number, not whether we're interested.</p>"),
+             "<p>Yes. That's most of what we do. Condition changes the number, not whether we're interested.</p>"),
             ("How quickly can you see the property?",
              "<p>Usually within a day or two, since this is home.</p>" if slug=="san-diego-county"
              else "<p>Usually within a few days. I batch trips to the area, so tell me your timing and I will work around it.</p>")]
@@ -647,7 +658,7 @@ for slug, name, img, cities in COUNTIES:
     P.append(dict(
         url=f"/{slug}/", trail=[("/areas/", "Where we buy"), (f"/{slug}/", name)],
         title=f"We Buy Houses in {name}, CA | HARDT",
-        desc=f"Sell a house as-is in {name} — {cities.split(',')[0]} and across the county. No repairs, no showings, no commissions. One walkthrough and one honest number.",
+        desc=f"Sell a house as-is in {name}: {cities.split(',')[0]} and across the county. No repairs, no showings, no commissions. One walkthrough and one honest number.",
         og=og_img(f"county-{img}"),
         faq=cfaq,
         body=f"""
@@ -662,7 +673,7 @@ for slug, name, img, cities in COUNTIES:
 
 <section class="band--tight">
   <div class="shell">
-    <div data-reveal>{pic(f"county-{img}", f"A residential street in {name}", "media media--wide", tag="Illustration &mdash; local photography to come", eager=True, w=1400, h=640)}</div>
+    <div data-reveal>{pic(f"county-{img}", f"A residential street in {name}", "media media--wide", tag="Illustration &middot; local photography to come", eager=True, w=1400, h=640)}</div>
   </div>
 </section>
 
@@ -684,7 +695,7 @@ for slug, name, img, cities in COUNTIES:
   <div class="shell">
     <p class="eyebrow" data-reveal>The local details</p>
     <h2 class="h-sect" data-reveal>How {short} actually works when you sell.</h2>
-    <p class="lede" data-reveal>The courthouse, the recorder, the tax line and the housing stock &mdash; the specifics that decide how a {short} sale really goes.</p>
+    <p class="lede" data-reveal>The courthouse, the recorder, the tax line and the housing stock: the specifics that decide how a {short} sale really goes.</p>
     <div class="grid grid--2" style="margin-top:42px">{local_cards}</div>
     {sources_line(slug)}
   </div>
@@ -735,10 +746,10 @@ for (cslug, sslug), d in M.items():
 
     # Walkthrough timing is genuinely different per county — say so.
     visit = {
-        "san-diego-county": "Usually within a day or two &mdash; this county is home.",
-        "riverside-county": "Within a few days &mdash; I batch southwest-county trips and work around your timing.",
-        "san-bernardino-county": "Within a few days, valley or High Desert &mdash; tell me your timing and I&rsquo;ll route the trip around it.",
-        "kern-county": "I&rsquo;m in Kern regularly &mdash; walkthroughs usually land within the week, Ridgecrest included.",
+        "san-diego-county": "Usually within a day or two. This county is home.",
+        "riverside-county": "Within a few days. I batch southwest-county trips and work around your timing.",
+        "san-bernardino-county": "Within a few days, valley or High Desert. Tell me your timing and I&rsquo;ll route the trip around it.",
+        "kern-county": "I&rsquo;m in Kern regularly. Walkthroughs usually land within the week, Ridgecrest included.",
     }[cslug]
 
     # Service-flavoured extras: the statutory clock on foreclosure pages,
@@ -756,19 +767,19 @@ for (cslug, sslug), d in M.items():
             "authority. <strong>Full authority</strong> under the Independent Administration of Estates "
             "Act usually means the representative can sell with notice to the heirs and no court "
             "hearing; <strong>limited authority</strong> means the sale is confirmed in court, which "
-            "adds weeks and an overbid step. It&rsquo;s printed on the Letters &mdash; look before you plan, "
+            "adds weeks and an overbid step. It&rsquo;s printed on the Letters. Look before you plan, "
             "and if probate hasn&rsquo;t been opened yet, tell your attorney you&rsquo;d like full authority "
             "requested. It routinely saves an estate a month or more.</p>"),
         "sell-my-house-fast": (
             "<p>What to have handy for the first call, none of it mandatory: roughly what you owe "
             "on the house, any insurance or inspection paperwork from recent years, and a sense of "
-            "your ideal date to be done. That&rsquo;s it. The walkthrough needs no preparation at all &mdash; "
-            "we have seen every version of &ldquo;I didn&rsquo;t have time to clean,&rdquo; and we are not "
+            "your ideal date to be done. That&rsquo;s it. The walkthrough needs no preparation at all. "
+            "We have seen every version of &ldquo;I didn&rsquo;t have time to clean,&rdquo; and we are not "
             "grading.</p>"),
         "sell-rental-property": (
             "<p>Paper to gather when you&rsquo;re ready: the lease or a note of the verbal terms, the "
-            "deposit amount, and the last tax bill. Everything else &mdash; estoppel, prorations, the "
-            "housing-authority transfer where one applies &mdash; is escrow&rsquo;s routine, not yours.</p>"),
+            "deposit amount, and the last tax bill. Everything else (estoppel, prorations, the "
+            "housing-authority transfer where one applies) is escrow&rsquo;s routine, not yours.</p>"),
     }
     narr_extra += SVC_NOTE.get(sslug, "")
 
@@ -794,7 +805,7 @@ for (cslug, sslug), d in M.items():
         url=f"/{cslug}/{sslug}/",
         trail=[("/areas/", "Where we buy"), (f"/{cslug}/", cname), (f"/{cslug}/{sslug}/", slabel)],
         title=d["title"], desc=d["desc"],
-        service=f"{slongname} &mdash; {cname}", service_area=cname,
+        service=f"{slongname} in {cname}", service_area=cname,
         og=og_img(f"county-{cimg}"),
         faq=faqs,
         body=f"""
@@ -813,10 +824,10 @@ for (cslug, sslug), d in M.items():
     <div data-reveal>
       <p class="h-kicker">Where we buy in {cshort}</p>
       <p>{ccities}, plus the smaller communities around them.</p>
-      <p class="small">Not listed? Send the address anyway &mdash; the line on a map matters less than the drive.</p>
+      <p class="small">Not listed? Send the address anyway: the line on a map matters less than the drive.</p>
       <p class="h-kicker" style="margin-top:26px">The ground rules</p>
       <ul class="checks"><li>No repairs, no cleaning out, no showings</li>
-      <li>One walkthrough &mdash; me, not an inspector parade</li>
+      <li>One walkthrough: me, not an inspector parade</li>
       <li>One number, with the math shown</li>
       <li>We don&rsquo;t assign contracts. If it doesn&rsquo;t close, I buy it myself.</li></ul>
     </div>
@@ -848,7 +859,7 @@ for (cslug, sslug), d in M.items():
     <div class="figrow" style="margin-top:36px" data-reveal>
       <div><p class="h-kicker">01 &middot; The conversation</p><p class="small">Ten minutes on the phone. What the property is and what&rsquo;s happening around it. You talk to me, not a call centre.</p></div>
       <div><p class="h-kicker">02 &middot; One walkthrough</p><p class="small">{visit} Half an hour, no cleaning or repairs first.</p></div>
-      <div><p class="h-kicker">03 &middot; One number</p><p class="small">With the math shown &mdash; finished value, work budget, margin &mdash; and a closing date you choose.</p></div>
+      <div><p class="h-kicker">03 &middot; One number</p><p class="small">With the math shown: finished value, work budget, margin, and a closing date you choose.</p></div>
     </div>
   </div>
 </section>
@@ -883,7 +894,7 @@ LEGAL = {
 <h2 class="h-card" style="margin-top:30px">What we do with it</h2>
 <p>We use it to contact you about your property and to prepare an offer. That's it.</p>
 <h2 class="h-card" style="margin-top:30px">What we don't do</h2>
-<p><strong>We do not sell your information, and we do not share it with other investors or lead buyers.</strong> This is common practice in our industry and we don't do it. We share information only with the parties needed to complete a transaction you have chosen to proceed with &mdash; a title company, an escrow officer &mdash; and where the law requires it.</p>
+<p><strong>We do not sell your information, and we do not share it with other investors or lead buyers.</strong> This is common practice in our industry and we don't do it. We share information only with the parties needed to complete a transaction you have chosen to proceed with: a title company, an escrow officer, and where the law requires it.</p>
 <h2 class="h-card" style="margin-top:30px">Your rights in California</h2>
 <p>Under the CCPA and CPRA you can ask what personal information we hold about you, ask us to delete it, and ask us to correct it. We don't sell personal information, so there is nothing to opt out of on that front. To make a request, email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 <h2 class="h-card" style="margin-top:30px">Contact by phone and text</h2>
@@ -910,7 +921,7 @@ LEGAL = {
 <p>We target <strong>WCAG 2.1 Level AA</strong>.</p>
 <h2 class="h-card" style="margin-top:30px">What that means here</h2>
 <ul class="checks" style="margin-top:14px">
-  <li>Every text and background pairing on this site is tested to meet AA contrast &mdash; we adjusted our own brand colours to get there rather than the other way round</li>
+  <li>Every text and background pairing on this site is tested to meet AA contrast. We adjusted our own brand colours to get there rather than the other way round</li>
   <li>The site works end to end with a keyboard, and focus is always visible</li>
   <li>Headings run in order, images carry alternative text, and form fields have real labels</li>
   <li>Animation is removed entirely for anyone whose system requests reduced motion</li>
@@ -918,9 +929,9 @@ LEGAL = {
   <li>Text can be resized without breaking the layout</li>
 </ul>
 <h2 class="h-card" style="margin-top:30px">Where we know we fall short</h2>
-<p>This site is under active construction and some sections still use placeholder artwork. If you find something that doesn't work with your assistive technology, we want to hear about it &mdash; that's a bug, not a preference.</p>
+<p>This site is under active construction and some sections still use placeholder artwork. If you find something that doesn't work with your assistive technology, we want to hear about it. That's a bug, not a preference.</p>
 <h2 class="h-card" style="margin-top:30px">Tell us</h2>
-<p>Email <a href="mailto:{EMAIL}">{EMAIL}</a> or call {PHONE_DISPLAY}. Describe what happened and what you were using, and we'll fix it. If you need to give us information about a property in another format, we'll take it however works for you &mdash; including over the phone.</p>"""),
+<p>Email <a href="mailto:{EMAIL}">{EMAIL}</a> or call {PHONE_DISPLAY}. Describe what happened and what you were using, and we'll fix it. If you need to give us information about a property in another format, we'll take it however works for you, including over the phone.</p>"""),
 }
 for slug, (name, desc, body) in LEGAL.items():
     P.append(dict(url=f"/{slug}/", trail=[(f"/{slug}/", name)],
@@ -954,7 +965,7 @@ P.append(dict(
     url="/resources/", active="/resources/",
     trail=[("/resources/", "Resources")],
     title="Homeowner Resources & Plain-English Guides | HARDT",
-    desc="Plain-English guides to probate, foreclosure notices, Prop 19 and tenant-occupied sales in California — written to be useful, not to sell you anything.",
+    desc="Plain-English guides to probate, foreclosure notices, Prop 19 and tenant-occupied sales in California, written to be useful, not to sell you anything.",
     body=f"""
 <section class="band band--tight">
   <div class="shell">
@@ -968,7 +979,7 @@ P.append(dict(
     <div class="grid grid--2" style="margin-top:8px">
       {"".join(f'''<a class="card" href="/resources/{s}/" data-reveal><h2 class="h-card">{t}</h2><p>{d}</p><span class="card__link">Read the guide</span></a>''' for s, t, d in RES_ITEMS)}
     </div>
-    <p class="small" style="margin-top:34px">These guides are general information, not legal, tax or financial advice. For advice on your situation, talk to a licensed professional &mdash; and for foreclosure, a HUD-approved housing counsellor is free.</p>
+    <p class="small" style="margin-top:34px">These guides are general information, not legal, tax or financial advice. For advice on your situation, talk to a licensed professional, and for foreclosure, a HUD-approved housing counsellor is free.</p>
   </div>
 </section>
 {cta("Rather just talk it through?", "Call me directly, or send the address and I'll come look at it myself.")}
@@ -979,44 +990,44 @@ RES_TRAIL = [("/resources/", "Resources")]
 P.append(dict(
     url="/resources/probate-timeline/", trail=RES_TRAIL + [("/resources/probate-timeline/", "Probate timeline")],
     title="California Probate Timeline, Step by Step | HARDT",
-    desc="How long California probate takes and what happens at each step — filing, letters, the four-month creditor window, inventory, and final distribution.",
+    desc="How long California probate takes and what happens at each step: filing, letters, the four-month creditor window, inventory, and final distribution.",
     body=f"""
 <section class="band band--tight">
   <div class="shell shell--narrow">
     <p class="eyebrow" data-reveal>Resources</p>
     <h1 class="h-sect" data-reveal>The California probate timeline, step by step.</h1>
-    <p class="lede" data-reveal>Most heirs have never done this before. Here&rsquo;s the whole shape of it &mdash; what happens, in what order, and where the time actually goes.</p>
+    <p class="lede" data-reveal>Most heirs have never done this before. Here&rsquo;s the whole shape of it: what happens, in what order, and where the time actually goes.</p>
   </div>
 </section>
 <section class="band band--tight paper">
   <div class="shell shell--narrow" data-reveal>
-    <p>Probate is the court process for transferring a person&rsquo;s property after death when there&rsquo;s no trust (or the trust doesn&rsquo;t cover everything). In California it runs through the Superior Court of the county where the person lived &mdash; and it runs on the court&rsquo;s calendar, which is the part nobody warns you about.</p>
+    <p>Probate is the court process for transferring a person&rsquo;s property after death when there&rsquo;s no trust (or the trust doesn&rsquo;t cover everything). In California it runs through the Superior Court of the county where the person lived, and it runs on the court&rsquo;s calendar, which is the part nobody warns you about.</p>
 
     <h2 class="h-card" style="margin-top:34px">1. Filing the petition</h2>
-    <p>Someone &mdash; usually the person named in the will, or a close relative &mdash; files a Petition for Probate with the county&rsquo;s probate court. The base court filing fee is $435 statewide, and some counties add local surcharges. The court sets a hearing date, typically several weeks out depending on the county&rsquo;s calendar.</p>
+    <p>Someone, usually the person named in the will or a close relative, files a Petition for Probate with the county&rsquo;s probate court. The base court filing fee is $435 statewide, and some counties add local surcharges. The court sets a hearing date, typically several weeks out depending on the county&rsquo;s calendar.</p>
 
     <h2 class="h-card" style="margin-top:30px">2. Notice, hearing, and Letters</h2>
-    <p>Notice of the hearing is published and mailed to heirs. If nobody objects and the paperwork is clean, the court appoints a personal representative and issues &ldquo;Letters&rdquo; &mdash; the document that gives them legal authority to act. Paperwork problems are flagged in the court&rsquo;s <em>probate notes</em> before the hearing; clearing them early is the single best way to keep your date.</p>
+    <p>Notice of the hearing is published and mailed to heirs. If nobody objects and the paperwork is clean, the court appoints a personal representative and issues &ldquo;Letters&rdquo;: the document that gives them legal authority to act. Paperwork problems are flagged in the court&rsquo;s <em>probate notes</em> before the hearing; clearing them early is the single best way to keep your date.</p>
 
     <h2 class="h-card" style="margin-top:30px">3. The four-month creditor window</h2>
-    <p>Once Letters issue, creditors get four months to file claims against the estate. This window is statutory &mdash; the estate generally can&rsquo;t close before it runs, which is why even a simple, uncontested California probate lasts the better part of a year.</p>
+    <p>Once Letters issue, creditors get four months to file claims against the estate. This window is statutory: the estate generally can&rsquo;t close before it runs, which is why even a simple, uncontested California probate lasts the better part of a year.</p>
 
     <h2 class="h-card" style="margin-top:30px">4. Inventory and appraisal</h2>
     <p>The representative files an Inventory &amp; Appraisal of estate assets, generally due within four months of Letters. Real property is valued by a court-appointed probate referee, not by a real-estate agent&rsquo;s opinion.</p>
 
     <h2 class="h-card" style="margin-top:30px">5. Selling the house, if the estate sells</h2>
-    <p>Whether the house can be sold before the estate closes depends on the representative&rsquo;s authority. With <strong>full authority</strong> under the Independent Administration of Estates Act, the representative can usually sell with notice to heirs but without a court hearing. With <strong>limited authority</strong>, the sale is confirmed in court &mdash; and in some counties the confirmation hearing includes open overbidding, where competing buyers can raise the price on the spot. That&rsquo;s not a bug; it can only raise what the estate receives.</p>
+    <p>Whether the house can be sold before the estate closes depends on the representative&rsquo;s authority. With <strong>full authority</strong> under the Independent Administration of Estates Act, the representative can usually sell with notice to heirs but without a court hearing. With <strong>limited authority</strong>, the sale is confirmed in court, and in some counties the confirmation hearing includes open overbidding, where competing buyers can raise the price on the spot. That&rsquo;s not a bug; it can only raise what the estate receives.</p>
 
     <h2 class="h-card" style="margin-top:30px">6. Accounting and distribution</h2>
     <p>After the creditor window closes and taxes and debts are handled, the representative petitions for final distribution. The court approves the accounting, assets distribute, and the estate closes. Statutory fees for the representative and attorney are set by the Probate Code as percentages of the estate: 4% of the first $100,000, 3% of the next $100,000, 2% of the next $800,000, and down from there.</p>
 
     <h2 class="h-card" style="margin-top:30px">How long, all in?</h2>
-    <p>A clean, uncontested probate with a house in it typically runs nine months to eighteen. Contested estates, lost heirs, or title problems run longer. The court is rarely the villain &mdash; the calendar is simply the calendar, and the estates that move fastest are the ones whose paperwork clears the examiner&rsquo;s notes the first time.</p>
+    <p>A clean, uncontested probate with a house in it typically runs nine months to eighteen. Contested estates, lost heirs, or title problems run longer. The court is rarely the villain: the calendar is simply the calendar, and the estates that move fastest are the ones whose paperwork clears the examiner&rsquo;s notes the first time.</p>
 
-    <p class="small" style="margin-top:34px">Sources: California Probate Code &sect;&sect;8000&ndash;12252 (petition, letters, creditor claims, inventory) and &sect;10810 (statutory fees), at <a href="https://leginfo.legislature.ca.gov" rel="noopener">leginfo.legislature.ca.gov</a>; filing fee per Government Code &sect;70650; California Courts self-help guide at <a href="https://selfhelp.courts.ca.gov/probate" rel="noopener">selfhelp.courts.ca.gov/probate</a>. Checked {CHECKED}. This is general information, not legal advice &mdash; probate practice varies by county, and a probate attorney is the right person for your specifics.</p>
+    <p class="small" style="margin-top:34px">Sources: California Probate Code &sect;&sect;8000&ndash;12252 (petition, letters, creditor claims, inventory) and &sect;10810 (statutory fees), at <a href="https://leginfo.legislature.ca.gov" rel="noopener">leginfo.legislature.ca.gov</a>; filing fee per Government Code &sect;70650; California Courts self-help guide at <a href="https://selfhelp.courts.ca.gov/probate" rel="noopener">selfhelp.courts.ca.gov/probate</a>. Checked {CHECKED}. This is general information, not legal advice. Probate practice varies by county, and a probate attorney is the right person for your specifics.</p>
   </div>
 </section>
-{cta("Dealing with an estate house?", "We buy inherited houses as-is, on the court's timeline — contents and all.", href="/inherited-house/", label="How we handle probate")}
+{cta("Dealing with an estate house?", "We buy inherited houses as-is, on the court's timeline, contents and all.", href="/inherited-house/", label="How we handle probate")}
 """))
 
 P.append(dict(
@@ -1028,25 +1039,25 @@ P.append(dict(
   <div class="shell shell--narrow">
     <p class="eyebrow" data-reveal>Resources</p>
     <h1 class="h-sect" data-reveal>You got a Notice of Default. Here&rsquo;s what it actually means.</h1>
-    <p class="lede" data-reveal>It is not a sale date, and it is not next week. It&rsquo;s the start of a statutory clock with real rights attached &mdash; and the earlier you act, the more of them you keep.</p>
+    <p class="lede" data-reveal>It is not a sale date, and it is not next week. It&rsquo;s the start of a statutory clock with real rights attached, and the earlier you act, the more of them you keep.</p>
   </div>
 </section>
 <section class="band band--tight paper">
   <div class="shell shell--narrow" data-reveal>
     <h2 class="h-card">What the NOD is</h2>
-    <p>In California, most home loans foreclose <em>non-judicially</em> &mdash; no lawsuit, no judge, just a recorded process governed by Civil Code &sect;2924. The Notice of Default is the first recorded step. From its recording date, a minimum of <strong>three months</strong> must pass before the next step can even be taken.</p>
+    <p>In California, most home loans foreclose <em>non-judicially</em>: no lawsuit, no judge, just a recorded process governed by Civil Code &sect;2924. The Notice of Default is the first recorded step. From its recording date, a minimum of <strong>three months</strong> must pass before the next step can even be taken.</p>
 
     <h2 class="h-card" style="margin-top:30px">The clock, in full</h2>
-    <p><strong>Day 0:</strong> NOD records with the county recorder. <strong>Months 0&ndash;3:</strong> the reinstatement period &mdash; you can stop the process by paying the missed amounts plus fees (not the whole loan). <strong>After month 3:</strong> a Notice of Trustee&rsquo;s Sale can be recorded, posted and mailed, with the auction no sooner than 20 days later &mdash; about <strong>111 days minimum</strong> from NOD to auction, and in practice usually longer. Your right to reinstate actually continues until five business days before the sale date.</p>
+    <p><strong>Day 0:</strong> NOD records with the county recorder. <strong>Months 0&ndash;3:</strong> the reinstatement period. You can stop the process by paying the missed amounts plus fees (not the whole loan). <strong>After month 3:</strong> a Notice of Trustee&rsquo;s Sale can be recorded, posted and mailed, with the auction no sooner than 20 days later, or about <strong>111 days minimum</strong> from NOD to auction, and in practice usually longer. Your right to reinstate actually continues until five business days before the sale date.</p>
 
     <h2 class="h-card" style="margin-top:30px">Rights worth knowing by name</h2>
-    <p>The <strong>Homeowner Bill of Rights</strong> requires your servicer to give you a single point of contact and generally prohibits &ldquo;dual tracking&rdquo; &mdash; foreclosing while a complete modification application is under review. And under <strong>SB&nbsp;1079</strong>, even after an auction of a 1&ndash;4 unit home, eligible owner-occupant bidders and tenants get a window to match or beat the winning bid.</p>
+    <p>The <strong>Homeowner Bill of Rights</strong> requires your servicer to give you a single point of contact and generally prohibits &ldquo;dual tracking&rdquo;: foreclosing while a complete modification application is under review. And under <strong>SB&nbsp;1079</strong>, even after an auction of a 1&ndash;4 unit home, eligible owner-occupant bidders and tenants get a window to match or beat the winning bid.</p>
 
     <h2 class="h-card" style="margin-top:30px">Your options, plainly</h2>
-    <p><strong>Reinstate</strong> if you can find the arrears &mdash; the process ends. <strong>Modify or forbear:</strong> ask the servicer&rsquo;s loss-mitigation department, in writing, early. <strong>Sell before the sale date:</strong> if you have equity, a controlled sale protects it in a way an auction never will. <strong>Get counselled:</strong> HUD-approved housing counsellors are free, at <a href="https://www.hud.gov/findacounselor" rel="noopener">hud.gov/findacounselor</a> or (800)&nbsp;569-4287. <strong>Beware of rescue offers:</strong> California law strictly regulates foreclosure consultants and equity purchasers because homeowners in default are heavily targeted. Anyone charging fees up front, or proposing you deed the house over &ldquo;temporarily,&rdquo; is a red flag with legs.</p>
+    <p><strong>Reinstate</strong> if you can find the arrears: the process ends. <strong>Modify or forbear:</strong> ask the servicer&rsquo;s loss-mitigation department, in writing, early. <strong>Sell before the sale date:</strong> if you have equity, a controlled sale protects it in a way an auction never will. <strong>Get counselled:</strong> HUD-approved housing counsellors are free, at <a href="https://www.hud.gov/findacounselor" rel="noopener">hud.gov/findacounselor</a> or (800)&nbsp;569-4287. <strong>Beware of rescue offers:</strong> California law strictly regulates foreclosure consultants and equity purchasers because homeowners in default are heavily targeted. Anyone charging fees up front, or proposing you deed the house over &ldquo;temporarily,&rdquo; is a red flag with legs.</p>
 
     <h2 class="h-card" style="margin-top:30px">The one thing to do today</h2>
-    <p>Find out exactly what&rsquo;s been recorded against your house and when &mdash; the NOD and any sale notice are public records at your county recorder. Dates from the record beat dates from collection letters, every time. Then pick your option with weeks in hand instead of days.</p>
+    <p>Find out exactly what&rsquo;s been recorded against your house and when: the NOD and any sale notice are public records at your county recorder. Dates from the record beat dates from collection letters, every time. Then pick your option with weeks in hand instead of days.</p>
 
     <p class="small" style="margin-top:34px">Sources: Civil Code &sect;&sect;2924, 2924c (reinstatement), 2924f (sale notice), 2924m (SB&nbsp;1079) and &sect;2923.7 (single point of contact), at <a href="https://leginfo.legislature.ca.gov" rel="noopener">leginfo.legislature.ca.gov</a>. Checked {CHECKED}. This is general information, not legal advice. HARDT is not a foreclosure consultant, charges no fees, and buys property only as a principal.</p>
   </div>
@@ -1063,7 +1074,7 @@ P.append(dict(
   <div class="shell shell--narrow">
     <p class="eyebrow" data-reveal>Resources</p>
     <h1 class="h-sect" data-reveal>Prop 19 changed what inheriting a house means.</h1>
-    <p class="lede" data-reveal>Before 2021, heirs generally kept the parents&rsquo; low property-tax bill. Now, most don&rsquo;t &mdash; and the difference changes the keep-or-sell math entirely.</p>
+    <p class="lede" data-reveal>Before 2021, heirs generally kept the parents&rsquo; low property-tax bill. Now, most don&rsquo;t, and the difference changes the keep-or-sell math entirely.</p>
   </div>
 </section>
 <section class="band band--tight paper">
@@ -1072,18 +1083,18 @@ P.append(dict(
     <p>California property taxes are based on a property&rsquo;s assessed value at purchase, growing at most 2% a year (Prop 13). For decades, parents could pass a house &mdash; any house &mdash; to children with that low assessed value intact. A house bought in 1978 could carry a 1978-based tax bill into a third generation.</p>
 
     <h2 class="h-card" style="margin-top:30px">What Prop 19 did</h2>
-    <p>For deaths and transfers on or after <strong>February 16, 2021</strong>, the parent-child exclusion survives only when <strong>the child moves into the house as their principal residence</strong>, generally claiming it within a year &mdash; and even then, only the first $1&nbsp;million or so of the gap between the old assessed value and market value stays excluded (the cap adjusts over time). A rental, a second home, or an inherited house the heirs don&rsquo;t live in gets <strong>reassessed to market value</strong> as of the transfer.</p>
+    <p>For deaths and transfers on or after <strong>February 16, 2021</strong>, the parent-child exclusion survives only when <strong>the child moves into the house as their principal residence</strong>, generally claiming it within a year, and even then, only the first $1&nbsp;million or so of the gap between the old assessed value and market value stays excluded (the cap adjusts over time). A rental, a second home, or an inherited house the heirs don&rsquo;t live in gets <strong>reassessed to market value</strong> as of the transfer.</p>
 
     <h2 class="h-card" style="margin-top:30px">What that looks like in practice</h2>
-    <p>Say the family house has an assessed value of $95,000 and a market value of $850,000. Under the old rules, heirs kept a tax bill near $1,200 a year. Under Prop 19, if nobody moves in, the bill resets to roughly 1&ndash;1.25% of $850,000 &mdash; call it $9,000&ndash;$10,000 a year &mdash; from the date of death. Heirs planning to keep the house as a rental discover the yield they imagined included a tax bill that no longer exists.</p>
+    <p>Say the family house has an assessed value of $95,000 and a market value of $850,000. Under the old rules, heirs kept a tax bill near $1,200 a year. Under Prop 19, if nobody moves in, the bill resets to roughly 1&ndash;1.25% of $850,000 (call it $9,000&ndash;$10,000 a year) from the date of death. Heirs planning to keep the house as a rental discover the yield they imagined included a tax bill that no longer exists.</p>
 
     <h2 class="h-card" style="margin-top:30px">The decisions it forces</h2>
-    <p><strong>Move in:</strong> one heir occupying as a principal residence can preserve much of the exclusion &mdash; workable for one heir, complicated for four. <strong>Keep as a rental:</strong> run the numbers with the <em>new</em> tax bill, not the old one. <strong>Sell:</strong> often the cleanest split &mdash; and note that heirs also generally receive a <em>stepped-up income-tax basis</em> to date-of-death value, so a prompt sale frequently owes little or no capital-gains tax. The property-tax reset and the income-tax step-up point in opposite directions, which is exactly why estates should run both sets of numbers before deciding.</p>
+    <p><strong>Move in:</strong> one heir occupying as a principal residence can preserve much of the exclusion. Workable for one heir, complicated for four. <strong>Keep as a rental:</strong> run the numbers with the <em>new</em> tax bill, not the old one. <strong>Sell:</strong> often the cleanest split, and note that heirs also generally receive a <em>stepped-up income-tax basis</em> to date-of-death value, so a prompt sale frequently owes little or no capital-gains tax. The property-tax reset and the income-tax step-up point in opposite directions, which is exactly why estates should run both sets of numbers before deciding.</p>
 
     <h2 class="h-card" style="margin-top:30px">Deadlines matter</h2>
-    <p>Reassessment runs from the date of death, not the date anyone gets around to paperwork &mdash; and supplemental bills arrive retroactively. File the claim forms with the county assessor promptly if an heir is moving in; talk to a CPA or estate attorney before choosing a path.</p>
+    <p>Reassessment runs from the date of death, not the date anyone gets around to paperwork, and supplemental bills arrive retroactively. File the claim forms with the county assessor promptly if an heir is moving in; talk to a CPA or estate attorney before choosing a path.</p>
 
-    <p class="small" style="margin-top:34px">Sources: California Board of Equalization Prop 19 guidance at <a href="https://www.boe.ca.gov/prop19/" rel="noopener">boe.ca.gov/prop19</a>; Revenue &amp; Taxation Code &sect;63.2. Checked {CHECKED}. This is general information, not tax or legal advice &mdash; the numbers above are illustrative, and a CPA should run yours.</p>
+    <p class="small" style="margin-top:34px">Sources: California Board of Equalization Prop 19 guidance at <a href="https://www.boe.ca.gov/prop19/" rel="noopener">boe.ca.gov/prop19</a>; Revenue &amp; Taxation Code &sect;63.2. Checked {CHECKED}. This is general information, not tax or legal advice: the numbers above are illustrative, and a CPA should run yours.</p>
   </div>
 </section>
 {cta("Inherited a house and weighing it up?", "We'll put an honest as-is number next to your keep-it math, no pressure either way.", href="/inherited-house/", label="Inherited & probate")}
@@ -1092,39 +1103,39 @@ P.append(dict(
 P.append(dict(
     url="/resources/selling-with-tenants/", trail=RES_TRAIL + [("/resources/selling-with-tenants/", "Selling with tenants")],
     title="Selling a Tenant-Occupied Rental in California | HARDT",
-    desc="California just-cause rules, entry notice, deposits and local ordinances — what a landlord can and can't do when selling, and how an occupied sale works.",
+    desc="California just-cause rules, entry notice, deposits and local ordinances: what a landlord can and can't do when selling, and how an occupied sale works.",
     body=f"""
 <section class="band band--tight">
   <div class="shell shell--narrow">
     <p class="eyebrow" data-reveal>Resources</p>
     <h1 class="h-sect" data-reveal>Selling a rental with tenants in place: the actual rules.</h1>
-    <p class="lede" data-reveal>You can sell an occupied rental in California. What you mostly can&rsquo;t do cheaply is empty it first &mdash; and the good news is you don&rsquo;t need to.</p>
+    <p class="lede" data-reveal>You can sell an occupied rental in California. What you mostly can&rsquo;t do cheaply is empty it first, and the good news is you don&rsquo;t need to.</p>
   </div>
 </section>
 <section class="band band--tight paper">
   <div class="shell shell--narrow" data-reveal>
     <h2 class="h-card">The tenancy survives the sale</h2>
-    <p>A lease follows the property, not the landlord. When an occupied rental sells, the buyer steps into the lease as-is &mdash; same rent, same terms, same deposit obligations. Nothing about a sale, by itself, ends a tenancy or changes its terms.</p>
+    <p>A lease follows the property, not the landlord. When an occupied rental sells, the buyer steps into the lease as-is: same rent, same terms, same deposit obligations. Nothing about a sale, by itself, ends a tenancy or changes its terms.</p>
 
     <h2 class="h-card" style="margin-top:30px">State law: AB 1482</h2>
-    <p>The Tenant Protection Act (Civil Code &sect;1946.2) covers most California rentals older than 15 years: after 12 months&rsquo; occupancy, terminating requires <em>just cause</em>. &ldquo;I&rsquo;m selling&rdquo; is not on the just-cause list. No-fault causes (owner move-in, withdrawal from the rental market, substantial remodel) exist but come with relocation assistance &mdash; generally one month&rsquo;s rent at the state level &mdash; and with paperwork that has to be right.</p>
+    <p>The Tenant Protection Act (Civil Code &sect;1946.2) covers most California rentals older than 15 years: after 12 months&rsquo; occupancy, terminating requires <em>just cause</em>. &ldquo;I&rsquo;m selling&rdquo; is not on the just-cause list. No-fault causes (owner move-in, withdrawal from the rental market, substantial remodel) exist but come with relocation assistance: generally one month&rsquo;s rent at the state level, and with paperwork that has to be right.</p>
 
     <h2 class="h-card" style="margin-top:30px">Local layers</h2>
-    <p>Cities can and do add stricter rules. The city of San Diego&rsquo;s 2023 Tenant Protections Ordinance, for example, tightens no-fault terminations and generally doubles relocation to two months&rsquo; rent. Always check the city&rsquo;s rules, not just the state&rsquo;s &mdash; the answer changes at municipal boundaries.</p>
+    <p>Cities can and do add stricter rules. The city of San Diego&rsquo;s 2023 Tenant Protections Ordinance, for example, tightens no-fault terminations and generally doubles relocation to two months&rsquo; rent. Always check the city&rsquo;s rules, not just the state&rsquo;s: the answer changes at municipal boundaries.</p>
 
     <h2 class="h-card" style="margin-top:30px">Showings and entry</h2>
-    <p>Entry to show the property requires proper notice &mdash; generally 24 hours, in writing, at reasonable times (Civil Code &sect;1954). Tenants don&rsquo;t have to make the place pretty, accommodate open houses, or tolerate a parade. This is a real friction of listing an occupied property on the open market &mdash; and essentially a non-issue in a direct sale with one scheduled walkthrough.</p>
+    <p>Entry to show the property requires proper notice: generally 24 hours, in writing, at reasonable times (Civil Code &sect;1954). Tenants don&rsquo;t have to make the place pretty, accommodate open houses, or tolerate a parade. This is a real friction of listing an occupied property on the open market, and essentially a non-issue in a direct sale with one scheduled walkthrough.</p>
 
     <h2 class="h-card" style="margin-top:30px">Deposits, rent and paperwork at closing</h2>
-    <p>Security deposits transfer to the buyer through escrow (Civil Code &sect;1950.5), rent prorates to the closing date, and the tenancy&rsquo;s terms get documented &mdash; typically with an estoppel certificate the tenant confirms. Section 8 tenancies add the housing-authority contract, which transfers with ownership; the tenant&rsquo;s voucher is unaffected by a sale.</p>
+    <p>Security deposits transfer to the buyer through escrow (Civil Code &sect;1950.5), rent prorates to the closing date, and the tenancy&rsquo;s terms get documented: typically with an estoppel certificate the tenant confirms. Section 8 tenancies add the housing-authority contract, which transfers with ownership; the tenant&rsquo;s voucher is unaffected by a sale.</p>
 
     <h2 class="h-card" style="margin-top:30px">The two honest paths</h2>
-    <p><strong>List it vacant:</strong> lawful where a no-fault ground genuinely applies, but slow and expensive once relocation, vacancy, turnover work and commissions stack up &mdash; and hard on a tenant who did nothing wrong. <strong>Sell it occupied:</strong> tenancy transfers intact, nobody is displaced, and the price reflects the building and the actual rent. Investors buy occupied buildings every day; the trick is finding one who&rsquo;ll show you the math.</p>
+    <p><strong>List it vacant:</strong> lawful where a no-fault ground genuinely applies, but slow and expensive once relocation, vacancy, turnover work and commissions stack up, and hard on a tenant who did nothing wrong. <strong>Sell it occupied:</strong> tenancy transfers intact, nobody is displaced, and the price reflects the building and the actual rent. Investors buy occupied buildings every day; the trick is finding one who&rsquo;ll show you the math.</p>
 
-    <p class="small" style="margin-top:34px">Sources: Civil Code &sect;&sect;1946.2 (just cause), 1954 (entry), 1950.5 (deposits) at <a href="https://leginfo.legislature.ca.gov" rel="noopener">leginfo.legislature.ca.gov</a>; City of San Diego Tenant Protections Ordinance (2023). Checked {CHECKED}. General information, not legal advice &mdash; landlord-tenant law is fact-specific and locally variable.</p>
+    <p class="small" style="margin-top:34px">Sources: Civil Code &sect;&sect;1946.2 (just cause), 1954 (entry), 1950.5 (deposits) at <a href="https://leginfo.legislature.ca.gov" rel="noopener">leginfo.legislature.ca.gov</a>; City of San Diego Tenant Protections Ordinance (2023). Checked {CHECKED}. General information, not legal advice. Landlord-tenant law is fact-specific and locally variable.</p>
   </div>
 </section>
-{cta("Done being a landlord?", "We buy occupied — mid-lease, Section 8, arrears and all. Nobody gets displaced.", href="/sell-rental-property/", label="Selling a rental")}
+{cta("Done being a landlord?", "We buy occupied: mid-lease, Section 8, arrears and all. Nobody gets displaced.", href="/sell-rental-property/", label="Selling a rental")}
 """))
 
 # The honest-math calculator. Progressive enhancement: the static worked
@@ -1139,7 +1150,7 @@ P.append(dict(
   <div class="shell shell--narrow">
     <p class="eyebrow" data-reveal>Resources</p>
     <h1 class="h-sect" data-reveal>The honest math: cash offer vs. listing.</h1>
-    <p class="lede" data-reveal>Nobody in this industry shows you this side by side, because the answer isn&rsquo;t always the one they&rsquo;re selling. Run your own numbers &mdash; sometimes listing wins, and when it does, you should list.</p>
+    <p class="lede" data-reveal>Nobody in this industry shows you this side by side, because the answer isn&rsquo;t always the one they&rsquo;re selling. Run your own numbers. Sometimes listing wins, and when it does, you should list.</p>
   </div>
 </section>
 
@@ -1179,19 +1190,19 @@ P.append(dict(
           <div class="calc__row"><span>&minus; Commissions</span><strong>$0</strong></div>
           <div class="calc__net"><span>You net about</span><strong data-calc-out="r-net">$508,400</strong></div>
         </div>
-        <p class="small" data-calc-out="verdict" style="margin-top:18px">In this example the difference is about $11,400 &mdash; in the listing&rsquo;s favour if everything goes to plan, and to your taste whether five months of project management is worth it.</p>
+        <p class="small" data-calc-out="verdict" style="margin-top:18px">In this example the difference is about $11,400, in the listing&rsquo;s favour if everything goes to plan, and to your taste whether five months of project management is worth it.</p>
       </div>
     </div>
-    <p class="small" style="margin-top:30px;max-width:78ch">Defaults are illustrative, not a quote. The repair, timeline and carrying numbers are the honest variables &mdash; ask any agent and any buyer to fill in <em>their</em> version of this table, in writing, and compare nets rather than headline prices. When our number is the smaller net, we&rsquo;ll tell you to list. That&rsquo;s the policy.</p>
+    <p class="small" style="margin-top:30px;max-width:78ch">Defaults are illustrative, not a quote. The repair, timeline and carrying numbers are the honest variables. Ask any agent and any buyer to fill in <em>their</em> version of this table, in writing, and compare nets rather than headline prices. When our number is the smaller net, we&rsquo;ll tell you to list. That&rsquo;s the policy.</p>
   </div>
 </section>
-{cta("Want our line of this table for your house?", "One walkthrough, one number, with the math shown — and no hard feelings if listing wins.")}
+{cta("Want our line of this table for your house?", "One walkthrough, one number, with the math shown, and no hard feelings if listing wins.")}
 """))
 
 # ══════════════════════════════════════════════ THANK YOU
 P.append(dict(
     url="/thank-you/", noindex=True,
-    title="Thanks — I'll be in touch | HARDT",
+    title="Thanks, I'll Be in Touch | HARDT",
     desc="Your details are in. Here is exactly what happens next, who calls you, and how quickly.",
     body=f"""
 <section class="band band--tight">
@@ -1204,12 +1215,12 @@ P.append(dict(
 <section class="band band--tight paper">
   <div class="shell">
     <div class="grid grid--3">
-      <div data-reveal><span class="step__n">First</span><h2 class="h-card">I call or text you</h2><p>Within 15 minutes between 8am and 6pm. Later than that, first thing next morning. It&rsquo;s me &mdash; not an assistant, not a call centre.</p></div>
+      <div data-reveal><span class="step__n">First</span><h2 class="h-card">I call or text you</h2><p>Within 15 minutes between 8am and 6pm. Later than that, first thing next morning. It&rsquo;s me, not an assistant, not a call centre.</p></div>
       <div data-reveal data-reveal-delay="90"><span class="step__n">Then</span><h2 class="h-card">We talk it through</h2><p>Ten minutes about the house and the situation. If a cash sale isn&rsquo;t your best move, I&rsquo;ll say so on that call.</p></div>
       <div data-reveal data-reveal-delay="180"><span class="step__n">If it fits</span><h2 class="h-card">One walkthrough</h2><p>Half an hour, at a time that suits you. Don&rsquo;t clean, fix or move anything. Then a number with the math shown.</p></div>
     </div>
     <hr class="rule" style="margin:48px 0 36px">
-    <p style="font-size:1.06rem"><strong>Need me sooner?</strong> Call or text {TEL} &mdash; that reaches me directly.</p>
+    <p style="font-size:1.06rem"><strong>Need me sooner?</strong> Call or text {TEL}, which reaches me directly.</p>
     <p class="serif" style="font-size:1.4rem;color:var(--bronze-ink);margin-top:30px">Every situation has a way forward.</p>
     <div class="btnrow"><a class="btn btn--ghost" href="/">Back to the site</a></div>
   </div>

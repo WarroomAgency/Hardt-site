@@ -185,7 +185,7 @@
      Progressive enhancement on /resources/cash-offer-vs-listing/.
      The static worked example in the HTML is the content; this
      just makes the numbers yours. No dependencies, no dollar
-     signs typed — everything formats through toLocaleString.  */
+     signs typed. Everything formats through toLocaleString.  */
   document.querySelectorAll('[data-calc]').forEach(function (root) {
     var $ = function (sel) { return root.querySelector(sel); };
     var val = function (name) {
@@ -226,13 +226,13 @@
       var diff = Math.abs(lNet - rNet);
       var msg;
       if (lNet > rNet) {
-        msg = 'On these numbers, listing nets about ' + fmt(diff) + ' more — if the repair estimate holds, ' +
+        msg = 'On these numbers, listing nets about ' + fmt(diff) + ' more, provided the repair estimate holds, ' +
               'the timeline holds, and you want the project. If all three are true, list it. Honestly.';
       } else if (rNet > lNet) {
-        msg = 'On these numbers, the cash sale nets about ' + fmt(diff) + ' more — before counting the ' +
+        msg = 'On these numbers, the cash sale nets about ' + fmt(diff) + ' more, and that is before counting the ' +
               'risk that repairs run over or the market moves during the wait.';
       } else {
-        msg = 'On these numbers it’s a dead heat — which usually means the decision is about time and ' +
+        msg = 'On these numbers it’s a dead heat, which usually means the decision is about time and ' +
               'appetite for a project, not money.';
       }
       out('verdict', msg);

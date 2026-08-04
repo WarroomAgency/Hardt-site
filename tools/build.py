@@ -142,7 +142,7 @@ def header(active=""):
     mcty = "".join(f'<a href="/{s}/">{n}</a>' for s, n, _, _ in COUNTIES)
     return f"""<header class="site-head">
   <div class="shell site-head__in">
-    <a class="lockup" href="/" aria-label="HARDT — home">{MARK_DARK}<span class="lockup__hair"></span><span class="lockup__word">HARDT</span></a>
+    <a class="lockup" href="/" aria-label="HARDT home">{MARK_DARK}<span class="lockup__hair"></span><span class="lockup__word">HARDT</span></a>
     <nav class="nav" aria-label="Main">{links}</nav>
     <div class="head-actions">
       <a class="tel" href="{PHONE_HREF}">{PHONE_ICON}{PHONE_DISPLAY}</a>
@@ -179,7 +179,7 @@ def footer():
   <div class="shell">
     <div class="foot-grid">
       <div>
-        <a class="lockup" href="/" aria-label="HARDT — home">{MARK_LIGHT}<span class="lockup__hair"></span><span class="lockup__word" style="color:#F0EBE4;font-size:17px">HARDT</span></a>
+        <a class="lockup" href="/" aria-label="HARDT home">{MARK_LIGHT}<span class="lockup__hair"></span><span class="lockup__word" style="color:#F0EBE4;font-size:17px">HARDT</span></a>
         <p style="margin-top:16px;max-width:34ch">Founder&#8209;led home buying across Southern California. Serving San Diego, Riverside, San Bernardino and Kern counties.</p>
         <p class="serif" style="color:var(--bronze-light);font-size:1.05rem;margin-top:20px">Built on Integrity.</p>
       </div>
