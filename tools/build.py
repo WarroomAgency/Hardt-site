@@ -40,6 +40,12 @@ def pic(slot, alt, cls="media media--4x3", tag=None, eager=False, w=1200, h=900)
     return f'<div class="{cls}">{inner}{badge}</div>'
 
 
+def og_img(slot):
+    """OG image for a slot: the processed photo if one exists, else the svg."""
+    return (f"/assets/img/{slot}.jpg" if os.path.exists(f"assets/img/{slot}.jpg")
+            else f"/assets/img/{slot}.svg")
+
+
 def rev(path):
     """Content hash appended as a query string.
 
@@ -91,7 +97,7 @@ PHONE_ICON = ('<svg width="15" height="15" viewBox="0 0 24 24" fill="none" strok
 
 # ───────────────────────────────────────────── shell
 def head(p):
-    og = p.get("og", "/assets/img/og-home.svg")
+    og = p.get("og", og_img("og-home"))
     extra = p.get("head", "")
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -110,7 +116,9 @@ def head(p):
 <meta property="og:image" content="{SITE}{og}">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <meta name="theme-color" content="#1A1A1A">
 <link rel="preload" href="/assets/fonts/red-hat-display-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -125,7 +133,7 @@ def head(p):
 
 def header(active=""):
     nav = [("/how-it-works/", "How it works"), ("/what-we-buy/", "What we buy"),
-           ("/areas/", "Where we buy"), ("/about/", "About Peter")]
+           ("/areas/", "Where we buy"), ("/resources/", "Resources"), ("/about/", "About Peter")]
     def _a(u, t):
         cur = ' aria-current="page"' if u == active else ''
         return f'<a href="{u}"{cur}>{t}</a>'
@@ -181,7 +189,8 @@ def footer():
         <p class="foot-h">Company</p>
         <ul class="foot-list">
           <li><a href="/about/">About Peter</a></li><li><a href="/how-it-works/">How it works</a></li>
-          <li><a href="/what-we-buy/">What we buy</a></li><li><a href="/contact/">Contact</a></li>
+          <li><a href="/what-we-buy/">What we buy</a></li><li><a href="/resources/">Resources</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
         <p class="foot-h" style="margin-top:26px">Reach us</p>
         <ul class="foot-list">
@@ -226,7 +235,7 @@ def graph(p):
     biz = {
         "@type": "LocalBusiness", "@id": f"{SITE}/#business", "name": "HARDT",
         "parentOrganization": {"@id": f"{SITE}/#org"}, "url": f"{SITE}/",
-        "image": f"{SITE}/assets/img/og-home.svg", "telephone": PHONE_E164, "email": EMAIL,
+        "image": SITE + og_img("og-home"), "telephone": PHONE_E164, "email": EMAIL,
         "priceRange": "$$",
         # Service-area business: no locality published. The verification address
         # lives on the Google Business Profile and is hidden there.
@@ -259,11 +268,16 @@ def graph(p):
         nodes.append({"@type": "BreadcrumbList", "@id": f"{SITE}{p['url']}#crumbs", "itemListElement": elems})
 
     if p.get("service"):
+        # Matrix pages pass service_area to scope the Service to one county;
+        # the four service hubs cover all four.
+        area = ([{"@type": "AdministrativeArea", "name": f"{p['service_area']}, California"}]
+                if p.get("service_area") else
+                [{"@type": "AdministrativeArea", "name": f"{n}, California"}
+                 for _, n, _, _ in COUNTIES])
         nodes.append({"@type": "Service", "@id": f"{SITE}{p['url']}#service",
             "serviceType": re.sub("&amp;", "&", p["service"]),
             "provider": {"@id": f"{SITE}/#org"},
-            "areaServed": [{"@type": "AdministrativeArea", "name": f"{n}, California"}
-                           for _, n, _, _ in COUNTIES],
+            "areaServed": area,
             "description": p["desc"]})
 
     if p.get("faq"):

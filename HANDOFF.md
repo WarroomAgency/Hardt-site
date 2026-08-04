@@ -1,5 +1,14 @@
 # HARDT — handoff to Claude Code
 
+> **Status 2026-08-04:** the priority work below is DONE — county research
+> layer (`tools/research.py`, sourced + dated), all 16 matrix pages
+> (`tools/matrix.py`), Resources hub + honest-math calculator, favicons,
+> og-home.jpg, hero + county photography (free stock per Michael's ruling;
+> see `photos-in/SOURCES.md`). `CLAUDE.md`'s State section is the living
+> status; `CLIENT-ACTIONS.md` holds the Peter chase email and ops steps.
+> Still open: Peter's five blockers, Netlify/RESimpli wiring, GBP (parked
+> on the DBA), and an LA County expansion if he says yes.
+
 Everything needed to pick this up and finish it. Read `CLAUDE.md` first for
 the rules that must not be broken; this file is state and next actions.
 

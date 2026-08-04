@@ -180,4 +180,66 @@
       f.addEventListener('input', function () { f.classList.remove('is-bad'); });
     });
   });
+
+  /* ---------- the honest-math calculator ---------------------
+     Progressive enhancement on /resources/cash-offer-vs-listing/.
+     The static worked example in the HTML is the content; this
+     just makes the numbers yours. No dependencies, no dollar
+     signs typed — everything formats through toLocaleString.  */
+  document.querySelectorAll('[data-calc]').forEach(function (root) {
+    var $ = function (sel) { return root.querySelector(sel); };
+    var val = function (name) {
+      var el = $('[data-calc-in="' + name + '"]');
+      var n = parseFloat(el && el.value);
+      return isFinite(n) && n >= 0 ? n : 0;
+    };
+    var fmt = function (n) {
+      return '$' + Math.round(n).toLocaleString('en-US');
+    };
+    var out = function (name, text) {
+      var el = $('[data-calc-out="' + name + '"]');
+      if (el) el.textContent = text;
+    };
+    var recalc = function () {
+      var arv = val('arv'), rep = val('rep'), mo = val('mo'),
+          carry = val('carry'), commPct = val('comm'),
+          offer = val('offer'), cwk = val('cwk');
+      var lCarry = carry * mo;
+      var lComm = arv * commPct / 100;
+      var lNet = arv - rep - lCarry - lComm;
+      var rCarry = carry * (cwk / 4.345);
+      var rNet = offer - rCarry;
+      out('l-price', fmt(arv));
+      out('l-rep', fmt(rep));
+      out('l-carry', fmt(lCarry));
+      out('l-comm', fmt(lComm));
+      out('l-net', fmt(lNet));
+      out('r-price', fmt(offer));
+      out('r-carry', fmt(rCarry));
+      out('r-net', fmt(rNet));
+      var mLabel = root.querySelector('[data-calc-out="l-carry"]');
+      if (mLabel && mLabel.previousElementSibling)
+        mLabel.previousElementSibling.textContent = '− Carrying, ' + mo + (mo === 1 ? ' month' : ' months');
+      var wLabel = root.querySelector('[data-calc-out="r-carry"]');
+      if (wLabel && wLabel.previousElementSibling)
+        wLabel.previousElementSibling.textContent = '− Carrying, ~' + cwk + (cwk === 1 ? ' week' : ' weeks');
+      var diff = Math.abs(lNet - rNet);
+      var msg;
+      if (lNet > rNet) {
+        msg = 'On these numbers, listing nets about ' + fmt(diff) + ' more — if the repair estimate holds, ' +
+              'the timeline holds, and you want the project. If all three are true, list it. Honestly.';
+      } else if (rNet > lNet) {
+        msg = 'On these numbers, the cash sale nets about ' + fmt(diff) + ' more — before counting the ' +
+              'risk that repairs run over or the market moves during the wait.';
+      } else {
+        msg = 'On these numbers it’s a dead heat — which usually means the decision is about time and ' +
+              'appetite for a project, not money.';
+      }
+      out('verdict', msg);
+    };
+    root.querySelectorAll('[data-calc-in]').forEach(function (el) {
+      el.addEventListener('input', recalc);
+    });
+    recalc();
+  });
 })();
