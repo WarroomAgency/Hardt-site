@@ -378,3 +378,203 @@ html{scroll-padding-top:88px}
   background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%237D674C' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 15px center;
 }
+
+
+/* ════════════════════════════════════════════════════════════
+   MOTION
+   Quiet confidence: things settle, nothing bounces or flies in.
+   ════════════════════════════════════════════════════════════ */
+[data-reveal]{opacity:0;transform:translateY(14px);
+  transition:opacity .62s cubic-bezier(.22,.61,.36,1),transform .62s cubic-bezier(.22,.61,.36,1)}
+[data-reveal].is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+}
+
+/* ════════════════════════════════════════════════════════════
+   HEADER — mobile drawer
+   ════════════════════════════════════════════════════════════ */
+.site-head{transition:box-shadow .25s ease,background-color .25s ease}
+.site-head.is-stuck{box-shadow:0 1px 20px rgba(26,26,26,.09)}
+
+.burger{
+  display:none;width:46px;height:46px;padding:0;border:1px solid var(--line);
+  background:transparent;border-radius:var(--radius);cursor:pointer;
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;
+}
+.burger span{display:block;width:19px;height:1.5px;background:var(--charcoal);transition:transform .24s ease,opacity .2s ease}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media(max-width:940px){.burger{display:flex}}
+
+.mobile-nav{
+  position:fixed;inset:66px 0 0;z-index:70;background:var(--charcoal);color:var(--cream);
+  padding:34px var(--gutter) 40px;overflow-y:auto;
+}
+.mobile-nav[hidden]{display:none}
+.mobile-nav a{
+  display:block;color:var(--cream);text-decoration:none;font-family:var(--display);
+  font-weight:900;font-size:1.55rem;letter-spacing:-.02em;padding:15px 0;
+  border-bottom:1px solid var(--line-dark);
+}
+.mobile-nav a:hover{color:var(--bronze-light)}
+.mobile-nav .mn-h{
+  font-family:var(--display);font-weight:800;font-size:10.5px;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--bronze-light);margin:30px 0 6px;
+}
+.mobile-nav .mn-sub a{font-size:1.06rem;font-weight:500;font-family:var(--body);padding:12px 0}
+html.nav-open{overflow:hidden}
+
+/* sticky call bar — phones only, and only past the hero */
+.callbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:11px var(--gutter) calc(11px + env(safe-area-inset-bottom));
+  background:var(--charcoal);border-top:1px solid var(--line-dark);
+  transform:translateY(105%);transition:transform .3s cubic-bezier(.22,.61,.36,1);
+}
+.callbar.is-up{transform:none}
+.callbar .btn{flex:1;padding:14px 16px;font-size:13px;min-height:46px}
+.callbar .btn--ghost{color:var(--cream);border-color:rgba(240,235,228,.34)}
+@media(max-width:760px){.callbar{display:flex}body{padding-bottom:0}}
+@media (prefers-reduced-motion:reduce){.callbar{transition:none}}
+
+/* ════════════════════════════════════════════════════════════
+   MEDIA
+   ════════════════════════════════════════════════════════════ */
+.media{position:relative;overflow:hidden;border-radius:var(--radius);background:var(--warm,#E6E0D7)}
+.media img{width:100%;height:100%;object-fit:cover;display:block}
+.media--4x3{aspect-ratio:4/3}
+.media--4x5{aspect-ratio:4/5}
+.media--16x9{aspect-ratio:16/9}
+.media--wide{aspect-ratio:21/9}
+.media__tag{
+  position:absolute;left:12px;bottom:12px;z-index:2;
+  background:rgba(26,26,26,.82);color:var(--cream);
+  font-family:var(--display);font-weight:800;font-size:9.5px;letter-spacing:.13em;
+  text-transform:uppercase;padding:6px 10px;border-radius:2px;
+}
+
+/* hero with art */
+.hero--art{position:relative;background:var(--charcoal);color:var(--cream);overflow:hidden}
+.hero--art .hero__bg{position:absolute;inset:0;z-index:0}
+.hero--art .hero__bg img{width:100%;height:100%;object-fit:cover;opacity:.5}
+.hero--art::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(100deg,rgba(26,26,26,.95) 0%,rgba(26,26,26,.86) 42%,rgba(26,26,26,.55) 100%);
+}
+.hero--art .shell{position:relative;z-index:2}
+.hero--art h1,.hero--art .h-hero{color:var(--cream)}
+.hero--art .hero__promise{color:var(--cream)}
+.hero--art .hero__note{color:rgba(240,235,228,.68)}
+.hero--art .eyebrow{color:var(--bronze-light)}
+.hero--art .trust{border-top-color:var(--line-dark)}
+.hero--art .trust__i{border-right-color:var(--line-dark)}
+.hero--art .trust__k{color:var(--cream)}
+.hero--art .trust__v{color:rgba(240,235,228,.62)}
+.hero--art .btn--ghost{color:var(--cream);border-color:rgba(240,235,228,.36)}
+.hero--art .btn--ghost:hover{background:var(--cream);color:var(--charcoal)}
+.hero--art .tel{color:var(--cream)}
+
+/* ════════════════════════════════════════════════════════════
+   BEFORE / AFTER
+   ════════════════════════════════════════════════════════════ */
+.ba{position:relative;--pos:50%;aspect-ratio:3/2;overflow:hidden;border-radius:var(--radius);
+  border:1px solid var(--line);user-select:none;touch-action:pan-y;cursor:ew-resize;background:#C9C3BA}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba__after{clip-path:inset(0 0 0 var(--pos))}
+.ba__handle{
+  position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:var(--cream);
+  transform:translateX(-1px);z-index:3;border:0;padding:0;cursor:ew-resize;
+}
+.ba__handle::after{
+  content:"";position:absolute;top:50%;left:50%;width:46px;height:46px;
+  transform:translate(-50%,-50%);border-radius:50%;background:var(--cream);
+  box-shadow:0 2px 14px rgba(26,26,26,.34);
+}
+.ba__handle::before{
+  content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;
+  font-family:var(--display);font-weight:900;font-size:15px;color:var(--charcoal);letter-spacing:1px;
+}
+.ba__lbl{
+  position:absolute;top:12px;z-index:2;background:rgba(26,26,26,.82);color:var(--cream);
+  font-family:var(--display);font-weight:800;font-size:9.5px;letter-spacing:.13em;
+  text-transform:uppercase;padding:6px 10px;border-radius:2px;
+}
+.ba__lbl--b{left:12px}
+.ba__lbl--a{right:12px}
+
+/* ════════════════════════════════════════════════════════════
+   ACCORDION
+   ════════════════════════════════════════════════════════════ */
+.acc{border-top:1px solid var(--line)}
+.acc__item{border-bottom:1px solid var(--line)}
+.acc__q{
+  width:100%;text-align:left;background:none;border:0;cursor:pointer;
+  padding:22px 44px 22px 0;position:relative;
+  font-family:var(--display);font-weight:900;font-size:1.08rem;letter-spacing:-.012em;
+  color:var(--charcoal);line-height:1.35;
+}
+.acc__q::after{
+  content:"";position:absolute;right:8px;top:50%;width:11px;height:11px;
+  border-right:1.8px solid var(--bronze-ink);border-bottom:1.8px solid var(--bronze-ink);
+  transform:translateY(-70%) rotate(45deg);transition:transform .24s ease;
+}
+.acc__q[aria-expanded="true"]::after{transform:translateY(-25%) rotate(225deg)}
+.acc__q:hover{color:var(--bronze-ink)}
+.acc__a{padding:0 40px 24px 0}
+.acc__a p:last-child{margin-bottom:0}
+.dark .acc,.dark .acc__item{border-color:var(--line-dark)}
+.dark .acc__q{color:var(--cream)}
+.dark .acc__q::after{border-color:var(--bronze-light)}
+.dark .acc__q:hover{color:var(--bronze-light)}
+
+/* ════════════════════════════════════════════════════════════
+   MISC COMPONENTS
+   ════════════════════════════════════════════════════════════ */
+.breadcrumb{font-size:.83rem;color:var(--gray);padding-block:20px 0}
+.breadcrumb ol{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0;max-width:none}
+.breadcrumb li{margin:0}
+.breadcrumb li+li::before{content:"/";margin-right:7px;color:var(--bronze-ink);opacity:.6}
+.breadcrumb a{color:var(--gray);text-decoration:none}
+.breadcrumb a:hover{color:var(--bronze-ink)}
+.dark .breadcrumb,.dark .breadcrumb a{color:rgba(240,235,228,.55)}
+
+.pill{
+  display:inline-block;font-family:var(--display);font-weight:800;font-size:10px;
+  letter-spacing:.13em;text-transform:uppercase;padding:5px 10px;border-radius:2px;
+  border:1px solid var(--bronze-ink);color:var(--bronze-ink);margin:0 6px 6px 0;
+}
+.dark .pill{border-color:var(--bronze-light);color:var(--bronze-light)}
+
+.checks{list-style:none;padding:0;margin:0}
+.checks li{position:relative;padding-left:30px;margin-bottom:13px}
+.checks li::before{
+  content:"";position:absolute;left:2px;top:.42em;width:11px;height:6px;
+  border-left:1.8px solid var(--bronze-ink);border-bottom:1.8px solid var(--bronze-ink);
+  transform:rotate(-45deg);
+}
+.dark .checks li::before{border-color:var(--bronze-light)}
+.nots{list-style:none;padding:0;margin:0}
+.nots li{position:relative;padding-left:30px;margin-bottom:13px;color:var(--gray)}
+.nots li::before{
+  content:"";position:absolute;left:4px;top:.72em;width:12px;height:1.8px;background:var(--gray);
+}
+
+.figrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.figrow > div{background:var(--cream);padding:26px 24px}
+.dark .figrow{background:var(--line-dark);border-color:var(--line-dark)}
+.dark .figrow > div{background:var(--charcoal)}
+@media(max-width:700px){.figrow{grid-template-columns:1fr}}
+
+.cta-strip{background:var(--charcoal);color:var(--cream);border-radius:var(--radius);padding:clamp(30px,4vw,52px);display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center}
+.cta-strip h2{color:var(--cream);font-size:clamp(1.4rem,2.5vw,1.95rem);max-width:22ch}
+.cta-strip p{color:rgba(240,235,228,.72);margin:10px 0 0}
+@media(max-width:760px){.cta-strip{grid-template-columns:1fr}}
+
+/* Step numerals sit on charcoal inside dark bands — bronze-ink is only
+   AA on cream, so switch to the on-dark tint there. */
+.dark .step__n,.dark .card__link{color:var(--bronze-light)}
+
+/* On small phones the header phone number wraps and squeezes the lockup.
+   The sticky call bar already carries the call action there, so drop it. */
+@media(max-width:560px){.site-head .tel{display:none}}
