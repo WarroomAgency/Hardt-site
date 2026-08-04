@@ -86,3 +86,15 @@ Fluid Developments LLC profile (don't create new), hide the address
 (service-area business), no keywords in the name field, category tested
 against what actually ranks (not "Real estate agency"), and **Kern gets
 no map presence** — website only.
+
+**6. The three stories on /how-weve-helped/.** The new page tells three
+real situations from your intake, names withheld: the foreclosure save
+(Robert), the Huskey Drive close (Eli's deal), and Graphic Street
+(Chuck). Three things needed from you:
+   - Read each telling and correct anything that isn't exactly how it
+     went. Nothing publishes wrong on my watch, including stories.
+   - Ask Robert, Eli and Chuck whether they're comfortable being named.
+     Named stories resonate harder; the page works either way.
+   - Optional but powerful: a 60-second phone video at any of the five
+     projects, you talking through what the house needed. No script, no
+     polish. That becomes the strongest thing on the page.

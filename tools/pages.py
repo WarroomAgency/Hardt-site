@@ -160,7 +160,7 @@ P.append(dict(
   <div class="shell">
     <p class="eyebrow" data-reveal>Recent work</p>
     <h2 class="h-sect" data-reveal>Houses we bought, fixed, and put back into use.</h2>
-    <p class="lede" data-reveal>Five of the most recent. Photography from each of these is being prepared: the illustrations below are standing in until it lands.</p>
+    <p class="lede" data-reveal>Five of the most recent. Photography from each of these is being prepared: the illustrations below are standing in until it lands. The stories behind some of them are on <a href="/how-weve-helped/">how we&rsquo;ve helped</a>.</p>
     <div class="grid grid--4" style="margin-top:44px">
       <div class="card" style="padding:0;overflow:hidden" data-reveal>
         {pic("project-1","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
@@ -883,6 +883,115 @@ for (cslug, sslug), d in M.items():
 </section>
 
 {cta(f"Have a house in {cshort}?", "Send the address and I'll come look at it myself.")}
+"""))
+
+# ══════════════════════════════════════════════ HOW WE'VE HELPED
+# Story-led proof, not a portfolio. Every fact below comes from Peter's
+# intake (06 · Proof and 07 · Reviews): the foreclosure save, the Huskey
+# Drive close, Graphic Street, and the five project addresses. Nothing
+# is embellished; where we don't know a detail, the story doesn't claim
+# one. Names are withheld until Peter confirms each person is happy to
+# be named (chase item in CLIENT-ACTIONS.md). No Review/testimonial
+# JSON-LD on purpose: these are our accounts, not endorsements.
+P.append(dict(
+    url="/how-weve-helped/",
+    trail=[("/how-weve-helped/", "How we've helped")],
+    title="How We've Helped Homeowners | HARDT",
+    desc="Real situations we've been part of: a homeowner who kept his house, a sale that was falling apart, a house 250 miles from anywhere. Told plainly, not as ads.",
+    og=og_img("after"),
+    body=f"""
+<section class="band band--tight">
+  <div class="shell shell--narrow">
+    <p class="eyebrow" data-reveal>How we&rsquo;ve helped</p>
+    <h1 class="h-sect" data-reveal>Some situations we&rsquo;ve been part of.</h1>
+    <p class="lede" data-reveal>Most people who call us are somewhere in the middle of a hard year. These are a few of the situations we&rsquo;ve helped with, told the way they actually went. No names until each person has said they&rsquo;re comfortable being named, and no dressing anything up.</p>
+    <p class="serif" data-reveal style="font-size:1.15rem;color:var(--bronze-ink);margin-top:18px">Every situation has a way forward.</p>
+  </div>
+</section>
+
+<section class="band paper">
+  <div class="shell shell--narrow">
+    <p class="h-kicker" data-reveal>Behind on payments, auction date approaching</p>
+    <h2 class="h-card" data-reveal style="font-size:1.5rem">He kept his house.</h2>
+    <div data-reveal>
+      <p style="margin-top:14px">A homeowner came to us in default, with the foreclosure clock already running. The easy thing, and the profitable thing, would have been to buy the house.</p>
+      <p>It wasn&rsquo;t the right answer. Once we walked through his numbers and his options together, there was a route that let him catch up and stay. We helped him take it.</p>
+      <p>He still lives there. We never bought anything, and that&rsquo;s the point: the first conversation is about your options, not our offer. Sometimes the way forward doesn&rsquo;t involve us, and we&rsquo;ll be the ones to say so.</p>
+    </div>
+    <p class="small" data-reveal style="margin-top:10px">If you&rsquo;re behind on payments, start with <a href="/resources/notice-of-default/">what a Notice of Default actually means</a>. It&rsquo;s free and it applies whether or not you ever talk to us.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="shell shell--narrow">
+    <p class="h-kicker" data-reveal>A sale collapsing a week before closing</p>
+    <h2 class="h-card" data-reveal style="font-size:1.5rem">Huskey Drive, Bakersfield.</h2>
+    <div data-reveal>
+      <p style="margin-top:14px">The seller had a deal in hand, and the deal was dying. The buyer who&rsquo;d put the house under contract couldn&rsquo;t perform, which usually means the seller starts over from zero: new listing, new waiting, new uncertainty, with whatever deadline pushed them to sell still ticking.</p>
+      <p>We stepped in, bought the house ourselves, and closed. The seller got the exit he&rsquo;d already planned around instead of a restart.</p>
+      <p>This is what &ldquo;we don&rsquo;t assign contracts&rdquo; means in practice. When we sign, we&rsquo;re the ones on the hook to finish, and Huskey Drive is one of the houses we&rsquo;ve since renovated and put back into use.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band paper">
+  <div class="shell shell--narrow">
+    <p class="h-kicker" data-reveal>A long way from anywhere</p>
+    <h2 class="h-card" data-reveal style="font-size:1.5rem">Graphic Street, Lancaster.</h2>
+    <div data-reveal>
+      <p style="margin-top:14px">Some houses sit where the usual buyers don&rsquo;t bother going. Graphic Street is in Lancaster, in the Antelope Valley: a long drive from the coastal markets where most cash buyers concentrate, and the kind of address that gets lowballed by mail and then ignored in person.</p>
+      <p>We drove up, walked it, and bought it from its owner directly. Then we renovated it, the same as we do everywhere else. Distance changes the drive time, not the standard of work and not how straight the number is.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band dark">
+  <div class="shell split">
+    <div>
+      <p class="eyebrow" data-reveal>Before and after</p>
+      <h2 class="h-sect" data-reveal>The work is the proof.</h2>
+      <p data-reveal style="margin-top:20px">Every house we buy gets renovated and put back into use. Drag the slider: this is the part of the business we&rsquo;re actually in.</p>
+      <p data-reveal class="small">Photography from all five recent projects is being prepared. As it lands, this page fills in with the real before-and-afters, house by house.</p>
+    </div>
+    <div data-reveal>
+      <div class="ba" data-compare>
+        {ba_img("before","A house before renovation")}
+        {ba_img("after","The same house after renovation")}
+        <span class="ba__lbl ba__lbl--b">Before</span><span class="ba__lbl ba__lbl--a">After</span>
+        <button class="ba__handle" type="button" role="slider" tabindex="0"
+          aria-label="Compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="shell">
+    <p class="eyebrow" data-reveal>The list so far</p>
+    <h2 class="h-sect" data-reveal>Five recent projects.</h2>
+    <div class="grid grid--4" style="margin-top:42px">
+      <div class="card" style="padding:0;overflow:hidden" data-reveal>
+        {pic("project-1","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
+        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Shenandoah Drive</p></div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="70">
+        {pic("project-2","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
+        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Cale Court</p></div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="140">
+        {pic("project-3","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
+        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Terrace Way &amp; Huskey Drive</p></div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="210">
+        {pic("project-4","A Lancaster house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
+        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Lancaster</p><p style="margin:0">Graphic Street</p></div>
+      </div>
+    </div>
+    <p class="small" data-reveal style="margin-top:22px">That&rsquo;s the whole list, not highlights. We&rsquo;d rather show you five real houses than imply fifty.</p>
+  </div>
+</section>
+
+{cta("In the middle of something like this?", "Tell me the situation. The first conversation is about your options, not our offer.")}
 """))
 
 # ══════════════════════════════════════════════ LEGAL
