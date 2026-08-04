@@ -186,7 +186,7 @@ a:hover{color:var(--charcoal)}
 }
 .nav a:hover,.nav a[aria-current="page"]{border-bottom-color:var(--bronze);color:var(--charcoal)}
 .head-actions{display:flex;align-items:center;gap:18px}
-@media(max-width:940px){.nav{display:none}}
+@media(max-width:1060px){.nav{display:none}}
 @media(max-width:520px){.head-actions .btn{display:none}}
 
 /* ============================================================
@@ -330,8 +330,11 @@ a.card:hover{border-color:var(--bronze);transform:translateY(-2px)}
 .site-foot{background:var(--charcoal);color:rgba(240,235,228,.62);padding-block:clamp(52px,7vw,76px) 34px;font-size:.92rem}
 .site-foot a{color:rgba(240,235,228,.62);text-decoration:none}
 .site-foot a:hover{color:var(--cream)}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(24px,3.5vw,44px)}
-@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.15fr;gap:clamp(22px,3vw,40px)}
+@media(max-width:1000px){
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-brand{grid-column:1/-1;max-width:44ch}
+}
 @media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
 .foot-h{
   font-family:var(--display);font-weight:800;font-size:11px;letter-spacing:.15em;
@@ -420,7 +423,7 @@ html{scroll-padding-top:88px}
 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-@media(max-width:940px){.burger{display:flex}}
+@media(max-width:1060px){.burger{display:flex}}
 
 .mobile-nav{
   position:fixed;inset:66px 0 0;z-index:70;background:var(--charcoal);color:var(--cream);
@@ -581,6 +584,7 @@ html.nav-open{overflow:hidden}
 }
 
 .figrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+@media(max-width:700px){.figrow{grid-template-columns:1fr}}
 .figrow > div{background:var(--cream);padding:26px 24px}
 .dark .figrow{background:var(--line-dark);border-color:var(--line-dark)}
 .dark .figrow > div{background:var(--charcoal)}

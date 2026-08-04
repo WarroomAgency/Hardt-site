@@ -393,7 +393,7 @@ P.append(dict(
     <div>
       <p class="eyebrow" data-reveal>Who you&rsquo;re dealing with</p>
       <h1 class="h-sect" data-reveal>The name on the company is my name.</h1>
-      <p class="lede" data-reveal>Peter Eberhardt &middot; Founder, HARDT Real Estate &middot; Southern California</p>
+      <p class="lede" data-reveal>Peter Eberhardt &middot; Founder, HARDT &middot; Southern California</p>
     </div>
     <div data-reveal>{pic("portrait","Peter Eberhardt, founder of HARDT","media media--4x5",tag="Portrait to be shot",eager=True,w=900,h=1150)}</div>
   </div>
@@ -427,7 +427,7 @@ P.append(dict(
   <div class="shell shell--narrow">
     <p class="eyebrow" data-reveal>The business</p>
     <h2 class="h-sect" data-reveal>Plainly stated.</h2>
-    <p data-reveal style="margin-top:22px">HARDT Real Estate is a d/b/a of Fluid Developments LLC, operating across San Diego, Riverside, San Bernardino and Kern counties since 2021. We buy houses with our own money, renovate them using local subcontractors, and put them back into use.</p>
+    <p data-reveal style="margin-top:22px">HARDT is a d/b/a of Fluid Developments LLC, operating across San Diego, Riverside, San Bernardino and Kern counties since 2021. We buy houses with our own money, renovate them using local subcontractors, and put them back into use.</p>
     <p data-reveal>We buy as a principal for our own account. We are not a licensed real estate brokerage, we don&rsquo;t represent buyers or sellers, and we don&rsquo;t give legal, tax or financial advice. When you need that kind of advice, and in a probate or a foreclosure you often do. We&rsquo;ll tell you to go get it.</p>
   </div>
 </section>
@@ -490,7 +490,7 @@ P.append(dict(
       <div><p class="h-kicker">Email</p><p><a href="mailto:{EMAIL}">{EMAIL}</a></p><p class="small">Fine for documents and photos.</p></div>
       <div><p class="h-kicker">Hours</p><p>Monday&ndash;Saturday, 8am&ndash;6pm</p><p class="small">Outside those hours I&rsquo;ll reply first thing the next morning.</p></div>
     </div>
-    <p class="small" style="margin-top:28px">HARDT Real Estate &middot; a d/b/a of Fluid Developments LLC. We buy across San Diego, Riverside, San Bernardino and Kern counties.</p>
+    <p class="small" style="margin-top:28px">HARDT &middot; a d/b/a of Fluid Developments LLC. We buy across San Diego, Riverside, San Bernardino and Kern counties.</p>
   </div>
 </section>
 """))
@@ -887,8 +887,8 @@ for (cslug, sslug), d in M.items():
 
 # ══════════════════════════════════════════════ LEGAL
 LEGAL = {
- "privacy": ("Privacy Policy", "How HARDT Real Estate collects, uses and protects the information you send through this website.", f"""
-<p>HARDT Real Estate, a d/b/a of Fluid Developments LLC, operates this website. This policy explains what we collect and what we do with it.</p>
+ "privacy": ("Privacy Policy", "How HARDT collects, uses and protects the information you send through this website.", f"""
+<p>HARDT, a d/b/a of Fluid Developments LLC, operates this website. This policy explains what we collect and what we do with it.</p>
 <h2 class="h-card" style="margin-top:34px">What we collect</h2>
 <p>Only what you send us: the property address, the situation you select, your name, a phone number or email address, and any notes you add. We also collect standard analytics such as pages viewed and approximate location, which is not tied to your name.</p>
 <h2 class="h-card" style="margin-top:30px">What we do with it</h2>
@@ -902,10 +902,10 @@ LEGAL = {
 <h2 class="h-card" style="margin-top:30px">Cookies</h2>
 <p>We use minimal analytics cookies to understand which pages are useful. We do not run advertising trackers on this site.</p>
 <p class="small" style="margin-top:34px">Questions about any of this: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
- "terms": ("Terms of Use", "Terms governing use of the HARDT Real Estate website, including our position as a principal buyer rather than a licensed brokerage.", f"""
+ "terms": ("Terms of Use", "Terms governing use of the HARDT website, including our position as a principal buyer rather than a licensed brokerage.", f"""
 <p>By using this website you agree to these terms.</p>
 <h2 class="h-card" style="margin-top:34px">Who we are</h2>
-<p>HARDT Real Estate is a d/b/a of Fluid Developments LLC, operating in Southern California. <strong>We buy property as a principal for our own account.</strong> We are not a licensed real estate brokerage, we do not represent buyers or sellers in transactions, and we do not act as agents for anyone.</p>
+<p>HARDT is a d/b/a of Fluid Developments LLC, operating in Southern California. <strong>We buy property as a principal for our own account.</strong> We are not a licensed real estate brokerage, we do not represent buyers or sellers in transactions, and we do not act as agents for anyone.</p>
 <h2 class="h-card" style="margin-top:30px">Not advice</h2>
 <p>Nothing on this site is legal, tax, financial or real estate advice. Content about probate, foreclosure, liens and title is general information and your situation will differ. Consult a qualified attorney, tax professional or HUD-approved housing counsellor about your circumstances.</p>
 <h2 class="h-card" style="margin-top:30px">No offer is made here</h2>

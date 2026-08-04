@@ -178,9 +178,9 @@ def footer():
     return f"""<footer class="site-foot">
   <div class="shell">
     <div class="foot-grid">
-      <div>
+      <div class="foot-brand">
         <a class="lockup" href="/" aria-label="HARDT home">{MARK_LIGHT}<span class="lockup__hair"></span><span class="lockup__word" style="color:#F0EBE4;font-size:17px">HARDT</span></a>
-        <p style="margin-top:16px;max-width:34ch">Founder&#8209;led home buying across Southern California. Serving San Diego, Riverside, San Bernardino and Kern counties.</p>
+        <p style="margin-top:16px;max-width:30ch">Founder&#8209;led home buying across San Diego, Riverside, San Bernardino and Kern counties.</p>
         <p class="serif" style="color:var(--bronze-light);font-size:1.05rem;margin-top:20px">Built on Integrity.</p>
       </div>
       <div><p class="foot-h">Situations</p><ul class="foot-list">{svc}</ul></div>
@@ -192,7 +192,9 @@ def footer():
           <li><a href="/what-we-buy/">What we buy</a></li><li><a href="/resources/">Resources</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul>
-        <p class="foot-h" style="margin-top:26px">Reach us</p>
+      </div>
+      <div>
+        <p class="foot-h">Reach us</p>
         <ul class="foot-list">
           <li><a href="{PHONE_HREF}">{PHONE_DISPLAY}</a></li>
           <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
@@ -201,11 +203,11 @@ def footer():
       </div>
     </div>
     <div class="foot-bottom">
-      <div>&copy; 2026 HARDT Real Estate &middot; a d/b/a of Fluid Developments LLC &middot; Southern California</div>
+      <div>&copy; 2026 HARDT &middot; a d/b/a of Fluid Developments LLC &middot; Southern California</div>
       <div><a href="/privacy/">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms/">Terms</a> &nbsp;&middot;&nbsp; <a href="/accessibility/">Accessibility</a></div>
     </div>
     <p class="small" style="margin-top:26px;max-width:78ch;color:rgba(240,235,228,.38);font-size:.79rem">
-      HARDT Real Estate buys property as a principal for its own account. We are not a licensed real estate
+      HARDT buys property as a principal for its own account. We are not a licensed real estate
       brokerage, we do not represent buyers or sellers, and we do not provide legal, tax or financial advice.
     </p>
   </div>
@@ -222,7 +224,7 @@ def footer():
 def graph(p):
     org = {
         "@type": "Organization", "@id": f"{SITE}/#org", "name": "HARDT",
-        "legalName": "Fluid Developments LLC", "alternateName": "HARDT Real Estate",
+        "legalName": "Fluid Developments LLC", "alternateName": "HARDT",
         "url": f"{SITE}/", "logo": f"{SITE}/assets/img/mark.svg", "foundingDate": "2021",
         "slogan": "Every situation has a way forward.",
         "description": ("Founder-led home buying and renovation across Southern California. HARDT buys "

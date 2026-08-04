@@ -33,7 +33,8 @@ One word answer is fine: in or out.
 and the schema currently say Mon–Sat 8–6. Whatever you pick, the Google
 Business Profile has to match it exactly — tell me which is true.
 
-**4. DBA + Blair.** The "HARDT Real Estate" DBA still needs filing (San
+**4. DBA + Blair.** The DBA (now looking like plain "HARDT" rather than
+"HARDT Real Estate") still needs filing (San
 Diego County Clerk, $54, then the newspaper publication run). And Blair
 should look at two things before we go loud: the /stop-foreclosure/
 page and the footer line about buying as a principal. Both are written

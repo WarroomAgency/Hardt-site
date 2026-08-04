@@ -95,18 +95,19 @@ Used close to verbatim because it's better than anything we'd write for him:
 - The **founder section** — condensed from his BMX-to-real-estate story,
   wording preserved.
 
-His story ends "HARDT homes was born." Now that the DBA is **HARDT Real
-Estate**, that line needs his sign-off on the About page wording.
+His story ends "HARDT homes was born." Now that the DBA is likely plain
+**HARDT**, that line needs his sign-off on the About page wording.
 
 ---
 
 ## Legal line in the footer
 
-> HARDT Real Estate buys property as a principal for its own account. We are not
+> HARDT buys property as a principal for its own account. We are not
 > a licensed real estate brokerage, we do not represent buyers or sellers, and we
 > do not provide legal, tax or financial advice.
 
-Added because the DBA contains "Real Estate" while Peter holds no DRE licence.
+Added because Peter operates in real estate without a DRE licence. (DBA is now
+likely plain "HARDT"; the line stays either way.)
 It states the exemption he actually operates under, in plain language, on every
 page. **Blair at API Law should read this line** along with the foreclosure page.
 

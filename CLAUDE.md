@@ -1,7 +1,8 @@
 # HARDT — working notes for Claude
 
-Static marketing site for **HARDT Real Estate** (hardtrealestate.com), a d/b/a of
-Fluid Developments LLC. Client is Peter Eberhardt. Agency is War Room.
+Static marketing site for **HARDT** (hardtrealestate.com), a d/b/a of
+Fluid Developments LLC. (DBA was going to be "HARDT Real Estate"; per Michael,
+2026-08-04, it will likely be plain "HARDT". Site copy uses HARDT throughout.) Client is Peter Eberhardt. Agency is War Room.
 Read this before writing any code or copy in this repo.
 
 Companion docs: `BUILD-NOTES.md` (placeholders + blockers).
@@ -47,10 +48,10 @@ a bug, not a style preference.
 ### Legal
 
 Every page carries the principal-buyer line in the footer. Peter holds **no DRE
-licence** and the DBA contains "Real Estate", so this states the exemption he
-operates under:
+licence**, so this states the exemption he operates under (kept even with the
+plain "HARDT" DBA — he is still buying real estate without a licence):
 
-> HARDT Real Estate buys property as a principal for its own account. We are not
+> HARDT buys property as a principal for its own account. We are not
 > a licensed real estate brokerage, we do not represent buyers or sellers, and we
 > do not provide legal, tax or financial advice.
 
