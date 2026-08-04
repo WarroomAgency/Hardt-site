@@ -39,7 +39,7 @@ NARR_EXTRA = {
   "<p>Distance deserves a straight word too. Some southwest-county owners assume a San Diego&ndash;based "
   "buyer treats Temecula as a stretch. The 15 corridor is our commute, the subcontractors we use "
   "work both counties, and the comps we price from are Riverside County comps, not coastal "
-  "numbers with a discount guessed on top. The walkthrough is me, in person, same as everywhere "
+  "numbers with a discount guessed on top. The walkthrough happens in person, same as everywhere "
   "we buy.</p>",
 ("riverside-county", "inherited-house"):
   "<p>Estates here also collide with the county&rsquo;s commuting reality: heirs scattered between "
@@ -245,7 +245,7 @@ M = {
     "modification or forbearance; sell before the sale date and keep your "
     "equity; or talk to a HUD-approved counsellor about the rest. Selling to "
     "us is one branch of one option, and if listing would net you more and "
-    "your timeline allows it, I&rsquo;ll say so on the first call.</p>"),
+    "your timeline allows it, we&rsquo;ll say so on the first call.</p>"),
   facts=("recorder", "dtt", "stock"),
   narr_h="Why equity changes the calculus",
   narr=(
@@ -349,7 +349,7 @@ M = {
     ("What&rsquo;s my Mello-Roos and does it kill my price?",
      "<p>It&rsquo;s on your property-tax bill as a special-district line, common across newer Temecula, Murrieta and French Valley tracts. It doesn&rsquo;t kill anything. It&rsquo;s a known monthly cost we and every informed buyer price in. Surprises kill deals; the assessment itself doesn&rsquo;t.</p>"),
     ("How fast can you close out here?",
-     "<p>Around two weeks with clean title. I batch southwest-county trips, so tell me your timing. Walkthroughs usually land within a few days, and the eSubmit-era county machinery records same-day through the title company.</p>")],
+     "<p>Around two weeks with clean title. We batch southwest-county trips, so tell us your timing. Walkthroughs usually land within a few days, and the eSubmit-era county machinery records same-day through the title company.</p>")],
 ),
 
 ("riverside-county", "inherited-house"): dict(
@@ -668,7 +668,7 @@ M = {
     "When we make an offer, the math that made it work is on the table: "
     "finished value from real local comps, work budget from our own subs, "
     "margin stated. If the numbers say the better move is listing it "
-    "as-is with an agent instead, that&rsquo;s what I&rsquo;ll tell you.</p>"
+    "as-is with an agent instead, that&rsquo;s what we&rsquo;ll tell you.</p>"
     "<p>Mechanics note: Kern records at the counter and by mail. The "
     "title company handles closing day fine, but paperwork you record "
     "yourself takes weeks to come back, so we build that into any "
@@ -677,7 +677,7 @@ M = {
     ("Why is your offer different from the we-buy-houses postcards I get?",
      "<p>Mostly because it comes with its arithmetic attached. We renovate in Kern constantly, so the repair budget is real, the comps are real, and the margin is stated, and we don&rsquo;t assign the contract to a stranger, so the name on the offer is the name at closing.</p>"),
     ("My house in Ridgecrest is a long way from anywhere. Do you actually come out?",
-     "<p>Yes. I batch Kern trips and Ridgecrest is on the route. Tell me your timing; the walkthrough is me, in person, and usually lands within the week.</p>"),
+     "<p>Yes. We batch Kern trips and Ridgecrest is on the route. Tell us your timing; the walkthrough happens in person, and usually lands within the week.</p>"),
     ("What&rsquo;s the transfer tax situation here?",
      "<p>$0.55 per $500 with no city add-ons, but Kern calculates it on the price or the unencumbered assessed value, whichever is greater, which is unusual and occasionally surprises below-market transfers. On a normal sale to us, the price governs and the offer states who pays it.</p>")],
 ),
@@ -760,7 +760,7 @@ M = {
     "options are the ones that work.</p>"),
   faq=[
     ("Everyone from the courthouse steps list is calling me. Are you one of them?",
-     "<p>We see the same public record everyone sees. That&rsquo;s how the system works, but we&rsquo;re not a call centre and there&rsquo;s no script. You&rsquo;d talk to me, once, and if what you need is a counsellor or your lender&rsquo;s workout department, that&rsquo;s the advice you&rsquo;ll get.</p>"),
+     "<p>We see the same public record everyone sees. That&rsquo;s how the system works, but we&rsquo;re not a call centre and there&rsquo;s no script. You&rsquo;d talk to us, once, and if what you need is a counsellor or your lender&rsquo;s workout department, that&rsquo;s the advice you&rsquo;ll get.</p>"),
     ("Can I sell with a sale date three weeks out?",
      "<p>It&rsquo;s tight but it&rsquo;s been done: cash, a motivated escrow, and clean-enough title are the requirements, and the payoff must reach the trustee before the auction. Call before it&rsquo;s three weeks if you possibly can; every extra week widens your options.</p>"),
     ("Will you charge me anything to figure out my options?",

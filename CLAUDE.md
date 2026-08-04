@@ -42,8 +42,9 @@ a bug, not a style preference.
   until his real photos land. Sources logged in `photos-in/SOURCES.md`. The
   cliché bans in `PHOTO-BRIEF.md` still apply in full.
 - **The proof point is a policy, never a statistic.** Write it exactly:
-  *"We don't assign contracts. If it doesn't close, I buy it myself."*
-  Never convert it to a percentage.
+  *"We don't assign contracts. If it doesn't close, we buy it ourselves."*
+  Never convert it to a percentage. (Was "I buy it myself" — changed to team
+  voice per Michael, 2026-08-04.)
 
 ### Legal
 
@@ -71,6 +72,12 @@ Never: exclamation marks, all-caps urgency, countdown timers, "act now",
 is literally a competitor's meta description.
 
 Always **HARDT** in all caps. Never Hardt or hardt.
+
+**Team voice, not solo-operator voice** (Michael, 2026-08-04). Operational copy
+says "we / us / our team", never "I come look at it myself". Three exceptions
+keep first-person singular: the founder story (About + the homepage founder
+blurb — it's Peter's own narrative), FAQ questions written in the homeowner's
+voice ("Do I pay transfer tax?"), and the visitor-facing CTA "Get my offer".
 
 ---
 

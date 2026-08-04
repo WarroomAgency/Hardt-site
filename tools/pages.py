@@ -53,7 +53,7 @@ P.append(dict(
   <div class="shell">
     <p class="eyebrow">San&nbsp;Diego &middot; Riverside &middot; San&nbsp;Bernardino &middot; Kern</p>
     <h1 class="h-hero">Sell your house as&#8209;is, anywhere in Southern California.</h1>
-    <p class="hero__promise">One walkthrough. One honest number. And every option on the table, including the ones that don&rsquo;t involve me.</p>
+    <p class="hero__promise">One walkthrough. One honest number. And every option on the table, including the ones that don&rsquo;t involve us.</p>
     <p class="hero__note">No repairs, no cleaning out, no showings. Tenants in place is fine. So is a house full of forty years of somebody&rsquo;s life.</p>
     <div class="btnrow">
       <a class="btn btn--primary btn--lg" href="/contact/">Get my offer</a>
@@ -109,8 +109,8 @@ P.append(dict(
     <p class="eyebrow" data-reveal>How it works</p>
     <h2 class="h-sect" data-reveal>Three steps, and a number you can check.</h2>
     <div class="grid grid--3" style="margin-top:46px">
-      <div data-reveal><span class="step__n">Step 01</span><h3 class="h-card">Tell me the situation</h3><p>A conversation, not a pitch. What the house is, what&rsquo;s going on, what you&rsquo;d want to happen. No pressure and no countdown.</p></div>
-      <div data-reveal data-reveal-delay="90"><span class="step__n">Step 02</span><h3 class="h-card">One walkthrough</h3><p>I come look at it myself. You don&rsquo;t clean, repair, or move anything. It takes about half an hour.</p></div>
+      <div data-reveal><span class="step__n">Step 01</span><h3 class="h-card">Tell us the situation</h3><p>A conversation, not a pitch. What the house is, what&rsquo;s going on, what you&rsquo;d want to happen. No pressure and no countdown.</p></div>
+      <div data-reveal data-reveal-delay="90"><span class="step__n">Step 02</span><h3 class="h-card">One walkthrough</h3><p>We come look at it in person. You don&rsquo;t clean, repair, or move anything. It takes about half an hour.</p></div>
       <div data-reveal data-reveal-delay="180"><span class="step__n">Step 03</span><h3 class="h-card">One honest number</h3><p>With the math shown. Take it, leave it, or take it to somebody else to check.</p></div>
     </div>
     <div class="btnrow"><a class="btn btn--ghost" href="/how-it-works/">The full process</a></div>
@@ -120,15 +120,15 @@ P.append(dict(
 <section class="band paper">
   <div class="shell">
     <p class="eyebrow" data-reveal>The honest math</p>
-    <h2 class="h-sect" data-reveal>Sometimes listing it is the better answer. When it is, I&rsquo;ll tell you.</h2>
-    <p class="lede" data-reveal>A cash sale isn&rsquo;t right for every house or every person. Here&rsquo;s how I&rsquo;d think about it if it were my family.</p>
+    <h2 class="h-sect" data-reveal>Sometimes listing it is the better answer. When it is, we&rsquo;ll tell you.</h2>
+    <p class="lede" data-reveal>A cash sale isn&rsquo;t right for every house or every person. Here&rsquo;s how we&rsquo;d think about it if it were our own family.</p>
     <div class="compare" style="margin-top:42px" data-reveal>
       <div class="compare__col">
         <p class="h-kicker" style="color:var(--bronze-ink)">List it on the open market when</p>
         <ul><li>You have the time to wait for the right buyer</li><li>The house is in good condition and doesn&rsquo;t need repairs</li><li>You want the highest gross price on paper, and you&rsquo;re fine paying commissions, title and escrow fees, and any repairs the buyer asks for out of that number</li></ul>
       </div>
       <div class="compare__col">
-        <p class="h-kicker">Talk to me when</p>
+        <p class="h-kicker">Talk to us when</p>
         <ul><li>The house needs work you don&rsquo;t want to pay for or manage</li><li>The timeline matters more than the last few thousand dollars</li><li>There are tenants, contents, liens, or a probate in the middle of it</li><li>You want one number and one person, start to finish</li></ul>
       </div>
     </div>
@@ -138,7 +138,7 @@ P.append(dict(
 <section class="band--tight band dark">
   <div class="shell quote">
     <p class="tagline serif" data-reveal>Every situation has a way forward.</p>
-    <p class="quote__proof" data-reveal>We don&rsquo;t assign contracts. If it doesn&rsquo;t close, I buy it myself.</p>
+    <p class="quote__proof" data-reveal>We don&rsquo;t assign contracts. If it doesn&rsquo;t close, we buy it ourselves.</p>
     <p class="quote__attr" data-reveal>Peter Eberhardt &middot; Founder</p>
   </div>
 </section>
@@ -186,8 +186,8 @@ P.append(dict(
 <section class="band">
   <div class="shell">
     <p class="eyebrow" data-reveal>Where we buy</p>
-    <h2 class="h-sect" data-reveal>Four counties, and I drive to all of them.</h2>
-    <p class="lede" data-reveal>Boots on the ground from the border to Bakersfield, and I do the walkthrough myself in every one of them.</p>
+    <h2 class="h-sect" data-reveal>Four counties, and we drive to all of them.</h2>
+    <p class="lede" data-reveal>Boots on the ground from the border to Bakersfield, and we do the walkthrough in person in every one of them.</p>
     <div class="grid grid--4" style="margin-top:42px">
       {"".join(f'''<a class="county" href="/{s}/" data-reveal data-reveal-delay="{i*70}" style="padding:0;overflow:hidden">
         {pic(f"county-{img}", f"A residential street in {n}", "media media--4x3", w=1000, h=750)}
@@ -197,7 +197,7 @@ P.append(dict(
   </div>
 </section>
 
-{cta("Tell me about the house.", "Three questions, no obligation, and nobody else gets your information.")}
+{cta("Tell us about the house.", "Three questions, no obligation, and nobody else gets your information.")}
 """))
 
 # ══════════════════════════════════════════════ HOW IT WORKS
@@ -232,18 +232,18 @@ P.append(dict(
   <div class="shell">
     <div class="grid grid--2" style="align-items:start">
       <div data-reveal>
-        <span class="step__n">Step 01</span><h2 class="h-card" style="font-size:1.5rem">You tell me the situation</h2>
+        <span class="step__n">Step 01</span><h2 class="h-card" style="font-size:1.5rem">You tell us the situation</h2>
         <p>Call, text, or send the form. We talk for ten minutes about the house and what's going on around it: a probate, a tenant, a job in another state, a repair bill you don't want.</p>
-        <p>This is a conversation, not a qualification script. If it becomes clear a cash sale isn't your best move, I'll say so on this call rather than three weeks from now.</p>
+        <p>This is a conversation, not a qualification script. If it becomes clear a cash sale isn't your best move, we'll say so on this call rather than three weeks from now.</p>
       </div>
       <div data-reveal data-reveal-delay="90">
         <span class="step__n">Step 02</span><h2 class="h-card" style="font-size:1.5rem">One walkthrough, about half an hour</h2>
-        <p>I come and look at the house myself, not an inspector, not a photographer, not a team. You don't clean, fix, or move anything, and you don't need to be embarrassed about any of it. I've seen houses in every condition there is.</p>
+        <p>We come and look at the house in person, not an inspector, not a photographer, not a team. You don't clean, fix, or move anything, and you don't need to be embarrassed about any of it. We've seen houses in every condition there is.</p>
         <p>If the property is tenant-occupied we work around the tenant's schedule and their legal notice period.</p>
       </div>
       <div data-reveal>
         <span class="step__n">Step 03</span><h2 class="h-card" style="font-size:1.5rem">One number, and the math behind it</h2>
-        <p>Usually within a day. You get the figure and the reasoning: what I think it's worth finished, what the work costs, what holding and reselling costs, and the margin left over.</p>
+        <p>Usually within a day. You get the figure and the reasoning: what we think it's worth finished, what the work costs, what holding and reselling costs, and the margin left over.</p>
         <p>Take it, leave it, or take it to an agent for a second opinion. It doesn't expire because a timer ran out.</p>
       </div>
       <div data-reveal data-reveal-delay="90">
@@ -264,7 +264,7 @@ P.append(dict(
       <div><p class="h-kicker">No showings</p><p class="small">One visit from one person. No lockbox, no strangers walking through on a Sunday.</p></div>
       <div><p class="h-kicker">No commissions</p><p class="small">There's no agent in the middle, so there's no commission coming out of your number.</p></div>
       <div><p class="h-kicker">No financing risk</p><p class="small">No lender means no appraisal gap and no loan falling through a week before closing.</p></div>
-      <div><p class="h-kicker">No assignment</p><p class="small">Your contract doesn't get sold to a stranger. If it doesn't close, I buy it myself.</p></div>
+      <div><p class="h-kicker">No assignment</p><p class="small">Your contract doesn't get sold to a stranger. If it doesn't close, we buy it ourselves.</p></div>
     </div>
   </div>
 </section>
@@ -277,7 +277,7 @@ P.append(dict(
   </div>
 </section>
 
-{cta("Ready to see a number?", "Send the address and I'll come look at it myself.")}
+{cta("Ready to see a number?", "Send the address and we'll come look at it in person.")}
 """))
 
 # ══════════════════════════════════════════════ WHAT WE BUY
@@ -290,8 +290,8 @@ P.append(dict(
 <section class="band band--tight">
   <div class="shell">
     <p class="eyebrow" data-reveal>Straight answers</p>
-    <h1 class="h-sect" data-reveal>What I buy, and what I don&rsquo;t.</h1>
-    <p class="lede" data-reveal>Published so you don&rsquo;t waste an afternoon finding out on a phone call. If your property falls outside this, I&rsquo;ll usually still know someone worth calling.</p>
+    <h1 class="h-sect" data-reveal>What we buy, and what we don&rsquo;t.</h1>
+    <p class="lede" data-reveal>Published so you don&rsquo;t waste an afternoon finding out on a phone call. If your property falls outside this, we&rsquo;ll usually still know someone worth calling.</p>
   </div>
 </section>
 
@@ -299,7 +299,7 @@ P.append(dict(
   <div class="shell">
     <div class="grid grid--2">
       <div class="card" data-reveal>
-        <p class="h-kicker">I buy</p>
+        <p class="h-kicker">We buy</p>
         <ul class="checks" style="margin-top:6px">
           <li>Single family and multi&#8209;family, up to about <strong>$1.2M</strong></li>
           <li>Houses needing major work, including fire and water damage</li>
@@ -311,7 +311,7 @@ P.append(dict(
         </ul>
       </div>
       <div class="card" data-reveal data-reveal-delay="90">
-        <p class="h-kicker" style="color:var(--gray)">I don&rsquo;t buy</p>
+        <p class="h-kicker" style="color:var(--gray)">We don&rsquo;t buy</p>
         <ul class="nots" style="margin-top:6px">
           <li>Anything under $100,000</li>
           <li>Houses with less than about 50% equity</li>
@@ -342,7 +342,7 @@ P.append(dict(
   </div>
 </section>
 
-{cta("Not sure if yours fits?", "Send it over. A ten minute call costs you nothing and I'll tell you straight.")}
+{cta("Not sure if yours fits?", "Send it over. A ten minute call costs you nothing and we'll tell you straight.")}
 """))
 
 # ══════════════════════════════════════════════ AREAS
@@ -355,8 +355,8 @@ P.append(dict(
 <section class="band band--tight">
   <div class="shell">
     <p class="eyebrow" data-reveal>Where we buy</p>
-    <h1 class="h-sect" data-reveal>Four counties, and I drive to all of them.</h1>
-    <p class="lede" data-reveal>I&rsquo;ll drive about four hours for a walkthrough, which covers everything from the border up to Bakersfield.</p>
+    <h1 class="h-sect" data-reveal>Four counties, and we drive to all of them.</h1>
+    <p class="lede" data-reveal>We&rsquo;ll drive about four hours for a walkthrough, which covers everything from the border up to Bakersfield.</p>
   </div>
 </section>
 
@@ -373,13 +373,13 @@ P.append(dict(
 
 <section class="band">
   <div class="shell shell--narrow">
-    <h2 class="h-sect" data-reveal>Places I&rsquo;d rather be honest about</h2>
-    <p data-reveal style="margin-top:20px">There are mountain communities I don&rsquo;t buy in: Big Bear, Lake Arrowhead, Crestline, Bear Valley Springs, Frazier Park and Pine Mountain Club among them. The market up there behaves differently enough that I&rsquo;d be guessing, and guessing with somebody&rsquo;s house is how people get hurt.</p>
-    <p data-reveal>If that&rsquo;s where your property is, tell me anyway. I&rsquo;d rather point you to someone who actually knows that market than pretend I do.</p>
+    <h2 class="h-sect" data-reveal>Places we&rsquo;d rather be honest about</h2>
+    <p data-reveal style="margin-top:20px">There are mountain communities we don&rsquo;t buy in: Big Bear, Lake Arrowhead, Crestline, Bear Valley Springs, Frazier Park and Pine Mountain Club among them. The market up there behaves differently enough that we&rsquo;d be guessing, and guessing with somebody&rsquo;s house is how people get hurt.</p>
+    <p data-reveal>If that&rsquo;s where your property is, tell us anyway. We&rsquo;d rather point you to someone who actually knows that market than pretend we do.</p>
   </div>
 </section>
 
-{cta("Not sure if you're in range?", "Send the address. If it's outside what I cover, I'll tell you in one message.")}
+{cta("Not sure if you're in range?", "Send the address. If it's outside what we cover, we'll tell you in one message.")}
 """))
 
 # ══════════════════════════════════════════════ ABOUT
@@ -416,10 +416,10 @@ P.append(dict(
     <p class="eyebrow" data-reveal>How we operate</p>
     <h2 class="h-sect" data-reveal>Four things that don&rsquo;t change.</h2>
     <div class="grid grid--2" style="margin-top:42px">
-      <div data-reveal><h3 class="h-card">You talk to me</h3><p>Every enquiry comes to me directly. Not a call centre, not an acquisitions rep working a script, not a lead that gets sold to four investors at once.</p></div>
-      <div data-reveal data-reveal-delay="80"><h3 class="h-card">We don&rsquo;t assign contracts</h3><p>Some buyers put a house under contract and then sell that contract on. We don&rsquo;t. If it doesn&rsquo;t close, I buy it myself.</p></div>
+      <div data-reveal><h3 class="h-card">You talk to us</h3><p>Every enquiry comes to our team directly. Not a call centre, not a script, and never a lead that gets sold to four investors at once.</p></div>
+      <div data-reveal data-reveal-delay="80"><h3 class="h-card">We don&rsquo;t assign contracts</h3><p>Some buyers put a house under contract and then sell that contract on. We don&rsquo;t. If it doesn&rsquo;t close, we buy it ourselves.</p></div>
       <div data-reveal><h3 class="h-card">The math is shown</h3><p>You see how the number was reached: finished value, cost of work, cost of holding and reselling, margin. Check it with anyone you like.</p></div>
-      <div data-reveal data-reveal-delay="80"><h3 class="h-card">Bad news arrives at the same volume</h3><p>If listing with an agent would put more money in your pocket, I&rsquo;ll say so on the first call. It costs me deals. It&rsquo;s still the right thing.</p></div>
+      <div data-reveal data-reveal-delay="80"><h3 class="h-card">Bad news arrives at the same volume</h3><p>If listing with an agent would put more money in your pocket, we&rsquo;ll say so on the first call. It costs us deals. It&rsquo;s still the right thing.</p></div>
     </div>
     <div class="btnrow"><a class="btn btn--ghost" href="/how-weve-helped/">See how this plays out</a></div>
   </div>
@@ -434,7 +434,7 @@ P.append(dict(
   </div>
 </section>
 
-{cta("Want to talk it through?", "Call me directly, or send the address and I'll come look at it.")}
+{cta("Want to talk it through?", "Call us directly, or send the address and we'll come look at it.")}
 """))
 
 # ══════════════════════════════════════════════ CONTACT
@@ -442,18 +442,18 @@ P.append(dict(
     url="/contact/", active="/contact/",
     trail=[("/contact/", "Contact")],
     title="Get Your Offer | HARDT",
-    desc="Three questions and I'll be in touch, usually within 15 minutes between 8am and 6pm. No obligation, no pressure, and nobody else gets your information.",
+    desc="Three questions and we'll be in touch, usually within 15 minutes between 8am and 6pm. No obligation, no pressure, and nobody else gets your information.",
     body=f"""
 <section class="band dark" id="offer">
   <div class="shell split">
     <div>
       <p class="eyebrow" data-reveal>Start here</p>
-      <h1 class="h-sect" data-reveal>Tell me about the house.</h1>
+      <h1 class="h-sect" data-reveal>Tell us about the house.</h1>
       <p class="lede" data-reveal>Three questions. No obligation, no pressure, and no one else gets your information.</p>
       <ul class="rail" style="margin-top:36px" data-reveal>
-        <li><strong>You talk to me, not a call center.</strong> Every lead comes to me directly.</li>
+        <li><strong>You talk to our team, not a call centre.</strong> Every lead comes straight to us.</li>
         <li><strong>A reply within 15 minutes</strong>, 8am&ndash;6pm. Outside those hours, first thing next morning.</li>
-        <li><strong>We don&rsquo;t assign contracts.</strong> If it doesn&rsquo;t close, I buy it myself.</li>
+        <li><strong>We don&rsquo;t assign contracts.</strong> If it doesn&rsquo;t close, we buy it ourselves.</li>
         <li><strong>No countdown clocks.</strong> The offer doesn&rsquo;t expire because a timer ran out.</li>
       </ul>
       <p class="small" style="margin-top:34px">Would rather just talk? {TEL}</p>
@@ -475,7 +475,7 @@ P.append(dict(
         </select></div>
       <div class="field"><label for="name">Your name</label>
         <input type="text" id="name" name="Name" autocomplete="name" required></div>
-      <div class="field"><label for="phone">Phone or email</label><span class="help">Whichever you&rsquo;d rather I use.</span>
+      <div class="field"><label for="phone">Phone or email</label><span class="help">Whichever you&rsquo;d rather we use.</span>
         <input type="text" id="phone" name="Phone or email" autocomplete="tel" required></div>
       <div class="field"><label for="notes">Anything else? <span style="font-weight:400;color:var(--gray)">(optional)</span></label>
         <textarea id="notes" name="Notes" rows="3"></textarea></div>
@@ -488,9 +488,9 @@ P.append(dict(
 <section class="band">
   <div class="shell">
     <div class="figrow" data-reveal>
-      <div><p class="h-kicker">Phone</p><p>{TEL}</p><p class="small">Call or text. It reaches me, not an assistant.</p></div>
+      <div><p class="h-kicker">Phone</p><p>{TEL}</p><p class="small">Call or text. It reaches us, not an answering service.</p></div>
       <div><p class="h-kicker">Email</p><p><a href="mailto:{EMAIL}">{EMAIL}</a></p><p class="small">Fine for documents and photos.</p></div>
-      <div><p class="h-kicker">Hours</p><p>Monday&ndash;Saturday, 8am&ndash;6pm</p><p class="small">Outside those hours I&rsquo;ll reply first thing the next morning.</p></div>
+      <div><p class="h-kicker">Hours</p><p>Monday&ndash;Saturday, 8am&ndash;6pm</p><p class="small">Outside those hours we&rsquo;ll reply first thing the next morning.</p></div>
     </div>
     <p class="small" style="margin-top:28px">HARDT &middot; a d/b/a of Fluid Developments LLC. We buy across San Diego, Riverside, San Bernardino and Kern counties.</p>
   </div>
@@ -512,7 +512,7 @@ SVC = {
            "Hoarding situations and full contents"],
    faq=[("Is the house too far gone?","<p>Almost certainly not. Condition changes the number, not whether we're interested. The only real disqualifiers are on our <a href=\"/what-we-buy/\">what we buy</a> page, and none of them are about condition.</p>"),
         ("Do I have to clear it out?","<p>No. Take what matters to you and leave everything else, including furniture, tools and whatever's in the garage.</p>"),
-        ("Will you lowball me because it needs work?","<p>You'll see the math: finished value, cost of the work, cost of holding and reselling, and the margin. If the repair estimate looks high to you, get a contractor to check it. That's a reasonable thing to do and I'd rather you did.</p>")]),
+        ("Will you lowball me because it needs work?","<p>You'll see the math: finished value, cost of the work, cost of holding and reselling, and the margin. If the repair estimate looks high to you, get a contractor to check it. That's a reasonable thing to do and we'd rather you did.</p>")]),
  "inherited-house": dict(
    h1="You inherited a house. Now what?",
    title="Selling an Inherited House in California | HARDT",
@@ -532,7 +532,7 @@ SVC = {
    title="Facing Foreclosure in Southern California? | HARDT",
    desc="Understand the California trustee-sale timeline and every option on the table, including the ones that don't involve selling. Straight information, no pressure.",
    lede="If you're behind on payments, the most valuable thing you can have right now is accurate information about your options, not another offer.",
-   body_intro="<p>People in this situation usually get a stack of letters and a lot of pressure. What they rarely get is a plain explanation of how the process actually works and how much time is genuinely left.</p><p>So that's what this conversation is. Sometimes the answer is a reinstatement, a loan modification, or a short sale with your lender. Sometimes it's selling before the sale date. Occasionally it's letting it go, and if that's genuinely your best outcome, I'll say so.</p>",
+   body_intro="<p>People in this situation usually get a stack of letters and a lot of pressure. What they rarely get is a plain explanation of how the process actually works and how much time is genuinely left.</p><p>So that's what this conversation is. Sometimes the answer is a reinstatement, a loan modification, or a short sale with your lender. Sometimes it's selling before the sale date. Occasionally it's letting it go, and if that's genuinely your best outcome, we'll say so.</p>",
    points=["Behind on payments but not yet in default",
            "A Notice of Default has been recorded",
            "A trustee sale date has been set",
@@ -594,7 +594,7 @@ for slug, label, longname in SERVICES:
     <h2 class="h-sect" data-reveal>The same three steps, whatever the situation.</h2>
     <div class="figrow" style="margin-top:36px" data-reveal>
       <div><p class="h-kicker">01 &middot; The conversation</p><p class="small">Ten minutes on the phone. What the property is and what's happening around it.</p></div>
-      <div><p class="h-kicker">02 &middot; One walkthrough</p><p class="small">Half an hour, me, no cleaning or repairs first.</p></div>
+      <div><p class="h-kicker">02 &middot; One walkthrough</p><p class="small">Half an hour, in person, no cleaning or repairs first.</p></div>
       <div><p class="h-kicker">03 &middot; One number</p><p class="small">With the math shown, and a closing date you choose.</p></div>
     </div>
     {d.get('legal','')}
@@ -619,7 +619,7 @@ for slug, label, longname in SERVICES:
   </div>
 </section>
 
-{cta("Tell me about the property.", "Three questions, no obligation, and you talk to me directly.")}
+{cta("Tell us about the property.", "Three questions, no obligation, and you talk to us directly.")}
 """))
 
 # ══════════════════════════════════════════════ COUNTIES
@@ -628,25 +628,25 @@ CTY = {
    "San Diego County is the heart of where we work. Anything here is a short drive and usually a same-week walkthrough.",
    "Coastal North County, the inland valleys and the East County foothills are three different housing markets wearing one county's name. A 1950s East County ranch and a 1990s Chula Vista tract house need completely different work, and the number reflects that."),
  "riverside-county": ("the corridor",
-   "Riverside County runs from the Inland Empire down through the Temecula Valley, and I cover the western and southwestern side of it.",
+   "Riverside County runs from the Inland Empire down through the Temecula Valley, and we cover the western and southwestern side of it.",
    "Newer subdivisions here often carry Mello-Roos assessments and solar or PACE liens attached to the property rather than the owner. Those don't stop a sale, but they have to be found early. They're a common reason a deal falls apart late with another buyer."),
  "san-bernardino-county": ("the inland empire",
    "From the older neighbourhoods of San Bernardino and Redlands out through Fontana, Rancho Cucamonga and Highland.",
    "The housing stock varies enormously by decade here, which matters for what's behind the walls: galvanised plumbing, aluminium wiring and panels that no longer pass inspection are all common in the older parts of the county."),
  "kern-county": ("the north end",
-   "Bakersfield and the surrounding towns are the northern end of what we cover. It's a long drive from the southern end of our territory, and I make it regularly.",
+   "Bakersfield and the surrounding towns are the northern end of what we cover. It's a long drive from the southern end of our territory, and we make it regularly.",
    "Kern is where a good deal of our renovation work has been. Prices are lower than the coastal counties, which changes the arithmetic on what's worth doing to a house: a full renovation that pencils in Chula Vista may not pencil in Wasco, and vice versa."),
 }
 
 for slug, name, img, cities in COUNTIES:
     kicker, intro, local = CTY[slug]
     cfaq = [(f"Which {name.replace(' County','')} cities do you buy in?",
-             f"<p>{cities}, plus the smaller communities around them. If you're not sure whether you're in range, send the address and I'll tell you in one message.</p>"),
+             f"<p>{cities}, plus the smaller communities around them. If you're not sure whether you're in range, send the address and we'll tell you in one message.</p>"),
             ("Do you buy houses that need work here?",
              "<p>Yes. That's most of what we do. Condition changes the number, not whether we're interested.</p>"),
             ("How quickly can you see the property?",
              "<p>Usually within a day or two, since this is home.</p>" if slug=="san-diego-county"
-             else "<p>Usually within a few days. I batch trips to the area, so tell me your timing and I will work around it.</p>")]
+             else "<p>Usually within a few days. We batch trips to the area, so tell us your timing and we will work around it.</p>")]
     short = name.replace(" County", "")
     # Situation cards on a county hub link to that county's matrix pages —
     # the hub is the county's front door, the matrix pages are the rooms.
@@ -719,7 +719,7 @@ for slug, name, img, cities in COUNTIES:
   </div>
 </section>
 
-{cta(f"Have a house in {short}?", "Send the address and I'll come look at it myself.")}
+{cta(f"Have a house in {short}?", "Send the address and we'll come look at it in person.")}
 """))
 
 # ══════════════════════════════════════════════ COUNTY × SERVICE MATRIX
@@ -749,9 +749,9 @@ for (cslug, sslug), d in M.items():
     # Walkthrough timing is genuinely different per county — say so.
     visit = {
         "san-diego-county": "Usually within a day or two. This county is home.",
-        "riverside-county": "Within a few days. I batch southwest-county trips and work around your timing.",
-        "san-bernardino-county": "Within a few days, valley or High Desert. Tell me your timing and I&rsquo;ll route the trip around it.",
-        "kern-county": "I&rsquo;m in Kern regularly. Walkthroughs usually land within the week, Ridgecrest included.",
+        "riverside-county": "Within a few days. We batch southwest-county trips and work around your timing.",
+        "san-bernardino-county": "Within a few days, valley or High Desert. Tell us your timing and we&rsquo;ll route the trip around it.",
+        "kern-county": "We&rsquo;re in Kern regularly. Walkthroughs usually land within the week, Ridgecrest included.",
     }[cslug]
 
     # Service-flavoured extras: the statutory clock on foreclosure pages,
@@ -829,9 +829,9 @@ for (cslug, sslug), d in M.items():
       <p class="small">Not listed? Send the address anyway: the line on a map matters less than the drive.</p>
       <p class="h-kicker" style="margin-top:26px">The ground rules</p>
       <ul class="checks"><li>No repairs, no cleaning out, no showings</li>
-      <li>One walkthrough: me, not an inspector parade</li>
+      <li>One walkthrough, not an inspector parade</li>
       <li>One number, with the math shown</li>
-      <li>We don&rsquo;t assign contracts. If it doesn&rsquo;t close, I buy it myself.</li></ul>
+      <li>We don&rsquo;t assign contracts. If it doesn&rsquo;t close, we buy it ourselves.</li></ul>
     </div>
   </div>
 </section>
@@ -859,7 +859,7 @@ for (cslug, sslug), d in M.items():
     <p class="eyebrow" data-reveal>How it goes</p>
     <h2 class="h-sect" data-reveal>The same three steps, {cshort} timing.</h2>
     <div class="figrow" style="margin-top:36px" data-reveal>
-      <div><p class="h-kicker">01 &middot; The conversation</p><p class="small">Ten minutes on the phone. What the property is and what&rsquo;s happening around it. You talk to me, not a call centre.</p></div>
+      <div><p class="h-kicker">01 &middot; The conversation</p><p class="small">Ten minutes on the phone. What the property is and what&rsquo;s happening around it. You talk to us, not a call centre.</p></div>
       <div><p class="h-kicker">02 &middot; One walkthrough</p><p class="small">{visit} Half an hour, no cleaning or repairs first.</p></div>
       <div><p class="h-kicker">03 &middot; One number</p><p class="small">With the math shown: finished value, work budget, margin, and a closing date you choose.</p></div>
     </div>
@@ -884,7 +884,7 @@ for (cslug, sslug), d in M.items():
   </div>
 </section>
 
-{cta(f"Have a house in {cshort}?", "Send the address and I'll come look at it myself.")}
+{cta(f"Have a house in {cshort}?", "Send the address and we'll come look at it in person.")}
 """))
 
 # ══════════════════════════════════════════════ HOW WE'VE HELPED
@@ -993,7 +993,7 @@ P.append(dict(
   </div>
 </section>
 
-{cta("In the middle of something like this?", "Tell me the situation. The first conversation is about your options, not our offer.")}
+{cta("In the middle of something like this?", "Tell us the situation. The first conversation is about your options, not our offer.")}
 """))
 
 # ══════════════════════════════════════════════ LEGAL
@@ -1093,7 +1093,7 @@ P.append(dict(
     <p class="small" style="margin-top:34px">These guides are general information, not legal, tax or financial advice. For advice on your situation, talk to a licensed professional, and for foreclosure, a HUD-approved housing counsellor is free.</p>
   </div>
 </section>
-{cta("Rather just talk it through?", "Call me directly, or send the address and I'll come look at it myself.")}
+{cta("Rather just talk it through?", "Call us directly, or send the address and we'll come look at it in person.")}
 """))
 
 RES_TRAIL = [("/resources/", "Resources")]
@@ -1173,7 +1173,7 @@ P.append(dict(
     <p class="small" style="margin-top:34px">Sources: Civil Code &sect;&sect;2924, 2924c (reinstatement), 2924f (sale notice), 2924m (SB&nbsp;1079) and &sect;2923.7 (single point of contact), at <a href="https://leginfo.legislature.ca.gov" rel="noopener">leginfo.legislature.ca.gov</a>. Checked {CHECKED}. This is general information, not legal advice. HARDT is not a foreclosure consultant, charges no fees, and buys property only as a principal.</p>
   </div>
 </section>
-{cta("Want the straight version for your situation?", "No fees, no pressure, and if selling isn't your best move I'll say so.", href="/stop-foreclosure/", label="Foreclosure options")}
+{cta("Want the straight version for your situation?", "No fees, no pressure, and if selling isn't your best move we'll say so.", href="/stop-foreclosure/", label="Foreclosure options")}
 """))
 
 P.append(dict(
@@ -1313,25 +1313,25 @@ P.append(dict(
 # ══════════════════════════════════════════════ THANK YOU
 P.append(dict(
     url="/thank-you/", noindex=True,
-    title="Thanks, I'll Be in Touch | HARDT",
+    title="Thanks, We'll Be in Touch | HARDT",
     desc="Your details are in. Here is exactly what happens next, who calls you, and how quickly.",
     body=f"""
 <section class="band band--tight">
   <div class="shell shell--narrow">
     <p class="eyebrow" data-reveal>Got it</p>
-    <h1 class="h-sect" data-reveal>Thanks. I&rsquo;ve got your address and I&rsquo;ll be in touch shortly.</h1>
+    <h1 class="h-sect" data-reveal>Thanks. We&rsquo;ve got your address and we&rsquo;ll be in touch shortly.</h1>
     <p class="lede" data-reveal>Here&rsquo;s exactly what happens next, so you&rsquo;re not left wondering.</p>
   </div>
 </section>
 <section class="band band--tight paper">
   <div class="shell">
     <div class="grid grid--3">
-      <div data-reveal><span class="step__n">First</span><h2 class="h-card">I call or text you</h2><p>Within 15 minutes between 8am and 6pm. Later than that, first thing next morning. It&rsquo;s me, not an assistant, not a call centre.</p></div>
-      <div data-reveal data-reveal-delay="90"><span class="step__n">Then</span><h2 class="h-card">We talk it through</h2><p>Ten minutes about the house and the situation. If a cash sale isn&rsquo;t your best move, I&rsquo;ll say so on that call.</p></div>
+      <div data-reveal><span class="step__n">First</span><h2 class="h-card">We call or text you</h2><p>Within 15 minutes between 8am and 6pm. Later than that, first thing next morning. It&rsquo;s a decision-maker, not an assistant, not a call centre.</p></div>
+      <div data-reveal data-reveal-delay="90"><span class="step__n">Then</span><h2 class="h-card">We talk it through</h2><p>Ten minutes about the house and the situation. If a cash sale isn&rsquo;t your best move, we&rsquo;ll say so on that call.</p></div>
       <div data-reveal data-reveal-delay="180"><span class="step__n">If it fits</span><h2 class="h-card">One walkthrough</h2><p>Half an hour, at a time that suits you. Don&rsquo;t clean, fix or move anything. Then a number with the math shown.</p></div>
     </div>
     <hr class="rule" style="margin:48px 0 36px">
-    <p style="font-size:1.06rem"><strong>Need me sooner?</strong> Call or text {TEL}, which reaches me directly.</p>
+    <p style="font-size:1.06rem"><strong>Need us sooner?</strong> Call or text {TEL}, which reaches us directly.</p>
     <p class="serif" style="font-size:1.4rem;color:var(--bronze-ink);margin-top:30px">Every situation has a way forward.</p>
     <div class="btnrow"><a class="btn btn--ghost" href="/">Back to the site</a></div>
   </div>
