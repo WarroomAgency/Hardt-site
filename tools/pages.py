@@ -995,7 +995,6 @@ P.append(dict(
 
 {cta("In the middle of something like this?", "Tell me the situation. The first conversation is about your options, not our offer.")}
 """))
-"""))
 
 # ══════════════════════════════════════════════ LEGAL
 LEGAL = {
