@@ -147,10 +147,10 @@ P.append(dict(
   <div class="shell split">
     <div>
       <p class="eyebrow" data-reveal>Who you&rsquo;re dealing with</p>
-      <h2 class="h-sect" data-reveal>The name on the company is my name.</h2>
-      <p data-reveal style="margin-top:22px">Through my twenties I chased an Olympic dream in BMX racing. Real estate started as a detour: a way to buy the time and money to keep racing. What I found instead was the thing I&rsquo;d actually been missing: purpose, impact, and people.</p>
-      <p data-reveal>I also found a corner of this business that nobody regulates, where distressed homeowners don&rsquo;t know what their options are, what questions to ask, or who to ask them to. I thought there could be a better way to do it.</p>
-      <div class="btnrow"><a class="btn btn--ghost" href="/about/">More about Peter</a></div>
+      <h2 class="h-sect" data-reveal>Founder&#8209;led, with a team behind every deal.</h2>
+      <p data-reveal style="margin-top:22px">HARDT started with our founder, Peter: a BMX racer who came into real estate looking for time and money to keep chasing an Olympic dream, and found what he&rsquo;d actually been missing instead: purpose, impact, and people.</p>
+      <p data-reveal>He also found a corner of this business that nobody regulates, where distressed homeowners don&rsquo;t know their options, the right questions, or who to ask. We built HARDT to be the better way: his eyes on every house, and a team behind him that gets it done.</p>
+      <div class="btnrow"><a class="btn btn--ghost" href="/about/">About us</a></div>
     </div>
     <div data-reveal>{pic("portrait","Peter Eberhardt, founder of HARDT","media media--4x5",tag="Portrait to be shot",w=900,h=1150)}</div>
   </div>
@@ -384,17 +384,17 @@ P.append(dict(
 
 # ══════════════════════════════════════════════ ABOUT
 P.append(dict(
-    url="/about/", active="/about/", ogtype="profile",
-    trail=[("/about/", "About Peter")],
-    title="About Peter Eberhardt, Founder | HARDT",
-    desc="HARDT is founder-led. Peter Eberhardt buys, renovates and rebuilds houses across Southern California, and refuses to take advantage of people having a hard year.",
+    url="/about/", active="/about/",
+    trail=[("/about/", "About us")],
+    title="About Us: The Team Behind HARDT | Southern California",
+    desc="HARDT is a founder-led team that buys, renovates and rebuilds houses across Southern California, and refuses to take advantage of people having a hard year.",
     body=f"""
 <section class="band band--tight">
   <div class="shell split">
     <div>
-      <p class="eyebrow" data-reveal>Who you&rsquo;re dealing with</p>
-      <h1 class="h-sect" data-reveal>The name on the company is my name.</h1>
-      <p class="lede" data-reveal>Peter Eberhardt &middot; Founder, HARDT &middot; Southern California</p>
+      <p class="eyebrow" data-reveal>About us</p>
+      <h1 class="h-sect" data-reveal>A team built around one promise.</h1>
+      <p class="lede" data-reveal>A straight answer, an honest number, and every option on the table. Everything about how we work, from who answers the phone to how the number is built, exists to keep that promise.</p>
     </div>
     <div data-reveal>{pic("portrait","Peter Eberhardt, founder of HARDT","media media--4x5",tag="Portrait to be shot",eager=True,w=900,h=1150)}</div>
   </div>
@@ -402,12 +402,24 @@ P.append(dict(
 
 <section class="band band--tight paper">
   <div class="shell shell--narrow">
-    <p data-reveal>Through my twenties I chased an Olympic dream in the sport of BMX racing. Getting into real estate started out as a short detour from that dream: a tool that would give me more time and money to chase the Olympic path.</p>
+    <p class="h-kicker" data-reveal>Who we are</p>
+    <div data-reveal>
+      <p style="margin-top:14px">HARDT is a founder-led team. Peter walks the houses and stands behind every number. Behind him sit the people who keep a sale moving: operations support for the paperwork and scheduling, the local subcontractor crews who do the renovation work, and the title and escrow partners who get transactions closed cleanly.</p>
+      <p>Small on purpose. Every house we buy is one we have to renovate ourselves, so there&rsquo;s no acquisitions floor working a script and no lead list being passed around. The person who saw your house is in the room when the offer is built.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tight">
+  <div class="shell shell--narrow">
+    <p class="h-kicker" data-reveal>The founder&rsquo;s story</p>
+    <p data-reveal style="margin-top:14px">Through my twenties I chased an Olympic dream in the sport of BMX racing. Getting into real estate started out as a short detour from that dream: a tool that would give me more time and money to chase the Olympic path.</p>
     <p data-reveal>I realised fairly quickly that I was missing much more than time and money. I was missing purpose, impact, and relationships.</p>
     <p data-reveal>Getting into real estate, I also discovered how unregulated the space is where distressed homes get bought and sold. I watched homeowners in situations where they didn&rsquo;t know what all their options were, didn&rsquo;t know the right questions to ask, and didn&rsquo;t know who to ask them to.</p>
     <p data-reveal>I wondered whether there could be a better way. A better service. A better impact: something that could actually get a homeowner out of the situation they were in and show them a way forward to the next chapter.</p>
     <p data-reveal>That&rsquo;s what HARDT is. We refuse to take advantage of homeowners, and we believe every situation has a way forward.</p>
     <p class="serif" style="font-size:1.4rem;color:var(--bronze-ink);margin-top:32px" data-reveal>Every situation has a way forward.</p>
+    <p class="small" data-reveal style="margin-top:10px">Peter Eberhardt &middot; Founder</p>
   </div>
 </section>
 

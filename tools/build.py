@@ -133,7 +133,7 @@ def head(p):
 
 def header(active=""):
     nav = [("/how-it-works/", "How it works"), ("/what-we-buy/", "What we buy"),
-           ("/areas/", "Where we buy"), ("/resources/", "Resources"), ("/about/", "About Peter")]
+           ("/areas/", "Where we buy"), ("/resources/", "Resources"), ("/about/", "About us")]
     def _a(u, t):
         cur = ' aria-current="page"' if u == active else ''
         return f'<a href="{u}"{cur}>{t}</a>'
@@ -189,7 +189,7 @@ def footer():
       <div>
         <p class="foot-h">Company</p>
         <ul class="foot-list">
-          <li><a href="/about/">About Peter</a></li><li><a href="/how-it-works/">How it works</a></li>
+          <li><a href="/about/">About us</a></li><li><a href="/how-it-works/">How it works</a></li>
           <li><a href="/what-we-buy/">What we buy</a></li><li><a href="/how-weve-helped/">How we&rsquo;ve helped</a></li>
           <li><a href="/resources/">Resources</a></li><li><a href="/contact/">Contact</a></li>
         </ul>
