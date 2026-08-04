@@ -50,7 +50,7 @@ P.append(dict(
     body=f"""
 <section class="hero hero--art" data-hero>
   <div class="hero__bg">{hero_img()}</div>
-  <div class="shell" style="padding-block:clamp(66px,11vw,132px) clamp(56px,8vw,96px)">
+  <div class="shell">
     <p class="eyebrow">San&nbsp;Diego &middot; Riverside &middot; San&nbsp;Bernardino &middot; Kern</p>
     <h1 class="h-hero">Sell your house as&#8209;is, anywhere in Southern California.</h1>
     <p class="hero__promise">One walkthrough. One honest number. And every option on the table, including the ones that don&rsquo;t involve me.</p>
