@@ -87,7 +87,9 @@ small text. **Do not "simplify" them back to one bronze** — that reintroduces 
 failure. The logo hairline stays exactly `#8B7355`.
 
 **The 85/15 rule.** Cream leads, charcoal frames the one moment that matters. If
-a page is more than about a third dark, it's drifting. The homepage runs 17%.
+a page is more than about a third dark, it's drifting. The homepage runs 30%
+after Peter asked for more colour balance — that's near the ceiling, so new dark
+bands should replace existing ones rather than add to them.
 
 **The serif rule.** `Source Serif 4 Italic` marks exactly **one** line per page —
 the warmest sentence on the surface. Never headlines, never body copy, never
@@ -188,6 +190,19 @@ Do not write copy implying a Bakersfield office.
 
 ---
 
+## Working with the zip handoff
+
+Claude can read this repo but cannot push to it, so builds arrive as a zip
+that gets unzipped over `~/Downloads/hardt-site` and pushed manually.
+
+Two things that have bitten us:
+
+- **Unzip from Terminal, not Finder.** macOS Archive Utility silently drops
+  the `.git` directory, which produces `src refspec main does not match any`
+  with no useful explanation. `unzip -q hardt-site.zip` keeps it.
+- **Upstream tracking** is written into `.git/config` in the zip now. If a
+  future archive ever loses it, `git push -u origin main` restores it.
+
 ## Deploy
 
 Netlify, repo root, no build command. `netlify.toml` sets headers, HSTS, cache
@@ -199,14 +214,31 @@ default and submissions pile up silently.
 
 ---
 
+## How pages are generated
+
+**Do not hand-edit the HTML.** Every page is generated:
+
+```bash
+python3 tools/pages.py      # content -> 18 pages
+python3 tools/make_images.py # placeholder art (delete once real photos land)
+```
+
+`tools/build.py` holds the shell — head, header, footer, breadcrumbs, schema
+graph. `tools/pages.py` holds the content. Editing `index.html` directly means
+your change is gone on the next run, and the shared chrome silently drifts.
+
+Interaction lives in `assets/site.js` — reveals, mobile drawer, before/after
+slider, accordions, sticky call bar. Vanilla, no dependencies. Everything must
+keep working with JS disabled.
+
 ## State
 
-Built: homepage, thank-you page, design system, fonts, scaffolding.
+Built: 18 pages — home, how it works, what we buy, where we buy, about, contact,
+four service hubs, four county hubs, three legal pages, thank-you. No 404s.
 
-Not built: `/how-it-works/`, `/about/`, `/contact/`, `/what-we-buy/`, four
-service hubs, four county hubs, sixteen matrix pages, legal pages. **The header
-and footer already link to these, so they 404 until built** — fine on a preview
-URL, not on the live domain.
+Not built: the sixteen county×service matrix pages, and the local-research layer
+on the county hubs (recorder, probate court, transfer tax, housing stock). The
+county pages are structurally complete but thin until that research is done.
 
 Blocking: real phone number (canonical NAP, blocks GBP and all citations),
 reconciled numbers, LA County yes/no, hours conflict, founder photography,
