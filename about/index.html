@@ -22,7 +22,7 @@
 <link rel="preload" href="/assets/fonts/red-hat-display-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css?v=aa82d71a">
-<link rel="stylesheet" href="/assets/site.css?v=51427849">
+<link rel="stylesheet" href="/assets/site.css?v=d19eb23e">
 
 </head>
 <body>
@@ -67,6 +67,18 @@
       <p style="margin-top:14px">HARDT is a founder-led team. Peter walks the houses and stands behind every number. Behind him sit the people who keep a sale moving: operations support for the paperwork and scheduling, the local subcontractor crews who do the renovation work, and the title and escrow partners who get transactions closed cleanly.</p>
       <p>Small on purpose. Every house we buy is one we have to renovate ourselves, so there&rsquo;s no acquisitions floor working a script and no lead list being passed around. The person who saw your house is in the room when the offer is built.</p>
     </div>
+    <div class="grid grid--2" style="margin-top:38px;max-width:640px">
+      <div class="team-card" data-reveal>
+        <div class="shot"><div class="shot__ph"><span>Photo of Peter Eberhardt to come</span></div></div>
+        <p class="h-card" style="margin:16px 0 2px">Peter Eberhardt</p>
+        <p class="small" style="margin:0">Founder. Walks every house, builds every offer, and answers for both.</p>
+      </div>
+      <div class="team-card" data-reveal data-reveal-delay="80">
+        <div class="shot"><div class="shot__ph"><span>Photo of Frances to come</span></div></div>
+        <p class="h-card" style="margin:16px 0 2px">Frances</p>
+        <p class="small" style="margin:0">Operations. Keeps the paperwork, scheduling and escrow moving on every purchase.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -109,7 +121,12 @@
 <section class="band band--tight"><div class="shell">
   <div class="cta-strip" data-reveal>
     <div><h2>Want to talk it through?</h2><p>Call us directly, or send the address and we'll come look at it.</p></div>
-    <a class="btn btn--primary btn--lg" href="/contact/">Get my offer</a>
+    <form class="lead-mini" action="/contact/" method="get">
+      <label class="sr-only" for="cta-address">Property address</label>
+      <input type="text" id="cta-address" name="address" placeholder="Property address"
+        autocomplete="street-address">
+      <button class="btn btn--primary btn--lg" type="submit">Get my offer</button>
+    </form>
   </div></div></section>
 </main><footer class="site-foot">
   <div class="shell">
@@ -152,7 +169,7 @@
   <a class="btn btn--ghost" href="tel:+17074896236">Call</a>
   <a class="btn btn--primary" href="/contact/">Get my offer</a>
 </div>
-<script src="/assets/site.js?v=d33c0ae5" defer></script>
+<script src="/assets/site.js?v=f4fd8aa5" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hardtrealestate.com/#org","name":"HARDT","legalName":"Fluid Developments LLC","alternateName":"HARDT","url":"https://hardtrealestate.com/","logo":"https://hardtrealestate.com/assets/img/mark.svg","foundingDate":"2021","slogan":"Every situation has a way forward.","description":"Founder-led home buying and renovation across Southern California. HARDT buys houses as-is directly from owners, as a principal, without assigning contracts.","founder":{"@id":"https://hardtrealestate.com/#peter"},"areaServed":[{"@type":"AdministrativeArea","name":"San Diego County, California"},{"@type":"AdministrativeArea","name":"Riverside County, California"},{"@type":"AdministrativeArea","name":"San Bernardino County, California"},{"@type":"AdministrativeArea","name":"Kern County, California"}],"contactPoint":{"@type":"ContactPoint","telephone":"+1-707-489-6236","contactType":"sales","areaServed":"US-CA","availableLanguage":"English"}},{"@type":"LocalBusiness","@id":"https://hardtrealestate.com/#business","name":"HARDT","parentOrganization":{"@id":"https://hardtrealestate.com/#org"},"url":"https://hardtrealestate.com/","image":"https://hardtrealestate.com/assets/img/og-home.jpg","telephone":"+1-707-489-6236","email":"peter@hardtrealestate.com","priceRange":"$$","address":{"@type":"PostalAddress","addressRegion":"CA","addressCountry":"US"},"areaServed":[{"@type":"AdministrativeArea","name":"San Diego County, California"},{"@type":"AdministrativeArea","name":"Riverside County, California"},{"@type":"AdministrativeArea","name":"San Bernardino County, California"},{"@type":"AdministrativeArea","name":"Kern County, California"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"}]},{"@type":"Person","@id":"https://hardtrealestate.com/#peter","name":"Peter Eberhardt","jobTitle":"Founder","worksFor":{"@id":"https://hardtrealestate.com/#org"},"knowsAbout":["Buying houses as-is","Probate and inherited property sales in California","Pre-foreclosure and Notice of Default","Tenant-occupied property sales","Residential renovation"]},{"@type":"WebSite","@id":"https://hardtrealestate.com/#site","url":"https://hardtrealestate.com/","name":"HARDT","publisher":{"@id":"https://hardtrealestate.com/#org"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://hardtrealestate.com/about/#webpage","url":"https://hardtrealestate.com/about/","name":"About Us: The Team Behind HARDT | Southern California","description":"HARDT is a founder-led team that buys, renovates and rebuilds houses across Southern California, and refuses to take advantage of people having a hard year.","isPartOf":{"@id":"https://hardtrealestate.com/#site"},"about":{"@id":"https://hardtrealestate.com/#org"}},{"@type":"BreadcrumbList","@id":"https://hardtrealestate.com/about/#crumbs","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hardtrealestate.com/"},{"@type":"ListItem","position":2,"name":"About us","item":"https://hardtrealestate.com/about/"}]}]}</script>
 </body>
 </html>

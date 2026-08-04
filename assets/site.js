@@ -168,6 +168,20 @@
   }, { passive: true });
   onScroll();
 
+  /* ---------- contact form: carry the address from mini-forms
+     The hero and CTA-band mini forms GET here with ?address=…, so the
+     visitor's first answer survives the page change and the form picks
+     up at question two. Without JS the field is simply empty.       */
+  var addrField = document.getElementById('address');
+  if (addrField && 'URLSearchParams' in window) {
+    var preAddr = new URLSearchParams(window.location.search).get('address');
+    if (preAddr && !addrField.value) {
+      addrField.value = preAddr;
+      var sit = document.getElementById('situation');
+      if (sit) sit.focus();
+    }
+  }
+
   /* ---------- form: honest inline validation -----------------
      No red-alarm styling until the field has actually been left
      in a bad state. Nobody needs to be shouted at here.       */

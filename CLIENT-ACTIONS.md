@@ -131,3 +131,13 @@ reviews beats zero, and the GBP rename preserves them.
      their OK — want me to draft the ask?
    - Security note: your intake document contains live passwords
      (Namecheap, BiggerPockets). Rotate both; intake docs get shared.
+
+
+**10. Team section details (About page).** Frances is now on the About
+page as "Frances — Operations" with a placeholder card. Needed to finish
+it: her full name as she wants it published, her preferred title, a
+yes/no on the two-line description we drafted ("Keeps the paperwork,
+scheduling and escrow moving on every purchase"), and both headshots.
+Text the two headshot files over and they go straight into the new
+photos-in/ slots (team-peter, team-frances). The dark-studio shots work
+as stopgaps; front-of-project shots replace them whenever they're taken.

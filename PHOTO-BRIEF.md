@@ -35,6 +35,8 @@ There is no "all or nothing" moment.
 | `photos-in/county-san-bernardino.jpg` | San Bernardino county pages | 4:3 | " |
 | `photos-in/county-kern.jpg` | Kern county pages | 4:3 | " |
 | `photos-in/og-home.jpg` | Social share card | 1200×630 | What people see when the link is pasted into a text. |
+| `photos-in/team-peter.jpg` | About team card | 1:1 | Peter's headshot. The studio shot works as a stopgap. |
+| `photos-in/team-frances.jpg` | About team card | 1:1 | Frances's headshot. Same: studio shot fine for now. |
 
 Phone photos are fine. A recent iPhone shot in good light beats a mediocre
 stock image, and it's real, which is the entire point of the brand.

@@ -304,10 +304,23 @@ def faq_block(items, dark=False):
 
 
 def cta(head_, sub, label="Get my offer", href="/contact/"):
+    """End-of-page CTA band. When it points at the contact page it
+    renders an address-first mini form (GET) instead of a button, so
+    every page ends with the funnel's first field rather than a link to
+    it. The contact page reads ?address= and continues from there."""
+    if href == "/contact/":
+        action = f"""<form class="lead-mini" action="/contact/" method="get">
+      <label class="sr-only" for="cta-address">Property address</label>
+      <input type="text" id="cta-address" name="address" placeholder="Property address"
+        autocomplete="street-address">
+      <button class="btn btn--primary btn--lg" type="submit">{label}</button>
+    </form>"""
+    else:
+        action = f'<a class="btn btn--primary btn--lg" href="{href}">{label}</a>'
     return f"""<section class="band band--tight"><div class="shell">
   <div class="cta-strip" data-reveal>
     <div><h2>{head_}</h2><p>{sub}</p></div>
-    <a class="btn btn--primary btn--lg" href="{href}">{label}</a>
+    {action}
   </div></div></section>"""
 
 

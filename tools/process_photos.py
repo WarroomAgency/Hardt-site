@@ -53,6 +53,11 @@ SLOTS = {
     "county-san-bernardino": (4 / 3,   1000),
     "county-kern":           (4 / 3,   1000),
     "og-home":               (1200 / 630, 1200),
+    # Team headshots — square crop for the About team cards. Peter and
+    # Frances both have studio headshots (dark background, off the brand
+    # spec) that serve as stopgaps until front-of-project shots exist.
+    "team-peter":            (1 / 1,    800),
+    "team-frances":          (1 / 1,    800),
 }
 
 

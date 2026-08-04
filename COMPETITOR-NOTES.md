@@ -1,9 +1,16 @@
 # Competitor notes — August 2026
 
 The seven names from Peter's intake, what each does well and badly, and
-what HARDT should copy, counter, or ignore. Written for the conversation
-with Peter; his own likes/dislikes are not in the intake and are asked
-for in CLIENT-ACTIONS.md item 7.
+what HARDT should copy, counter, or ignore. Peter's own read (via Michael, Aug 2026, verbatim): "He is a
+wholesaler but I liked the simplicity, how all the faces and bios where
+on there, the page organization etc. another wholesaler is
+sellersnewday." Three takeaways: (1) what he values is simplicity,
+faces-and-bios, and page organization — now implemented (team cards on
+About, address-first funnel forms); (2) he identifies both HHG and
+Sellers New Day as wholesalers, which makes "we don't assign contracts"
+the direct counter to the two sites he rates most; (3) he wants Frances,
+his VA, on the site as a team member — done, pending her details and
+headshot.
 
 Two of the seven could not be confidently identified online: "Central
 Valley Home Buyers" (probably Central Valley REI, covered below) and

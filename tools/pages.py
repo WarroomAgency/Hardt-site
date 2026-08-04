@@ -20,6 +20,16 @@ def _srcset(slot, ext):
     return f"{one} 1x, {two} 2x" if os.path.exists(two.lstrip("/")) else one
 
 
+def team_shot(slot, name):
+    """Square team headshot: real photo once processed, honest
+    placeholder otherwise — never stock, never an avatar library."""
+    import os
+    if os.path.exists(f"assets/img/{slot}.webp"):
+        return pic(slot, f"{name}, HARDT", "media", w=800, h=800)
+    return ('<div class="shot"><div class="shot__ph">'
+            f'<span>Photo of {name} to come</span></div></div>')
+
+
 def hero_img():
     """Hero art is positioned by .hero__bg itself, so no .media wrapper."""
     import os
@@ -55,9 +65,14 @@ P.append(dict(
     <h1 class="h-hero">Sell your house as&#8209;is, anywhere in Southern California.</h1>
     <p class="hero__promise">One walkthrough. One honest number. And every option on the table, including the ones that don&rsquo;t involve us.</p>
     <p class="hero__note">No repairs, no cleaning out, no showings. Tenants in place is fine. So is a house full of forty years of somebody&rsquo;s life.</p>
-    <div class="btnrow">
-      <a class="btn btn--primary btn--lg" href="/contact/">Get my offer</a>
-      <a class="btn btn--ghost btn--lg" href="/how-it-works/">See how it works</a>
+    <form class="lead-mini" action="/contact/" method="get">
+      <label class="sr-only" for="hero-address">Property address</label>
+      <input type="text" id="hero-address" name="address" placeholder="Property address"
+        autocomplete="street-address">
+      <button class="btn btn--primary btn--lg" type="submit">Get my offer</button>
+    </form>
+    <div class="btnrow" style="margin-top:18px">
+      <a class="btn btn--ghost" href="/how-it-works/">See how it works</a>
     </div>
     <div class="trust">
       <div class="trust__i"><span class="trust__k">Since 2021</span><span class="trust__v">Buying and renovating across Southern California</span></div>
@@ -407,6 +422,18 @@ P.append(dict(
       <p style="margin-top:14px">HARDT is a founder-led team. Peter walks the houses and stands behind every number. Behind him sit the people who keep a sale moving: operations support for the paperwork and scheduling, the local subcontractor crews who do the renovation work, and the title and escrow partners who get transactions closed cleanly.</p>
       <p>Small on purpose. Every house we buy is one we have to renovate ourselves, so there&rsquo;s no acquisitions floor working a script and no lead list being passed around. The person who saw your house is in the room when the offer is built.</p>
     </div>
+    <div class="grid grid--2" style="margin-top:38px;max-width:640px">
+      <div class="team-card" data-reveal>
+        {team_shot("team-peter", "Peter Eberhardt")}
+        <p class="h-card" style="margin:16px 0 2px">Peter Eberhardt</p>
+        <p class="small" style="margin:0">Founder. Walks every house, builds every offer, and answers for both.</p>
+      </div>
+      <div class="team-card" data-reveal data-reveal-delay="80">
+        {team_shot("team-frances", "Frances")}
+        <p class="h-card" style="margin:16px 0 2px">Frances</p>
+        <p class="small" style="margin:0">Operations. Keeps the paperwork, scheduling and escrow moving on every purchase.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -492,7 +519,7 @@ P.append(dict(
       <div class="field"><label for="notes">Anything else? <span style="font-weight:400;color:var(--gray)">(optional)</span></label>
         <textarea id="notes" name="Notes" rows="3"></textarea></div>
       <button class="btn btn--primary btn--lg" type="submit" style="width:100%;margin-top:6px">Get my offer</button>
-      <p class="small" style="margin:16px 0 0;text-align:center">No obligation. We never sell your information.</p>
+      <p class="small" style="margin:16px 0 0;text-align:center">No obligation, and we never sell your information. Sending this means we may call or text you about your property; tell us to stop at any time and we will.</p>
     </form>
   </div>
 </section>
