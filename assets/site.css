@@ -199,6 +199,14 @@ a:hover{color:var(--charcoal)}
 }
 .hero__note{margin-top:26px;font-size:.94rem;color:var(--gray);max-width:52ch}
 
+/* Secondary hero path. A ghost button here competed with the primary
+   CTA for the same attention; a text link offers the route without
+   arguing with the form next to it. */
+.hero__alt{margin:18px 0 0;font-size:.95rem}
+.hero__alt a{color:inherit;text-decoration:underline;text-underline-offset:3px;
+  text-decoration-color:rgba(240,235,228,.4)}
+.hero__alt a:hover{text-decoration-color:currentColor}
+
 /* Trust strip — only things that are true and documented.
    A contained panel rather than bare text: over photography, loose
    hairline columns read as clutter. The panel gives the four claims
@@ -223,6 +231,11 @@ a:hover{color:var(--charcoal)}
   .trust__i:nth-last-child(-n+2){border-bottom:0}
 }
 @media(max-width:420px){.trust__i{padding:16px 16px 18px}.trust__k{font-size:1.16rem}}
+
+/* Standalone trust band. Lifted out of the hero, where it was the
+   seventh competing block and sat below the fold anyway: on cream it
+   spans the shell and is far more readable than it was over photo. */
+.trust--band{max-width:none;margin-top:0}
 
 /* ============================================================
    CARDS

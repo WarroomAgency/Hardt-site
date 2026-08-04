@@ -124,6 +124,7 @@ def head(p):
 <link rel="preload" href="/assets/fonts/dm-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{rev("/assets/fonts.css")}">
 <link rel="stylesheet" href="{rev("/assets/site.css")}">
+<noscript><style>[data-reveal]{{opacity:1!important;transform:none!important}}</style></noscript>
 {extra}
 </head>
 <body>

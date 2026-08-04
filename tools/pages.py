@@ -64,17 +64,19 @@ P.append(dict(
     <p class="eyebrow">San&nbsp;Diego &middot; Riverside &middot; San&nbsp;Bernardino &middot; Kern</p>
     <h1 class="h-hero">Sell your house as&#8209;is, anywhere in Southern California.</h1>
     <p class="hero__promise">One walkthrough. One honest number. And every option on the table, including the ones that don&rsquo;t involve us.</p>
-    <p class="hero__note">No repairs, no cleaning out, no showings. Tenants in place is fine. So is a house full of forty years of somebody&rsquo;s life.</p>
     <form class="lead-mini" action="/contact/" method="get">
       <label class="sr-only" for="hero-address">Property address</label>
       <input type="text" id="hero-address" name="address" placeholder="Property address"
         autocomplete="street-address">
       <button class="btn btn--primary btn--lg" type="submit">Get my offer</button>
     </form>
-    <div class="btnrow" style="margin-top:18px">
-      <a class="btn btn--ghost" href="/how-it-works/">See how it works</a>
-    </div>
-    <div class="trust">
+    <p class="hero__alt"><a href="/how-it-works/">Or see how the process works first</a></p>
+  </div>
+</section>
+
+<section class="band band--tight">
+  <div class="shell">
+    <div class="trust trust--band" data-reveal>
       <div class="trust__i"><span class="trust__k">Since 2021</span><span class="trust__v">Buying and renovating across Southern California</span></div>
       <div class="trust__i"><span class="trust__k">Four counties</span><span class="trust__v">San Diego, Riverside, San Bernardino and Kern</span></div>
       <div class="trust__i"><span class="trust__k">~14 days</span><span class="trust__v">Typical time from first call to close</span></div>
