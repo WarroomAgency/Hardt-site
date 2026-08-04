@@ -33,9 +33,13 @@ One word answer is fine: in or out.
 and the schema currently say Mon–Sat 8–6. Whatever you pick, the Google
 Business Profile has to match it exactly — tell me which is true.
 
-**4. DBA + Blair.** The DBA (now looking like plain "HARDT" rather than
-"HARDT Real Estate") still needs filing (San
-Diego County Clerk, $54, then the newspaper publication run). And Blair
+**4. DBA + Blair.** DONE on the filing: "HARDT" is filed. Two tails
+remain. First, the publication run: California requires the FBN to be
+published in an approved newspaper in San Diego County once a week for
+four consecutive weeks, starting within 30 days of filing, then an
+affidavit of publication filed with the County Clerk — the DBA is not
+legally complete until that affidavit lands, and it expires in five
+years (calendar the renewal). And Blair
 should look at two things before we go loud: the /stop-foreclosure/
 page and the footer line about buying as a principal. Both are written
 conservatively but he should bless them. GBP work is parked until the
