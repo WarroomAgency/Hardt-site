@@ -167,8 +167,8 @@ python3 -m http.server 8100 &
 
 Do not invent these. They come from Peter's intake.
 
-**Counties and cities.** San Diego (El Cajon, Chula Vista, Santee, La Mesa, Lemon
-Grove, National City, Escondido, Ramona, San Diego) · Riverside (Riverside,
+**Counties and cities.** San Diego (San Diego, Chula Vista, Escondido, El Cajon,
+La Mesa, Santee, Lemon Grove, National City, Ramona) · Riverside (Riverside,
 Temecula, Murrieta, Perris) · San Bernardino (San Bernardino, Fontana, Rancho
 Cucamonga, Redlands, Highland) · Kern (Bakersfield, Shafter, Wasco, Tehachapi,
 Ridgecrest).
@@ -180,12 +180,15 @@ vacant land · commercial · timeshares · anything where title can't be cleared
 and water damage, inherited and probate, pre-foreclosure and NOD, liens and title
 problems, tenant-occupied, houses full of contents.
 
-**Operations.** Based in El Cajon. Subcontracts all renovation. ~14 days to close.
+**Operations.** Do not publish where Peter is based, or name any city as his
+location — the site speaks in counties only. El Cajon may appear as a city he
+*buys in*, never as a base. Subcontracts all renovation. ~14 days to close.
 Responds within 15 minutes, 8am–6pm. Handles ~50 web leads/month. Every lead goes
 to Peter directly — no call centre, no assistant screening.
 
 **Kern has no map presence.** Google caps a service area at roughly a two-hour
-drive and Bakersfield is ~4h from El Cajon. Kern is covered by the website only.
+drive from where he actually operates, and Bakersfield is well beyond that.
+Kern is covered by the website only.
 Do not write copy implying a Bakersfield office.
 
 ---

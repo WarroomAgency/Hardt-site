@@ -154,7 +154,7 @@ P.append(dict(
   <div class="shell">
     <p class="eyebrow" data-reveal>Where we buy</p>
     <h2 class="h-sect" data-reveal>Four counties, and I drive to all of them.</h2>
-    <p class="lede" data-reveal>Based in El Cajon. Boots on the ground from the border to Bakersfield.</p>
+    <p class="lede" data-reveal>Boots on the ground from the border to Bakersfield &mdash; and I do the walkthrough myself in every one of them.</p>
     <div class="grid grid--4" style="margin-top:42px">
       {"".join(f'''<a class="county" href="/{s}/" data-reveal data-reveal-delay="{i*70}" style="padding:0;overflow:hidden">
         <div class="media media--4x3"><img src="/assets/img/county-{img}.svg" alt="Illustration of {n}" width="1400" height="640" loading="lazy"></div>
@@ -317,13 +317,13 @@ P.append(dict(
     url="/areas/", active="/areas/",
     trail=[("/areas/", "Where we buy")],
     title="Where We Buy — Four Southern California Counties | HARDT",
-    desc="HARDT buys houses across San Diego, Riverside, San Bernardino and Kern counties. Based in El Cajon, with boots on the ground from the border to Bakersfield.",
+    desc="HARDT buys houses across San Diego, Riverside, San Bernardino and Kern counties — from the border up to Bakersfield, with the walkthrough done in person every time.",
     body=f"""
 <section class="band band--tight">
   <div class="shell">
     <p class="eyebrow" data-reveal>Where we buy</p>
     <h1 class="h-sect" data-reveal>Four counties, and I drive to all of them.</h1>
-    <p class="lede" data-reveal>Based in El Cajon. I&rsquo;ll go about four hours for a walkthrough, which covers everything from the border up to Bakersfield.</p>
+    <p class="lede" data-reveal>I&rsquo;ll drive about four hours for a walkthrough, which covers everything from the border up to Bakersfield.</p>
   </div>
 </section>
 
@@ -361,7 +361,7 @@ P.append(dict(
     <div>
       <p class="eyebrow" data-reveal>Who you&rsquo;re dealing with</p>
       <h1 class="h-sect" data-reveal>The name on the company is my name.</h1>
-      <p class="lede" data-reveal>Peter Eberhardt &middot; Founder, HARDT Real Estate &middot; El Cajon, California</p>
+      <p class="lede" data-reveal>Peter Eberhardt &middot; Founder, HARDT Real Estate &middot; Southern California</p>
     </div>
     <div class="media media--4x5" data-reveal>
       <img src="/assets/img/portrait.svg" alt="Placeholder for a portrait of founder Peter Eberhardt" width="900" height="1150">
@@ -398,7 +398,7 @@ P.append(dict(
   <div class="shell shell--narrow">
     <p class="eyebrow" data-reveal>The business</p>
     <h2 class="h-sect" data-reveal>Plainly stated.</h2>
-    <p data-reveal style="margin-top:22px">HARDT Real Estate is a d/b/a of Fluid Developments LLC, based in El Cajon and operating across San Diego, Riverside, San Bernardino and Kern counties since 2021. We buy houses with our own money, renovate them using local subcontractors, and put them back into use.</p>
+    <p data-reveal style="margin-top:22px">HARDT Real Estate is a d/b/a of Fluid Developments LLC, operating across San Diego, Riverside, San Bernardino and Kern counties since 2021. We buy houses with our own money, renovate them using local subcontractors, and put them back into use.</p>
     <p data-reveal>We buy as a principal for our own account. We are not a licensed real estate brokerage, we don&rsquo;t represent buyers or sellers, and we don&rsquo;t give legal, tax or financial advice. When you need that kind of advice &mdash; and in a probate or a foreclosure you often do &mdash; we&rsquo;ll tell you to go get it.</p>
   </div>
 </section>
@@ -461,7 +461,7 @@ P.append(dict(
       <div><p class="h-kicker">Email</p><p><a href="mailto:{EMAIL}">{EMAIL}</a></p><p class="small">Fine for documents and photos.</p></div>
       <div><p class="h-kicker">Hours</p><p>Monday&ndash;Saturday, 8am&ndash;6pm</p><p class="small">Outside those hours I&rsquo;ll reply first thing the next morning.</p></div>
     </div>
-    <p class="small" style="margin-top:28px">HARDT Real Estate &middot; a d/b/a of Fluid Developments LLC &middot; El Cajon, California. We buy across San Diego, Riverside, San Bernardino and Kern counties.</p>
+    <p class="small" style="margin-top:28px">HARDT Real Estate &middot; a d/b/a of Fluid Developments LLC. We buy across San Diego, Riverside, San Bernardino and Kern counties.</p>
   </div>
 </section>
 """))
@@ -593,8 +593,8 @@ for slug, label, longname in SERVICES:
 
 # ══════════════════════════════════════════════ COUNTIES
 CTY = {
- "san-diego-county": ("home county",
-   "This is home. I live in El Cajon, so anything in San Diego County is a short drive and usually a same-week walkthrough.",
+ "san-diego-county": ("our home county",
+   "San Diego County is the heart of where we work. Anything here is a short drive and usually a same-week walkthrough.",
    "Coastal North County, the inland valleys and the East County foothills are three different housing markets wearing one county's name. A 1950s East County ranch and a 1990s Chula Vista tract house need completely different work, and the number reflects that."),
  "riverside-county": ("the corridor",
    "Riverside County runs from the Inland Empire down through the Temecula Valley, and I cover the western and southwestern side of it.",
@@ -603,7 +603,7 @@ CTY = {
    "From the older neighbourhoods of San Bernardino and Redlands out through Fontana, Rancho Cucamonga and Highland.",
    "The housing stock varies enormously by decade here, which matters for what's behind the walls &mdash; galvanised plumbing, aluminium wiring and panels that no longer pass inspection are all common in the older parts of the county."),
  "kern-county": ("the north end",
-   "Bakersfield and the surrounding towns are the northern end of what I cover. It's a four hour drive from El Cajon and I make it regularly.",
+   "Bakersfield and the surrounding towns are the northern end of what we cover. It's a long drive from the southern end of our territory, and I make it regularly.",
    "Kern is where a good deal of our renovation work has been. Prices are lower than the coastal counties, which changes the arithmetic on what's worth doing to a house &mdash; a full renovation that pencils in Chula Vista may not pencil in Wasco, and vice versa."),
 }
 
@@ -695,7 +695,7 @@ LEGAL = {
  "terms": ("Terms of Use", "Terms governing use of the HARDT Real Estate website, including our position as a principal buyer rather than a licensed brokerage.", f"""
 <p>By using this website you agree to these terms.</p>
 <h2 class="h-card" style="margin-top:34px">Who we are</h2>
-<p>HARDT Real Estate is a d/b/a of Fluid Developments LLC, based in El Cajon, California. <strong>We buy property as a principal for our own account.</strong> We are not a licensed real estate brokerage, we do not represent buyers or sellers in transactions, and we do not act as agents for anyone.</p>
+<p>HARDT Real Estate is a d/b/a of Fluid Developments LLC, operating in Southern California. <strong>We buy property as a principal for our own account.</strong> We are not a licensed real estate brokerage, we do not represent buyers or sellers in transactions, and we do not act as agents for anyone.</p>
 <h2 class="h-card" style="margin-top:30px">Not advice</h2>
 <p>Nothing on this site is legal, tax, financial or real estate advice. Content about probate, foreclosure, liens and title is general information and your situation will differ. Consult a qualified attorney, tax professional or HUD-approved housing counsellor about your circumstances.</p>
 <h2 class="h-card" style="margin-top:30px">No offer is made here</h2>

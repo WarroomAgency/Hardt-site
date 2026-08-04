@@ -39,7 +39,7 @@ SERVICES = [
 ]
 COUNTIES = [
     ("san-diego-county",      "San Diego County",      "san-diego",
-     "El Cajon, Chula Vista, Santee, La Mesa, Lemon Grove, National City, Escondido, Ramona and San Diego"),
+     "San Diego, Chula Vista, Escondido, El Cajon, La Mesa, Santee, Lemon Grove, National City and Ramona"),
     ("riverside-county",      "Riverside County",      "riverside",
      "Riverside, Temecula, Murrieta and Perris"),
     ("san-bernardino-county", "San Bernardino County", "san-bernardino",
@@ -164,7 +164,7 @@ def footer():
       </div>
     </div>
     <div class="foot-bottom">
-      <div>&copy; 2026 HARDT Real Estate &middot; a d/b/a of Fluid Developments LLC &middot; El Cajon, CA</div>
+      <div>&copy; 2026 HARDT Real Estate &middot; a d/b/a of Fluid Developments LLC &middot; Southern California</div>
       <div><a href="/privacy/">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms/">Terms</a> &nbsp;&middot;&nbsp; <a href="/accessibility/">Accessibility</a></div>
     </div>
     <p class="small" style="margin-top:26px;max-width:78ch;color:rgba(240,235,228,.38);font-size:.79rem">
@@ -200,8 +200,9 @@ def graph(p):
         "parentOrganization": {"@id": f"{SITE}/#org"}, "url": f"{SITE}/",
         "image": f"{SITE}/assets/img/og-home.svg", "telephone": PHONE_E164, "email": EMAIL,
         "priceRange": "$$",
-        "address": {"@type": "PostalAddress", "addressLocality": "El Cajon",
-                    "addressRegion": "CA", "addressCountry": "US"},
+        # Service-area business: no locality published. The verification address
+        # lives on the Google Business Profile and is hidden there.
+        "address": {"@type": "PostalAddress", "addressRegion": "CA", "addressCountry": "US"},
         "areaServed": [{"@type": "AdministrativeArea", "name": f"{n}, California"} for _, n, _, _ in COUNTIES],
         "openingHoursSpecification": [{"@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
