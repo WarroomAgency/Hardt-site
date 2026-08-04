@@ -126,13 +126,40 @@ P.append(dict(
 
 <section class="band paper">
   <div class="shell">
+    <p class="eyebrow" data-reveal>Recent work</p>
+    <h2 class="h-sect" data-reveal>Houses we bought, fixed, and put back into use.</h2>
+    <p class="lede" data-reveal>Five of the most recent. Photography from each of these is being prepared &mdash; the illustrations below are standing in until it lands.</p>
+    <div class="grid grid--4" style="margin-top:44px">
+      <div class="card" style="padding:0;overflow:hidden" data-reveal>
+        <div class="media media--4x3"><img src="/assets/img/project-1.svg" alt="Illustration of a Bakersfield street" width="1200" height="900" loading="lazy"></div>
+        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Shenandoah Drive</p></div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="70">
+        <div class="media media--4x3"><img src="/assets/img/project-2.svg" alt="Illustration of a Bakersfield street" width="1200" height="900" loading="lazy"></div>
+        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Cale Court</p></div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="140">
+        <div class="media media--4x3"><img src="/assets/img/project-3.svg" alt="Illustration of a Bakersfield street" width="1200" height="900" loading="lazy"></div>
+        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Terrace Way &amp; Huskey Drive</p></div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="210">
+        <div class="media media--4x3"><img src="/assets/img/project-4.svg" alt="Illustration of a Lancaster street" width="1200" height="900" loading="lazy"></div>
+        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Lancaster</p><p style="margin:0">Graphic Street</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="shell">
     <p class="eyebrow" data-reveal>Where we buy</p>
     <h2 class="h-sect" data-reveal>Four counties, and I drive to all of them.</h2>
     <p class="lede" data-reveal>Based in El Cajon. Boots on the ground from the border to Bakersfield.</p>
     <div class="grid grid--4" style="margin-top:42px">
-      {"".join(f'''<a class="county" href="/{s}/" data-reveal data-reveal-delay="{i*70}">
-        <div class="media media--16x9" style="margin:-27px -29px 20px"><img src="/assets/img/county-{img}.svg" alt="" width="1400" height="620" loading="lazy"></div>
-        <p class="county__name">{n}</p><p class="county__cities">{c}</p></a>''' for i,(s,n,img,c) in enumerate(COUNTIES))}
+      {"".join(f'''<a class="county" href="/{s}/" data-reveal data-reveal-delay="{i*70}" style="padding:0;overflow:hidden">
+        <div class="media media--4x3"><img src="/assets/img/county-{img}.svg" alt="Illustration of {n}" width="1400" height="640" loading="lazy"></div>
+        <div style="padding:22px 24px 26px"><p class="county__name">{n}</p><p class="county__cities">{c}</p>
+        <span class="card__link" style="margin-top:14px;display:inline-block">Selling here</span></div></a>''' for i,(s,n,img,c) in enumerate(COUNTIES))}
     </div>
   </div>
 </section>

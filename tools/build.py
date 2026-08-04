@@ -9,12 +9,26 @@ missing canonicals.
 
 Run from the repo root:  python3 tools/build.py
 """
-import os, json, re, html
+import os, json, re, html, hashlib
+
+
+def rev(path):
+    """Content hash appended as a query string.
+
+    Netlify caches /assets/*.css for a week. Without this, a deploy ships new
+    HTML against a stale stylesheet — which is exactly how the hero ended up
+    rendering above the headline instead of behind it.
+    """
+    try:
+        h = hashlib.md5(open(path.lstrip("/"), "rb").read()).hexdigest()[:8]
+        return f"{path}?v={h}"
+    except OSError:
+        return path
 
 SITE = "https://hardtrealestate.com"
-PHONE_DISPLAY = "(619) 000-0000"          # PLACEHOLDER — see BUILD-NOTES.md
-PHONE_E164 = "+1-619-000-0000"
-PHONE_HREF = "tel:+16190000000"
+PHONE_DISPLAY = "(707) 489-6236"
+PHONE_E164 = "+1-707-489-6236"
+PHONE_HREF = "tel:+17074896236"
 EMAIL = "peter@hardtrealestate.com"
 
 SERVICES = [
@@ -72,8 +86,8 @@ def head(p):
 <meta name="theme-color" content="#1A1A1A">
 <link rel="preload" href="/assets/fonts/red-hat-display-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/fonts.css">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="{rev("/assets/fonts.css")}">
+<link rel="stylesheet" href="{rev("/assets/site.css")}">
 {extra}
 </head>
 <body>
@@ -163,7 +177,7 @@ def footer():
   <a class="btn btn--ghost" href="{PHONE_HREF}">Call</a>
   <a class="btn btn--primary" href="/contact/">Get my offer</a>
 </div>
-<script src="/assets/site.js" defer></script>
+<script src="{rev("/assets/site.js")}" defer></script>
 """
 
 
