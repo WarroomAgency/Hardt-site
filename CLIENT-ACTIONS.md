@@ -98,3 +98,36 @@ real situations from your intake, names withheld: the foreclosure save
    - Optional but powerful: a 60-second phone video at any of the five
      projects, you talking through what the house needed. No script, no
      polish. That becomes the strongest thing on the page.
+
+**7. Competitor gut-check (10 minutes).** Open these five and tell me:
+which one feels closest to what you want HARDT to be, the one thing any
+of them does that you wish we had, and anything you'd never want us to
+do. homehelpersgroup.com · sellersnewday.com · cenvalrei.com ·
+gghomes.com · newwestern.com. Also: your intake listed "Central Valley
+Home Buyers" and "Best Home Offer" — I couldn't confidently find those
+two; send links if they're different from the above. My own read is in
+COMPETITOR-NOTES.md in the repo.
+
+**8. Reviews are the one gap that compounds.** Home Helpers Group has
+~205 Google reviews in Kern; we have one, on the old Fluid profile.
+When you ask Chuck, Robert and Eli about the stories (item 6), ask each
+for a Google review in the same conversation. Three real, specific
+reviews beats zero, and the GBP rename preserves them.
+
+**9. Loose ends from your intake, quick answers needed:**
+   - Does the peter@hardtrealestate.com mailbox actually exist yet? The
+     site publishes it; if it isn't live, leads are bouncing silently.
+   - Mailers/ads may carry different phone numbers per your intake note.
+     Fine offline, but the (707) 489-6236 number must be the only one
+     that ever appears online, anywhere, or the citations fracture.
+   - Your intake said DBA "Hardt or Hardt Properties"; Michael says
+     plain "HARDT". Confirm the final SOS/county filing wording so the
+     site, GBP and legal line all match it exactly.
+   - Frances and the frances@ mailbox: you wanted to talk this one
+     through — also affects the "team" framing now live on About.
+   - LinkedIn / BiggerPockets profiles: yes or no, and who runs them.
+   - You listed partners (SoCal Title, Placer, Kiavi, NREIG, Winans).
+     A partners strip on the site is a real trust signal, but only with
+     their OK — want me to draft the ask?
+   - Security note: your intake document contains live passwords
+     (Namecheap, BiggerPockets). Rotate both; intake docs get shared.
