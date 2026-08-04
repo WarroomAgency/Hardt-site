@@ -2,10 +2,32 @@
 """Content for every page. Run: python3 tools/pages.py"""
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
-from build import (write, cta, faq_block, SERVICES, COUNTIES,
+from build import (write, cta, faq_block, pic, SERVICES, COUNTIES,
                    PHONE_DISPLAY, PHONE_HREF, EMAIL, PHONE_ICON)
 
 P = []
+
+
+def hero_img():
+    """Hero art is positioned by .hero__bg itself, so no .media wrapper."""
+    import os
+    if os.path.exists("assets/img/hero.webp"):
+        return ('<picture><source type="image/webp" srcset="/assets/img/hero.webp 1x, /assets/img/hero@2x.webp 2x">'
+                '<img src="/assets/img/hero.jpg" alt="" width="1800" height="1150" fetchpriority="high"></picture>')
+    return '<img src="/assets/img/hero.svg" alt="" width="1800" height="1150" fetchpriority="high">'
+
+
+def ba_img(slot, alt):
+    """The comparison slider needs bare <img> with its own class, no wrapper."""
+    import os
+    cls = "ba__" + slot
+    if os.path.exists(f"assets/img/{slot}.webp"):
+        return (f'<img class="{cls}" src="/assets/img/{slot}.jpg" '
+                f'srcset="/assets/img/{slot}.jpg 1x, /assets/img/{slot}@2x.jpg 2x" '
+                f'alt="{alt}" width="1200" height="800">')
+    return f'<img class="{cls}" src="/assets/img/{slot}.svg" alt="{alt}" width="1200" height="800">'
+
+
 TEL = f'<a class="tel" href="{PHONE_HREF}">{PHONE_ICON}{PHONE_DISPLAY}</a>'
 
 # ══════════════════════════════════════════════ HOME
@@ -14,7 +36,7 @@ P.append(dict(
     desc="Founder-led home buying across San Diego, Riverside, San Bernardino and Kern counties. We don't assign contracts. One walkthrough, one honest number.",
     body=f"""
 <section class="hero hero--art" data-hero>
-  <div class="hero__bg"><img src="/assets/img/hero.svg" alt="" width="1600" height="1100" fetchpriority="high"></div>
+  <div class="hero__bg">{hero_img()}</div>
   <div class="shell" style="padding-block:clamp(66px,11vw,132px) clamp(56px,8vw,96px)">
     <p class="eyebrow">San&nbsp;Diego &middot; Riverside &middot; San&nbsp;Bernardino &middot; Kern</p>
     <h1 class="h-hero">Sell your house as&#8209;is, anywhere in Southern California.</h1>
@@ -58,8 +80,8 @@ P.append(dict(
     </div>
     <div data-reveal>
       <div class="ba" data-compare>
-        <img class="ba__before" src="/assets/img/before.svg" alt="A tired house before renovation" width="1200" height="800">
-        <img class="ba__after"  src="/assets/img/after.svg"  alt="The same house after renovation" width="1200" height="800">
+        {ba_img("before","A house before renovation")}
+        {ba_img("after","The same house after renovation")}
         <span class="ba__lbl ba__lbl--b">Before</span><span class="ba__lbl ba__lbl--a">After</span>
         <button class="ba__handle" type="button" role="slider" tabindex="0"
           aria-label="Compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
@@ -117,10 +139,7 @@ P.append(dict(
       <p data-reveal>I also found a corner of this business that nobody regulates, where distressed homeowners don&rsquo;t know what their options are, what questions to ask, or who to ask them to. I thought there could be a better way to do it.</p>
       <div class="btnrow"><a class="btn btn--ghost" href="/about/">More about Peter</a></div>
     </div>
-    <div class="media media--4x5" data-reveal>
-      <img src="/assets/img/portrait.svg" alt="Placeholder for a portrait of founder Peter Eberhardt" width="900" height="1150" loading="lazy">
-      <span class="media__tag">Portrait to be shot</span>
-    </div>
+    <div data-reveal>{pic("portrait","Peter Eberhardt, founder of HARDT","media media--4x5",tag="Portrait to be shot",w=900,h=1150)}</div>
   </div>
 </section>
 
@@ -131,19 +150,19 @@ P.append(dict(
     <p class="lede" data-reveal>Five of the most recent. Photography from each of these is being prepared &mdash; the illustrations below are standing in until it lands.</p>
     <div class="grid grid--4" style="margin-top:44px">
       <div class="card" style="padding:0;overflow:hidden" data-reveal>
-        <div class="media media--4x3"><img src="/assets/img/project-1.svg" alt="Illustration of a Bakersfield street" width="1200" height="900" loading="lazy"></div>
+        {pic("project-1","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
         <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Shenandoah Drive</p></div>
       </div>
       <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="70">
-        <div class="media media--4x3"><img src="/assets/img/project-2.svg" alt="Illustration of a Bakersfield street" width="1200" height="900" loading="lazy"></div>
+        {pic("project-2","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
         <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Cale Court</p></div>
       </div>
       <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="140">
-        <div class="media media--4x3"><img src="/assets/img/project-3.svg" alt="Illustration of a Bakersfield street" width="1200" height="900" loading="lazy"></div>
+        {pic("project-3","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
         <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Terrace Way &amp; Huskey Drive</p></div>
       </div>
       <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="210">
-        <div class="media media--4x3"><img src="/assets/img/project-4.svg" alt="Illustration of a Lancaster street" width="1200" height="900" loading="lazy"></div>
+        {pic("project-4","A Lancaster house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
         <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Lancaster</p><p style="margin:0">Graphic Street</p></div>
       </div>
     </div>
@@ -157,7 +176,7 @@ P.append(dict(
     <p class="lede" data-reveal>Boots on the ground from the border to Bakersfield &mdash; and I do the walkthrough myself in every one of them.</p>
     <div class="grid grid--4" style="margin-top:42px">
       {"".join(f'''<a class="county" href="/{s}/" data-reveal data-reveal-delay="{i*70}" style="padding:0;overflow:hidden">
-        <div class="media media--4x3"><img src="/assets/img/county-{img}.svg" alt="Illustration of {n}" width="1400" height="640" loading="lazy"></div>
+        {pic(f"county-{img}", f"A residential street in {n}", "media media--4x3", w=1000, h=750)}
         <div style="padding:22px 24px 26px"><p class="county__name">{n}</p><p class="county__cities">{c}</p>
         <span class="card__link" style="margin-top:14px;display:inline-block">Selling here</span></div></a>''' for i,(s,n,img,c) in enumerate(COUNTIES))}
     </div>
@@ -331,7 +350,7 @@ P.append(dict(
   <div class="shell">
     <div class="grid grid--2">
       {"".join(f'''<a class="county" href="/{s}/" data-reveal data-reveal-delay="{i*80}" style="padding:0;overflow:hidden">
-        <div class="media media--16x9"><img src="/assets/img/county-{img}.svg" alt="" width="1400" height="620" loading="lazy"></div>
+        {pic(f"county-{img}", f"A residential street in {n}", "media media--4x3", w=1000, h=750)}
         <div style="padding:26px 28px"><p class="county__name">{n}</p><p class="county__cities">{c}</p>
         <span class="card__link" style="margin-top:14px;display:inline-block">Selling in {n.replace(" County","")}</span></div></a>''' for i,(s,n,img,c) in enumerate(COUNTIES))}
     </div>
@@ -363,10 +382,7 @@ P.append(dict(
       <h1 class="h-sect" data-reveal>The name on the company is my name.</h1>
       <p class="lede" data-reveal>Peter Eberhardt &middot; Founder, HARDT Real Estate &middot; Southern California</p>
     </div>
-    <div class="media media--4x5" data-reveal>
-      <img src="/assets/img/portrait.svg" alt="Placeholder for a portrait of founder Peter Eberhardt" width="900" height="1150">
-      <span class="media__tag">Portrait to be shot</span>
-    </div>
+    <div data-reveal>{pic("portrait","Peter Eberhardt, founder of HARDT","media media--4x5",tag="Portrait to be shot",eager=True,w=900,h=1150)}</div>
   </div>
 </section>
 
@@ -638,7 +654,7 @@ for slug, name, img, cities in COUNTIES:
 
 <section class="band--tight">
   <div class="shell">
-    <div class="media media--wide" data-reveal><img src="/assets/img/county-{img}.svg" alt="" width="1400" height="620"><span class="media__tag">Placeholder &mdash; local project photography to come</span></div>
+    <div data-reveal>{pic(f"county-{img}", f"A residential street in {name}", "media media--wide", tag="Illustration &mdash; local photography to come", eager=True, w=1400, h=640)}</div>
   </div>
 </section>
 

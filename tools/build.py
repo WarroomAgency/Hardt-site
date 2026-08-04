@@ -12,6 +12,34 @@ Run from the repo root:  python3 tools/build.py
 import os, json, re, html, hashlib
 
 
+def pic(slot, alt, cls="media media--4x3", tag=None, eager=False, w=1200, h=900):
+    """A <picture> for one image slot.
+
+    Uses assets/img/<slot>.webp|jpg once a real photo has been processed in
+    (tools/process_photos.py), and falls back to assets/img/<slot>.svg
+    otherwise — so photography can arrive one image at a time without
+    touching any page markup.
+    """
+    d = "assets/img"
+    load = 'fetchpriority="high"' if eager else 'loading="lazy" decoding="async"'
+
+    if os.path.exists(f"{d}/{slot}.webp"):
+        def srcset(ext):
+            one, two = f"/assets/img/{slot}.{ext}", f"/assets/img/{slot}@2x.{ext}"
+            return f'{one} 1x, {two} 2x' if os.path.exists(f"{d}/{slot}@2x.{ext}") else one
+        inner = (f'<picture>'
+                 f'<source type="image/webp" srcset="{srcset("webp")}">'
+                 f'<img src="/assets/img/{slot}.jpg" srcset="{srcset("jpg")}" '
+                 f'alt="{alt}" width="{w}" height="{h}" {load}>'
+                 f'</picture>')
+        badge = ""                       # a real photo needs no disclaimer
+    else:
+        inner = f'<img src="/assets/img/{slot}.svg" alt="{alt}" width="{w}" height="{h}" {load}>'
+        badge = f'<span class="media__tag">{tag}</span>' if tag else ""
+
+    return f'<div class="{cls}">{inner}{badge}</div>'
+
+
 def rev(path):
     """Content hash appended as a query string.
 
