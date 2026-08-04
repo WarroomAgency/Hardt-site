@@ -160,7 +160,7 @@ P.append(dict(
   <div class="shell">
     <p class="eyebrow" data-reveal>Recent work</p>
     <h2 class="h-sect" data-reveal>Houses we bought, fixed, and put back into use.</h2>
-    <p class="lede" data-reveal>Five of the most recent. Photography from each of these is being prepared: the illustrations below are standing in until it lands. The stories behind some of them are on <a href="/how-weve-helped/">how we&rsquo;ve helped</a>.</p>
+    <p class="lede" data-reveal>Five of the most recent. Photography from each of these is being prepared: the illustrations below are standing in until it lands.</p>
     <div class="grid grid--4" style="margin-top:44px">
       <div class="card" style="padding:0;overflow:hidden" data-reveal>
         {pic("project-1","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
@@ -179,6 +179,7 @@ P.append(dict(
         <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Lancaster</p><p style="margin:0">Graphic Street</p></div>
       </div>
     </div>
+    <div class="btnrow" data-reveal><a class="btn btn--ghost" href="/how-weve-helped/">The stories behind these houses</a></div>
   </div>
 </section>
 
@@ -420,6 +421,7 @@ P.append(dict(
       <div data-reveal><h3 class="h-card">The math is shown</h3><p>You see how the number was reached: finished value, cost of work, cost of holding and reselling, margin. Check it with anyone you like.</p></div>
       <div data-reveal data-reveal-delay="80"><h3 class="h-card">Bad news arrives at the same volume</h3><p>If listing with an agent would put more money in your pocket, I&rsquo;ll say so on the first call. It costs me deals. It&rsquo;s still the right thing.</p></div>
     </div>
+    <div class="btnrow"><a class="btn btn--ghost" href="/how-weve-helped/">See how this plays out</a></div>
   </div>
 </section>
 
@@ -428,7 +430,7 @@ P.append(dict(
     <p class="eyebrow" data-reveal>The business</p>
     <h2 class="h-sect" data-reveal>Plainly stated.</h2>
     <p data-reveal style="margin-top:22px">HARDT is a d/b/a of Fluid Developments LLC, operating across San Diego, Riverside, San Bernardino and Kern counties since 2021. We buy houses with our own money, renovate them using local subcontractors, and put them back into use.</p>
-    <p data-reveal>We buy as a principal for our own account. We are not a licensed real estate brokerage, we don&rsquo;t represent buyers or sellers, and we don&rsquo;t give legal, tax or financial advice. When you need that kind of advice, and in a probate or a foreclosure you often do. We&rsquo;ll tell you to go get it.</p>
+    <p data-reveal>We buy as a principal for our own account. We are not a licensed real estate brokerage, we don&rsquo;t represent buyers or sellers, and we don&rsquo;t give legal, tax or financial advice. When you need that kind of advice (in a probate or a foreclosure you often do), we&rsquo;ll tell you to go get it.</p>
   </div>
 </section>
 
@@ -992,6 +994,7 @@ P.append(dict(
 </section>
 
 {cta("In the middle of something like this?", "Tell me the situation. The first conversation is about your options, not our offer.")}
+"""))
 """))
 
 # ══════════════════════════════════════════════ LEGAL

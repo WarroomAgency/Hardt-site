@@ -155,6 +155,7 @@ def header(active=""):
 </header>
 <div class="mobile-nav" id="mobile-nav" hidden>
   {links}
+  <a href="/how-weve-helped/">How we&rsquo;ve helped</a>
   <a href="/contact/">Get my offer</a>
   <p class="mn-h">Situations</p><div class="mn-sub">{msvc}</div>
   <p class="mn-h">Counties</p><div class="mn-sub">{mcty}</div>
