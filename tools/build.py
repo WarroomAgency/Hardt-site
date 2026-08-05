@@ -114,8 +114,12 @@ def head(p):
 <meta property="og:description" content="{p['desc']}">
 <meta property="og:url" content="{SITE}{p['url']}">
 <meta property="og:image" content="{SITE}{og}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{p.get('ogalt', 'HARDT. Every situation has a way forward.')}">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="{p.get('ogalt', 'HARDT. Every situation has a way forward.')}">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">

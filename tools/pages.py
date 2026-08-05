@@ -247,8 +247,8 @@ HOW_FAQ = [
 P.append(dict(
     url="/how-it-works/", active="/how-it-works/",
     trail=[("/how-it-works/", "How it works")],
-    title="How Selling to HARDT Works | HARDT",
-    desc="A conversation, one walkthrough, one number with the math shown. Typical close is about 14 days, and the date is yours. No repairs, no showings, no assignments.",
+    title="How Selling Your House to HARDT Works, Step by Step",
+    desc="A conversation, one walkthrough, one number with the math shown. Typical close is about 14 days, and the date is yours. No repairs and no showings.",
     faq=HOW_FAQ,
     body=f"""
 <section class="band band--tight">
@@ -381,7 +381,7 @@ P.append(dict(
     url="/areas/", active="/areas/",
     trail=[("/areas/", "Where we buy")],
     title="Where We Buy: Four Southern California Counties | HARDT",
-    desc="HARDT buys houses across San Diego, Riverside, San Bernardino and Kern counties, from the border up to Bakersfield, with the walkthrough done in person every time.",
+    desc="HARDT buys houses across San Diego, Riverside, San Bernardino and Kern counties, from the border up to Bakersfield, with every walkthrough done in person.",
     body=f"""
 <section class="band band--tight">
   <div class="shell">
@@ -493,7 +493,7 @@ P.append(dict(
 P.append(dict(
     url="/contact/", active="/contact/",
     trail=[("/contact/", "Contact")],
-    title="Get Your Offer | HARDT",
+    title="Get Your Cash Offer | HARDT Southern California",
     desc="Three questions and we'll be in touch, usually within 15 minutes between 8am and 6pm. No obligation, no pressure, and nobody else gets your information.",
     body=f"""
 <section class="band dark" id="offer">
@@ -568,7 +568,7 @@ SVC = {
  "inherited-house": dict(
    h1="You inherited a house. Now what?",
    title="Selling an Inherited House in California | HARDT",
-   desc="Probate-fluent, patient, and willing to carry the heavy part, including the contents. Sell an inherited house in Southern California without repairs or showings.",
+   desc="Probate-fluent, patient, and willing to carry the heavy part, contents included. Sell an inherited house in Southern California without repairs or showings.",
    lede="Probate, siblings, and a house that can come with everything still in it. This is the situation we're asked about most, and the one people are least prepared for.",
    body_intro="<p>Inheriting a house usually arrives alongside a death, which means the paperwork lands at the worst possible time. Most people have never been through probate and don't know what they're allowed to do or when.</p><p>We deal with this constantly. There's rarely a rush from our side, and we're comfortable waiting for the court where waiting is what's needed.</p>",
    points=["Property still going through probate",
@@ -582,7 +582,7 @@ SVC = {
  "stop-foreclosure": dict(
    h1="A Notice of Default isn&rsquo;t the end of the road.",
    title="Facing Foreclosure in Southern California? | HARDT",
-   desc="Understand the California trustee-sale timeline and every option on the table, including the ones that don't involve selling. Straight information, no pressure.",
+   desc="Understand the California trustee-sale timeline and every option open to you, including those that don't involve selling. Straight information, no pressure.",
    lede="If you're behind on payments, the most valuable thing you can have right now is accurate information about your options, not another offer.",
    body_intro="<p>People in this situation usually get a stack of letters and a lot of pressure. What they rarely get is a plain explanation of how the process actually works and how much time is genuinely left.</p><p>So that's what this conversation is. Sometimes the answer is a reinstatement, a loan modification, or a short sale with your lender. Sometimes it's selling before the sale date. Occasionally it's letting it go, and if that's genuinely your best outcome, we'll say so.</p>",
    points=["Behind on payments but not yet in default",
@@ -712,8 +712,9 @@ for slug, name, img, cities in COUNTIES:
     P.append(dict(
         url=f"/{slug}/", trail=[("/areas/", "Where we buy"), (f"/{slug}/", name)],
         title=f"We Buy Houses in {name}, CA | HARDT",
-        desc=f"Sell a house as-is in {name}: {cities.split(',')[0]} and across the county. No repairs, no showings, no commissions. One walkthrough and one honest number.",
-        og=og_img(f"county-{img}"),
+        desc=f"Sell as-is anywhere in {name}. No repairs, no showings, no commissions, and we never assign your contract. One walkthrough, one honest number.",
+        og=og_img(f"og-{slug}"),
+        ogalt=f"HARDT. We buy houses in {name}, as-is.",
         faq=cfaq,
         body=f"""
 <section class="band band--tight">
@@ -860,7 +861,8 @@ for (cslug, sslug), d in M.items():
         trail=[("/areas/", "Where we buy"), (f"/{cslug}/", cname), (f"/{cslug}/{sslug}/", slabel)],
         title=d["title"], desc=d["desc"],
         service=f"{slongname} in {cname}", service_area=cname,
-        og=og_img(f"county-{cimg}"),
+        og=og_img(f"og-{cslug}"),
+        ogalt=f"HARDT. We buy houses in {cname}, as-is.",
         faq=faqs,
         body=f"""
 <section class="band band--tight">
@@ -1000,8 +1002,9 @@ _sit_html = "".join(
 P.append(dict(
     url="/situations/", trail=[("/situations/", "Situations we handle")],
     title="Situations We Handle | HARDT Southern California",
-    desc="Inherited, behind on payments, tenants in place, full of contents, fire damage, liens or a divorce. Ten situations we deal with constantly, and what happens next in each.",
-    og=og_img("project-2"),
+    desc="Inherited, behind on payments, tenants in place, full of contents, fire damage or a divorce. Ten situations we handle, and what happens next in each.",
+    og=og_img("og-situations"),
+    ogalt="HARDT. However you got here, there is a way through it.",
     body=f"""
 <section class="band band--tight">
   <div class="shell shell--narrow">
@@ -1034,9 +1037,10 @@ P.append(dict(
 P.append(dict(
     url="/how-weve-helped/",
     trail=[("/how-weve-helped/", "How we've helped")],
-    title="How We've Helped Homeowners | HARDT",
+    title="How We've Helped Homeowners | HARDT Real Estate",
     desc="Real situations we've been part of: a homeowner who kept his house, a sale that was falling apart, a house 250 miles from anywhere. Told plainly, not as ads.",
-    og=og_img("after"),
+    og=og_img("og-helped"),
+    ogalt="HARDT. Houses we bought, fixed, and put back into use.",
     body=f"""
 <section class="band band--tight">
   <div class="shell shell--narrow">
