@@ -675,3 +675,14 @@ html.nav-open{overflow:hidden}
 .situation__do strong{font-family:var(--display);font-weight:800;font-size:.86em;
   letter-spacing:.08em;text-transform:uppercase;color:var(--bronze-ink)}
 .situation__link{margin:0;font-size:.93rem}
+
+/* ── Tap targets (WCAG 2.2 AA, 2.5.8) ─────────────────────────────────
+   Nav and footer links were already sized. These are the remaining
+   standalone links: breadcrumbs, the hero's secondary path, and links
+   that are the only thing in their paragraph. All three sit outside the
+   "inline in a sentence" exception, so each needs a real 24px box.
+   Links genuinely inside a sentence are left alone: padding them would
+   break the line rhythm for no accessibility gain. */
+.breadcrumb a{display:inline-block;padding-block:4px;min-height:24px}
+.hero__alt a{display:inline-block;padding-block:2px;min-height:24px}
+main p > a:only-child{display:inline-block;padding-block:1px;min-height:24px}
