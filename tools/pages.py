@@ -196,8 +196,8 @@ P.append(dict(
     <div>
       <p class="eyebrow" data-reveal>Who you&rsquo;re dealing with</p>
       <h2 class="h-sect" data-reveal>Founder&#8209;led, with a team behind every deal.</h2>
-      <p data-reveal style="margin-top:22px">HARDT started with our founder, Peter: a BMX racer who came into real estate looking for time and money to keep chasing an Olympic dream, and found what he&rsquo;d actually been missing instead: purpose, impact, and people.</p>
-      <p data-reveal>He also found a corner of this business that nobody regulates, where distressed homeowners don&rsquo;t know their options, the right questions, or who to ask. We built HARDT to be the better way: his eyes on every house, and a team behind him that gets it done.</p>
+      <p data-reveal style="margin-top:22px">HARDT was founded on a simple belief: homeowners in difficult situations deserve to be treated with respect, not pressure. Peter Eberhardt started the company after watching too many wholesalers take advantage of sellers already navigating foreclosure or probate, treating people as transactions instead of partners in a fair deal.</p>
+      <p data-reveal>A competitive BMX racer before he was an investor, he bought his first property at twenty-two and has been renovating houses across these four counties since. His eyes are on every house, with a team behind him that gets it done.</p>
       <div class="btnrow"><a class="btn btn--ghost" href="/about/">About us</a></div>
     </div>
     <div data-reveal>{pic("portrait","Peter Eberhardt, founder of HARDT","media media--4x5",tag="Portrait to be shot",w=900,h=1150)}</div>
@@ -455,14 +455,11 @@ P.append(dict(
 
 <section class="band band--tight">
   <div class="shell shell--narrow">
-    <p class="h-kicker" data-reveal>The founder&rsquo;s story</p>
-    <p data-reveal style="margin-top:14px">Through my twenties I chased an Olympic dream in the sport of BMX racing. Getting into real estate started out as a short detour from that dream: a tool that would give me more time and money to chase the Olympic path.</p>
-    <p data-reveal>I realised fairly quickly that I was missing much more than time and money. I was missing purpose, impact, and relationships.</p>
-    <p data-reveal>Getting into real estate, I also discovered how unregulated the space is where distressed homes get bought and sold. I watched homeowners in situations where they didn&rsquo;t know what all their options were, didn&rsquo;t know the right questions to ask, and didn&rsquo;t know who to ask them to.</p>
-    <p data-reveal>I wondered whether there could be a better way. A better service. A better impact: something that could actually get a homeowner out of the situation they were in and show them a way forward to the next chapter.</p>
-    <p data-reveal>That&rsquo;s what HARDT is. We refuse to take advantage of homeowners, and we believe every situation has a way forward.</p>
+    <p class="h-kicker" data-reveal>Why HARDT exists</p>
+    <p data-reveal style="margin-top:14px">HARDT was founded on a simple belief: homeowners in difficult situations deserve to be treated with respect, not pressure. Peter Eberhardt started the company after watching too many wholesalers take advantage of sellers who were already navigating foreclosure, probate, or other hard circumstances, treating people as transactions instead of partners in a fair deal. He believed real estate investing could be done differently, and built HARDT to prove it.</p>
+    <p data-reveal>Peter&rsquo;s path here wasn&rsquo;t conventional. Raised in the mountains of Northern California, he spent his early twenties as a competitive BMX racer, funding his training by driving for Uber and eventually buying his first property, a condo, at twenty-two. That same discipline carried into real estate: a fourplex at twenty-six, then a shift into house flipping across Kern, San Bernardino, Riverside and San Diego counties.</p>
+    <p data-reveal>What started as a way to build his own future became a mission to do the same for others. Today, Peter leads HARDT with the same principle that got him here: quiet confidence, real respect, and deals structured so that homeowners, investors and the community all come out ahead.</p>
     <p class="serif" style="font-size:1.4rem;color:var(--bronze-ink);margin-top:32px" data-reveal>Every situation has a way forward.</p>
-    <p class="small" data-reveal style="margin-top:10px">Peter Eberhardt &middot; Founder</p>
   </div>
 </section>
 
