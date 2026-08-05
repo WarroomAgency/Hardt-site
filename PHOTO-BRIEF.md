@@ -1,5 +1,24 @@
 # Photography — what's needed and how to drop it in
 
+## Status, August 2026
+
+**Landed and live** (all Peter's own photos, no watermarks): `portrait`,
+`team-peter`, `team-frances`, `before` + `after` (44730 Graphic Street
+garage/driveway pair), `project-4` (Graphic Street front elevation).
+
+**Blocked on clean files:** `project-1` (Shenandoah), `project-2` (Cale),
+`project-3` (Terrace/Huskey), and a real `hero`. Peter's Drive folder has
+excellent photos of all of these, but the *after* sets for Shenandoah,
+Terrace, Cale and Huskey are MLS listing photos with a **baked-in
+"LCA CINEMA" and "GEMLS" watermark** in the bottom corners. Two problems:
+a third-party watermark on HARDT's own site looks wrong, and the licence
+for MLS listing photos usually sits with the photographer, not the seller.
+Peter paid for those shoots, so clean originals should be a phone call to
+LCA Cinema. Do **not** crop or edit the watermark out to get around it.
+The `before` folders and everything from Graphic Street are Peter's own
+phone photos and are clean.
+
+
 Every image on the site is currently an original illustration. The site is
 built so photographs can replace them **one at a time**, with no markup
 changes: drop a file in, run two commands, done.

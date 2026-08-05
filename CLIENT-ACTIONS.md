@@ -145,3 +145,21 @@ scheduling and escrow moving on every purchase"), and both headshots.
 Text the two headshot files over and they go straight into the new
 photos-in/ slots (team-peter, team-frances). The dark-studio shots work
 as stopgaps; front-of-project shots replace them whenever they're taken.
+
+
+**11. Watermarked project photos (quick win, needs one phone call).**
+Thank you for the Drive folder: your headshots, Frances's headshot, and
+the Graphic Street set are live on the site already, including a
+before/after slider of the garage and driveway that came out great.
+
+The Shenandoah, Cale, Terrace and Huskey *after* photos I can't use yet.
+They're the MLS listing sets and every frame has "LCA CINEMA" and "GEMLS"
+burned into the bottom corners. Putting another company's watermark on
+your own site looks wrong, and the licence on MLS listing photos normally
+stays with the photographer rather than the seller, so I won't crop them
+out or use them as-is.
+
+You paid for those shoots, so ask LCA Cinema for the un-watermarked
+originals with permission to use them on hardtrealestate.com. That's
+usually a five-minute email. The moment they land, three more project
+cards and a real hero photo go live.

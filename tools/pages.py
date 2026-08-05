@@ -110,13 +110,13 @@ P.append(dict(
     </div>
     <div data-reveal>
       <div class="ba" data-compare>
-        {ba_img("before","A house before renovation")}
-        {ba_img("after","The same house after renovation")}
+        {ba_img("before","The garage and driveway at 44730 Graphic Street, Lancaster, before renovation: peeling paint, a cracked dirt driveway and stored junk")}
+        {ba_img("after","The same garage after renovation: repainted white with a new door and a newly poured concrete driveway")}
         <span class="ba__lbl ba__lbl--b">Before</span><span class="ba__lbl ba__lbl--a">After</span>
         <button class="ba__handle" type="button" role="slider" tabindex="0"
           aria-label="Compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
       </div>
-      <p class="small" style="margin-top:12px">Drag to compare. Placeholder art. Real project photography is being shot.</p>
+      <p class="small" style="margin-top:12px">Drag to compare. 44730 Graphic Street, Lancaster: the garage and driveway, before we started and after we finished.</p>
     </div>
   </div>
 </section>
@@ -177,7 +177,7 @@ P.append(dict(
   <div class="shell">
     <p class="eyebrow" data-reveal>Recent work</p>
     <h2 class="h-sect" data-reveal>Houses we bought, fixed, and put back into use.</h2>
-    <p class="lede" data-reveal>Five of the most recent. Photography from each of these is being prepared: the illustrations below are standing in until it lands.</p>
+    <p class="lede" data-reveal>Five of the most recent. Photography is landing project by project; where a card still shows an illustration, the real photograph is on its way.</p>
     <div class="grid grid--4" style="margin-top:44px">
       <div class="card" style="padding:0;overflow:hidden" data-reveal>
         {pic("project-1","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
@@ -192,7 +192,7 @@ P.append(dict(
         <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Terrace Way &amp; Huskey Drive</p></div>
       </div>
       <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="210">
-        {pic("project-4","A Lancaster house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
+        {pic("project-4","The renovated front elevation of the house on Graphic Street in Lancaster","media media--4x3",tag="Photo to come",w=1000,h=750)}
         <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Lancaster</p><p style="margin:0">Graphic Street</p></div>
       </div>
     </div>
@@ -994,12 +994,12 @@ P.append(dict(
       <p class="eyebrow" data-reveal>Before and after</p>
       <h2 class="h-sect" data-reveal>The work is the proof.</h2>
       <p data-reveal style="margin-top:20px">Every house we buy gets renovated and put back into use. Drag the slider: this is the part of the business we&rsquo;re actually in.</p>
-      <p data-reveal class="small">Photography from all five recent projects is being prepared. As it lands, this page fills in with the real before-and-afters, house by house.</p>
+      <p data-reveal class="small">This is Graphic Street in Lancaster: the same garage and driveway, before and after. Photography from the other four projects is landing next.</p>
     </div>
     <div data-reveal>
       <div class="ba" data-compare>
-        {ba_img("before","A house before renovation")}
-        {ba_img("after","The same house after renovation")}
+        {ba_img("before","The garage and driveway at 44730 Graphic Street, Lancaster, before renovation: peeling paint, a cracked dirt driveway and stored junk")}
+        {ba_img("after","The same garage after renovation: repainted white with a new door and a newly poured concrete driveway")}
         <span class="ba__lbl ba__lbl--b">Before</span><span class="ba__lbl ba__lbl--a">After</span>
         <button class="ba__handle" type="button" role="slider" tabindex="0"
           aria-label="Compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
@@ -1026,7 +1026,7 @@ P.append(dict(
         <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Terrace Way &amp; Huskey Drive</p></div>
       </div>
       <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="210">
-        {pic("project-4","A Lancaster house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
+        {pic("project-4","The renovated front elevation of the house on Graphic Street in Lancaster","media media--4x3",tag="Photo to come",w=1000,h=750)}
         <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Lancaster</p><p style="margin:0">Graphic Street</p></div>
       </div>
     </div>
