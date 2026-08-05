@@ -29,6 +29,7 @@
   --shell:1160px;
   --band:clamp(64px,9vw,110px);   /* vertical rhythm between sections */
   --radius:3px;
+  --callbar-btn:48px;             /* drives both the bar and the body padding under it */
 
   /* --- type --- */
   --display:'Red Hat Display',system-ui,-apple-system,sans-serif;
@@ -463,9 +464,17 @@ html.nav-open{overflow:hidden}
   transform:translateY(105%);transition:transform .3s cubic-bezier(.22,.61,.36,1);
 }
 .callbar.is-up{transform:none}
-.callbar .btn{flex:1;padding:14px 16px;font-size:13px;min-height:46px}
+/* Fixed button height rather than min-height: the bar is position:fixed,
+   so the page below must reserve exactly its height. Letting the button
+   size itself from line-height made the bar 74px against a 68px
+   reservation, and the footer's legal line sat underneath it. */
+.callbar .btn{flex:1;padding:0 16px;font-size:13px;min-height:0;height:var(--callbar-btn)}
 .callbar .btn--ghost{color:var(--cream);border-color:rgba(240,235,228,.34)}
-@media(max-width:760px){.callbar{display:flex}body{padding-bottom:0}}
+@media(max-width:760px){
+  .callbar{display:flex}
+  /* 1px border + 11px + button + 11px, then the home-indicator inset */
+  body{padding-bottom:calc(23px + var(--callbar-btn) + env(safe-area-inset-bottom))}
+}
 @media (prefers-reduced-motion:reduce){.callbar{transition:none}}
 
 /* ════════════════════════════════════════════════════════════

@@ -54,22 +54,26 @@ def _bg(slot):
     return Image.new("RGB", (W, H), CHARCOAL)
 
 
-def _scrim(im):
-    """Readable column on the left, photo breathing on the right. Built as
-    a per-column alpha ramp rather than a hard split so no seam shows."""
-    ramp = Image.new("L", (W, 1))
-    px = ramp.load()
-    for x in range(W):
-        t = x / W
-        if t < 0.40:
-            a = 238
-        elif t < 0.74:
-            a = int(238 - (t - 0.40) / 0.34 * 186)      # 238 -> 52
-        else:
-            a = int(52 - (t - 0.74) / 0.26 * 30)        # 52 -> 22
-        px[x, 0] = max(0, min(255, a))
-    mask = ramp.resize((W, H))
-    return Image.composite(Image.new("RGB", (W, H), CHARCOAL), im, mask)
+PANEL = 516          # solid brand panel width; the rest is photograph
+
+
+def _compose(im):
+    """A solid charcoal brand panel, a bronze hairline, then the photograph.
+
+    An earlier version laid type over a gradient scrim. It read as a photo
+    with words on it rather than as a brand asset, which is the opposite of
+    what a share card is for. A hard panel and the logo's own hairline make
+    the card unmistakably HARDT at thumbnail size, and the photograph still
+    does the work of showing a real house.
+    """
+    card = Image.new("RGB", (W, H), CHARCOAL)
+    photo = ImageOps.fit(im, (W - PANEL, H), Image.LANCZOS, centering=(0.5, 0.45))
+    # ease the photo very slightly toward the panel so the seam is a join,
+    # not a collision
+    card.paste(photo, (PANEL, 0))
+    d = ImageDraw.Draw(card)
+    d.rectangle([PANEL - 1, 0, PANEL, H], fill=BRONZE)      # the hairline
+    return card
 
 
 def _tracked(d, xy, text, font, fill, track):
@@ -93,16 +97,16 @@ def _mark(d, x, y, s=54):
 
 
 def build(slot, photo, line, is_place):
-    im = _scrim(_bg(photo))
+    im = _compose(_bg(photo))
     d = ImageDraw.Draw(im)
     f_word = ImageFont.truetype(DISPLAY, 56)
     f_line = ImageFont.truetype(SERIF, 34)
     f_place = ImageFont.truetype(DISPLAY, 38)
     f_url = ImageFont.truetype(DISPLAY, 20)
 
-    x = 82
+    x = 74
     # lockup: mark, bronze hairline, wordmark
-    my = 196
+    my = 158
     _mark(d, x, my, 54)
     d.rectangle([x + 78, my + 8, x + 79, my + 46], fill=BRONZE)
     _tracked(d, (x + 100, my + 4), "HARDT", f_word, CREAM, 13)
@@ -118,7 +122,7 @@ def build(slot, photo, line, is_place):
         words, cur, lines = line.split(), "", []
         for w in words:
             t = (cur + " " + w).strip()
-            if d.textlength(t, font=f_line) > 470 and cur:
+            if d.textlength(t, font=f_line) > 372 and cur:
                 lines.append(cur); cur = w
             else:
                 cur = t
@@ -128,7 +132,7 @@ def build(slot, photo, line, is_place):
         ly += (len(lines) - 1) * 46
 
     # bronze rule and the domain, anchored to the lockup's left edge
-    ry = 470
+    ry = 452
     d.rectangle([x, ry, x + 54, ry + 2], fill=BRONZE)
     _tracked(d, (x, ry + 26), "HARDTREALESTATE.COM", f_url, (182, 175, 166), 2.2)
 
