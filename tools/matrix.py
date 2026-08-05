@@ -648,7 +648,7 @@ M = {
   lede="We&rsquo;ve renovated more houses in Kern than anywhere else. The offers here come with a builder&rsquo;s local math, not a formula&rsquo;s.",
   intro=(
     "<p>Kern is where much of our renovation track record actually lives: "
-    "Shenandoah Drive, Cale Court, Terrace Way, Huskey Drive. That matters "
+    "in Bakersfield and the towns around it. That matters "
     "to a seller for one reason: our repair numbers here aren&rsquo;t estimates "
     "from a spreadsheet, they&rsquo;re last quarter&rsquo;s invoices. When the margin "
     "between as-is and after-repair is as tight as Kern&rsquo;s, a buyer who&rsquo;s "

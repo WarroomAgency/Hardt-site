@@ -44,10 +44,14 @@ SLOTS = {
     "portrait":              (4 / 5,    900),
     "before":                (3 / 2,   1200),
     "after":                 (3 / 2,   1200),
+    # Work showcase. Deliberately named by slot number, not by address:
+    # these show the standard of work, never "here is the house at X".
     "project-1":             (4 / 3,   1000),
     "project-2":             (4 / 3,   1000),
     "project-3":             (4 / 3,   1000),
     "project-4":             (4 / 3,   1000),
+    "project-5":             (4 / 3,   1000),
+    "project-6":             (4 / 3,   1000),
     "county-san-diego":      (4 / 3,   1000),
     "county-riverside":      (4 / 3,   1000),
     "county-san-bernardino": (4 / 3,   1000),

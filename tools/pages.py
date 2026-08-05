@@ -20,6 +20,36 @@ def _srcset(slot, ext):
     return f"{one} 1x, {two} 2x" if os.path.exists(two.lstrip("/")) else one
 
 
+# Work showcase. Captions describe the work, never the property: no
+# addresses anywhere on the site (Michael, Aug 2026), and no framing that
+# counts projects — this shows the standard, not an inventory.
+SHOWCASE_ITEMS = [
+    ("project-1", "Kitchen", "Cabinets, counters, appliances and floor, replaced as one job."),
+    ("project-2", "Exterior", "Paint, roofline and frontage brought back from bare and tired."),
+    ("project-3", "Bathroom", "Taken back to the studs and rebuilt, tile and fixtures included."),
+    ("project-4", "Living space", "Floors, walls and light throughout the main rooms."),
+    ("project-5", "Grounds", "Driveway, yard and the parts most buyers walk away from."),
+    ("project-6", "Kitchen detail", "The finish level we hold, whatever the house cost us."),
+]
+
+
+def showcase(limit=6):
+    """The work strip. Every tile carries a real photograph; a slot with
+    no photo yet is skipped rather than shown as a placeholder, so the
+    grid never looks half-built."""
+    import os
+    out = []
+    for i, (slot, label, note) in enumerate(SHOWCASE_ITEMS[:limit]):
+        if not os.path.exists(f"assets/img/{slot}.webp"):
+            continue
+        out.append(
+            f'<figure class="shot-card" data-reveal data-reveal-delay="{(i%3)*70}">'
+            f'{pic(slot, f"{label.lower()} in a house renovated by HARDT", "media media--4x3", w=1000, h=750)}'
+            f'<figcaption><span class="shot-card__k">{label}</span>'
+            f'<span class="shot-card__v">{note}</span></figcaption></figure>')
+    return "".join(out)
+
+
 def team_shot(slot, name):
     """Square team headshot: real photo once processed, honest
     placeholder otherwise — never stock, never an avatar library."""
@@ -96,6 +126,7 @@ P.append(dict(
       <a class="card" href="/stop-foreclosure/" data-reveal data-reveal-delay="160"><h3 class="h-card">You&rsquo;re behind on payments</h3><p>A Notice of Default isn&rsquo;t the end of the road. There are more options than most people are told.</p><span class="card__link">Foreclosure &amp; liens</span></a>
       <a class="card" href="/sell-rental-property/" data-reveal data-reveal-delay="240"><h3 class="h-card">You&rsquo;re done being a landlord</h3><p>Tenants in place is fine. Truly. Occupied, mid&#8209;lease, deferred maintenance and all.</p><span class="card__link">Selling a rental</span></a>
     </div>
+    <div class="btnrow" data-reveal><a class="btn btn--ghost" href="/situations/">All ten situations we handle</a></div>
   </div>
 </section>
 
@@ -110,13 +141,13 @@ P.append(dict(
     </div>
     <div data-reveal>
       <div class="ba" data-compare>
-        {ba_img("before","The garage and driveway at 44730 Graphic Street, Lancaster, before renovation: peeling paint, a cracked dirt driveway and stored junk")}
+        {ba_img("before","A garage and driveway before renovation: peeling paint, a cracked dirt driveway and stored junk")}
         {ba_img("after","The same garage after renovation: repainted white with a new door and a newly poured concrete driveway")}
         <span class="ba__lbl ba__lbl--b">Before</span><span class="ba__lbl ba__lbl--a">After</span>
         <button class="ba__handle" type="button" role="slider" tabindex="0"
           aria-label="Compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
       </div>
-      <p class="small" style="margin-top:12px">Drag to compare. 44730 Graphic Street, Lancaster: the garage and driveway, before we started and after we finished.</p>
+      <p class="small" style="margin-top:12px">Drag to compare. The same garage and driveway, the day we bought it and the day we finished.</p>
     </div>
   </div>
 </section>
@@ -175,28 +206,11 @@ P.append(dict(
 
 <section class="band paper">
   <div class="shell">
-    <p class="eyebrow" data-reveal>Recent work</p>
-    <h2 class="h-sect" data-reveal>Houses we bought, fixed, and put back into use.</h2>
-    <p class="lede" data-reveal>Five of the most recent. Photography is landing project by project; where a card still shows an illustration, the real photograph is on its way.</p>
-    <div class="grid grid--4" style="margin-top:44px">
-      <div class="card" style="padding:0;overflow:hidden" data-reveal>
-        {pic("project-1","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
-        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Shenandoah Drive</p></div>
-      </div>
-      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="70">
-        {pic("project-2","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
-        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Cale Court</p></div>
-      </div>
-      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="140">
-        {pic("project-3","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
-        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Terrace Way &amp; Huskey Drive</p></div>
-      </div>
-      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="210">
-        {pic("project-4","The renovated front elevation of the house on Graphic Street in Lancaster","media media--4x3",tag="Photo to come",w=1000,h=750)}
-        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Lancaster</p><p style="margin:0">Graphic Street</p></div>
-      </div>
-    </div>
-    <div class="btnrow" data-reveal><a class="btn btn--ghost" href="/how-weve-helped/">The stories behind these houses</a></div>
+    <p class="eyebrow" data-reveal>The work</p>
+    <h2 class="h-sect" data-reveal>What a finished HARDT house looks like.</h2>
+    <p class="lede" data-reveal>We don&rsquo;t flip contracts, so every house we buy is one we have to finish ourselves. This is the standard, and it&rsquo;s the same whether the house came to us spotless or full.</p>
+    <div class="showcase" style="margin-top:44px">{showcase()}</div>
+    <div class="btnrow" data-reveal><a class="btn btn--ghost" href="/how-weve-helped/">How we&rsquo;ve helped homeowners</a></div>
   </div>
 </section>
 
@@ -928,10 +942,94 @@ for (cslug, sslug), d in M.items():
 {cta(f"Have a house in {cshort}?", "Send the address and we'll come look at it in person.")}
 """))
 
+# ══════════════════════════════════════════════ SITUATIONS
+# The ten situations from Peter's intake (05 · Target situations), written
+# out properly rather than compressed into four service hubs. Peter's
+# priority: lead as the party that understands the problem and is looking
+# for a way through it, not as a party with an offer. Every entry names
+# the situation plainly, says what we already know about it so nobody has
+# to explain themselves, then states what actually happens next.
+SITUATIONS = [
+ ("The house needs more work than you want to take on",
+  "Deferred maintenance, a failed inspection, a roof or a foundation you were quoted a number for and quietly closed the tab on. The cost is only half of it; the other half is managing contractors for months while living somewhere you were ready to leave.",
+  "We buy it in the condition it is in today, and the work becomes our problem. Nothing gets fixed, cleaned or staged first.",
+  "/sell-my-house-fast/", "Selling as-is"),
+ ("You inherited it, and it came with everything still in it",
+  "Grief and paperwork arriving together, often with siblings in three states and a house full of forty years of somebody&rsquo;s life. Probate has its own calendar and nobody hands you a map on the way in.",
+  "We buy on the court&rsquo;s timeline rather than fighting it, and we take the contents with the house. You keep what matters and leave the rest exactly where it sits.",
+  "/inherited-house/", "Inherited &amp; probate"),
+ ("You&rsquo;re behind on payments",
+  "A Notice of Default is frightening and the mail gets worse from there. Most people are told they have fewer options than they actually have, usually by someone who profits from the option they are recommending.",
+  "First we tell you where you really are on the statutory clock, and what each option costs you. Sometimes that means reinstating, or a modification, or a HUD counsellor, and none of those involve us. If selling is genuinely the best of the options, we will say so plainly and buy it.",
+  "/stop-foreclosure/", "Foreclosure &amp; liens"),
+ ("There are tenants in it and you&rsquo;re done being a landlord",
+  "Mid-lease, month-to-month, Section 8, or somebody who stopped paying in March. The usual advice is to get the place vacant first, which in California means notices, relocation payments and a wait you did not sign up for.",
+  "We buy occupied. The tenancy transfers with the deed, lease, deposit and housing-authority contract included, so nobody has to be moved out for you to be finished.",
+  "/sell-rental-property/", "Selling a rental"),
+ ("A divorce or a separation, and the house is in the middle of it",
+  "Two people who need this settled, a lender who wants one name off the loan, and a property that has to convert to a number both sides can live with. Every week it drags is another week of a conversation nobody wants.",
+  "One walkthrough, one written number, and a close date you both agree to. We work with attorneys and escrow directly so the house stops being the thing you argue about.",
+  "/sell-my-house-fast/", "How the sale works"),
+ ("You&rsquo;re moving, and the timing does not line up",
+  "A job that starts next month, family in another state, or a place you have already committed to. Listing means showings you cannot attend and a closing date you cannot control from four hundred miles away.",
+  "You pick the date. Faster is possible, and slower is completely fine; if you need sixty days to get the next thing sorted, we set it for sixty days.",
+  "/how-it-works/", "The process"),
+ ("The house is full, and clearing it feels impossible",
+  "Decades of belongings, a garage nobody has opened in years, and quotes from junk-haul companies that cost more than they should. People apologise to us for this constantly. There is nothing to apologise for.",
+  "Take what matters to you and leave the rest, including the garage and the paperwork in the kitchen drawer. We have bought houses in every condition there is, and clearing them is a line in our budget rather than a favour.",
+  "/what-we-buy/", "What we buy"),
+ ("There has been fire or water damage",
+  "Insurance adjusters, remediation quotes, and a property most retail buyers cannot get a loan on even if they wanted it. The financed buyer pool for a fire-damaged house is close to nobody.",
+  "We buy with our own money, so a lender&rsquo;s condition requirements never enter into it. Damage changes the number, not whether we are interested.",
+  "/what-we-buy/", "What we buy"),
+ ("There is a lien, or something is wrong with the title",
+  "A contractor&rsquo;s lien, unpaid property taxes, a solar or PACE assessment riding on the tax bill, an old deed of trust nobody ever released, or an heir who cannot be found. These surface late and kill ordinary sales in week four.",
+  "We look for these at the start rather than discovering them in escrow, and most of them are solvable with title&rsquo;s help. The one thing we cannot do is buy a house where title can never be cleared, and we will tell you that early rather than waste your month.",
+  "/stop-foreclosure/", "Liens &amp; title problems"),
+ ("It is a duplex, a triplex, or a small apartment building",
+  "Small multi-family carries everything a house does plus rent rolls, multiple tenancies, shared systems and a buyer pool that shrinks fast once the units are occupied or the deferred maintenance is visible.",
+  "We buy multi-family up to about $1.2M, occupied, with whatever the rent roll actually looks like rather than what it should look like on paper.",
+  "/sell-rental-property/", "Occupied property"),
+]
+
+_sit_html = "".join(
+    f'''<article class="situation" data-reveal>
+      <h2 class="h-card situation__q">{q}</h2>
+      <p class="situation__know">{know}</p>
+      <p class="situation__do"><strong>What happens:</strong> {do}</p>
+      <p class="situation__link"><a href="{href}">{label} &rarr;</a></p>
+    </article>''' for q, know, do, href, label in SITUATIONS)
+
+P.append(dict(
+    url="/situations/", trail=[("/situations/", "Situations we handle")],
+    title="Situations We Handle | HARDT Southern California",
+    desc="Inherited, behind on payments, tenants in place, full of contents, fire damage, liens or a divorce. Ten situations we deal with constantly, and what happens next in each.",
+    og=og_img("project-2"),
+    body=f"""
+<section class="band band--tight">
+  <div class="shell shell--narrow">
+    <p class="eyebrow" data-reveal>Situations we handle</p>
+    <h1 class="h-sect" data-reveal>However you got here, there is a way through it.</h1>
+    <p class="lede" data-reveal>Almost nobody calls us because selling a house was the plan. Something happened first. Below are the situations we deal with constantly, written out so you can see we already understand yours before you have to explain it.</p>
+    <p class="serif" data-reveal style="font-size:1.15rem;color:var(--bronze-ink);margin-top:18px">Every situation has a way forward.</p>
+  </div>
+</section>
+
+<section class="band--tight" style="padding-bottom:var(--band)">
+  <div class="shell shell--narrow">
+    <div class="situations">{_sit_html}</div>
+    <p class="small" data-reveal style="margin-top:40px">Not on this list? Call anyway. The situations that do not fit a category are usually the ones worth a conversation, and if the answer is that you should not sell to us, that is what you will hear.</p>
+  </div>
+</section>
+
+{cta("Tell us what you&rsquo;re dealing with.", "Three questions, no obligation, and the first conversation is about your options rather than our offer.")}
+"""))
+
 # ══════════════════════════════════════════════ HOW WE'VE HELPED
 # Story-led proof, not a portfolio. Every fact below comes from Peter's
-# intake (06 · Proof and 07 · Reviews): the foreclosure save, the Huskey
-# Drive close, Graphic Street, and the five project addresses. Nothing
+# intake (06 · Proof and 07 · Reviews): the foreclosure save, the rescued
+# close, and the high-desert buy. Property addresses are never published
+# (Michael, Aug 2026), so stories are told by situation. Nothing
 # is embellished; where we don't know a detail, the story doesn't claim
 # one. Names are withheld until Peter confirms each person is happy to
 # be named (chase item in CLIENT-ACTIONS.md). No Review/testimonial
@@ -968,11 +1066,11 @@ P.append(dict(
 <section class="band">
   <div class="shell shell--narrow">
     <p class="h-kicker" data-reveal>A sale collapsing a week before closing</p>
-    <h2 class="h-card" data-reveal style="font-size:1.5rem">Huskey Drive, Bakersfield.</h2>
+    <h2 class="h-card" data-reveal style="font-size:1.5rem">The buyer fell through. We closed anyway.</h2>
     <div data-reveal>
       <p style="margin-top:14px">The seller had a deal in hand, and the deal was dying. The buyer who&rsquo;d put the house under contract couldn&rsquo;t perform, which usually means the seller starts over from zero: new listing, new waiting, new uncertainty, with whatever deadline pushed them to sell still ticking.</p>
       <p>We stepped in, bought the house ourselves, and closed. The seller got the exit he&rsquo;d already planned around instead of a restart.</p>
-      <p>This is what &ldquo;we don&rsquo;t assign contracts&rdquo; means in practice. When we sign, we&rsquo;re the ones on the hook to finish, and Huskey Drive is one of the houses we&rsquo;ve since renovated and put back into use.</p>
+      <p>This is what &ldquo;we don&rsquo;t assign contracts&rdquo; means in practice. When we sign, we&rsquo;re the ones on the hook to finish, That house is one we&rsquo;ve since renovated and put back into use.</p>
     </div>
   </div>
 </section>
@@ -980,9 +1078,9 @@ P.append(dict(
 <section class="band paper">
   <div class="shell shell--narrow">
     <p class="h-kicker" data-reveal>A long way from anywhere</p>
-    <h2 class="h-card" data-reveal style="font-size:1.5rem">Graphic Street, Lancaster.</h2>
+    <h2 class="h-card" data-reveal style="font-size:1.5rem">Nobody else would make the drive.</h2>
     <div data-reveal>
-      <p style="margin-top:14px">Some houses sit where the usual buyers don&rsquo;t bother going. Graphic Street is in Lancaster, in the Antelope Valley: a long drive from the coastal markets where most cash buyers concentrate, and the kind of address that gets lowballed by mail and then ignored in person.</p>
+      <p style="margin-top:14px">Some houses sit where the usual buyers don&rsquo;t bother going. This one was out in the high desert, a long drive from the coastal markets where most cash buyers concentrate, and the kind of address that gets lowballed by mail and then ignored in person.</p>
       <p>We drove up, walked it, and bought it from its owner directly. Then we renovated it, the same as we do everywhere else. Distance changes the drive time, not the standard of work and not how straight the number is.</p>
     </div>
   </div>
@@ -994,11 +1092,11 @@ P.append(dict(
       <p class="eyebrow" data-reveal>Before and after</p>
       <h2 class="h-sect" data-reveal>The work is the proof.</h2>
       <p data-reveal style="margin-top:20px">Every house we buy gets renovated and put back into use. Drag the slider: this is the part of the business we&rsquo;re actually in.</p>
-      <p data-reveal class="small">This is Graphic Street in Lancaster: the same garage and driveway, before and after. Photography from the other four projects is landing next.</p>
+      <p data-reveal class="small">The same garage and driveway, the day we bought it and the day we finished.</p>
     </div>
     <div data-reveal>
       <div class="ba" data-compare>
-        {ba_img("before","The garage and driveway at 44730 Graphic Street, Lancaster, before renovation: peeling paint, a cracked dirt driveway and stored junk")}
+        {ba_img("before","A garage and driveway before renovation: peeling paint, a cracked dirt driveway and stored junk")}
         {ba_img("after","The same garage after renovation: repainted white with a new door and a newly poured concrete driveway")}
         <span class="ba__lbl ba__lbl--b">Before</span><span class="ba__lbl ba__lbl--a">After</span>
         <button class="ba__handle" type="button" role="slider" tabindex="0"
@@ -1010,27 +1108,10 @@ P.append(dict(
 
 <section class="band">
   <div class="shell">
-    <p class="eyebrow" data-reveal>The list so far</p>
-    <h2 class="h-sect" data-reveal>Five recent projects.</h2>
-    <div class="grid grid--4" style="margin-top:42px">
-      <div class="card" style="padding:0;overflow:hidden" data-reveal>
-        {pic("project-1","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
-        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Shenandoah Drive</p></div>
-      </div>
-      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="70">
-        {pic("project-2","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
-        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Cale Court</p></div>
-      </div>
-      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="140">
-        {pic("project-3","A Bakersfield house bought and renovated by HARDT","media media--4x3",tag="Photo to come",w=1000,h=750)}
-        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Bakersfield</p><p style="margin:0">Terrace Way &amp; Huskey Drive</p></div>
-      </div>
-      <div class="card" style="padding:0;overflow:hidden" data-reveal data-reveal-delay="210">
-        {pic("project-4","The renovated front elevation of the house on Graphic Street in Lancaster","media media--4x3",tag="Photo to come",w=1000,h=750)}
-        <div style="padding:20px 22px 24px"><p class="h-kicker" style="margin-bottom:5px">Lancaster</p><p style="margin:0">Graphic Street</p></div>
-      </div>
-    </div>
-    <p class="small" data-reveal style="margin-top:22px">That&rsquo;s the whole list, not highlights. We&rsquo;d rather show you five real houses than imply fifty.</p>
+    <p class="eyebrow" data-reveal>The work</p>
+    <h2 class="h-sect" data-reveal>What the house looks like when we&rsquo;re done.</h2>
+    <p class="lede" data-reveal>Whatever the situation was, it ends the same way: a house somebody wants to live in again. We don&rsquo;t publish addresses, so this is the work rather than a list of properties.</p>
+    <div class="showcase" style="margin-top:42px">{showcase()}</div>
   </div>
 </section>
 

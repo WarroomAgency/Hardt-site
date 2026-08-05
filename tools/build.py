@@ -156,6 +156,7 @@ def header(active=""):
 </header>
 <div class="mobile-nav" id="mobile-nav" hidden>
   {links}
+  <a href="/situations/">Situations we handle</a>
   <a href="/how-weve-helped/">How we&rsquo;ve helped</a>
   <a href="/contact/">Get my offer</a>
   <p class="mn-h">Situations</p><div class="mn-sub">{msvc}</div>
@@ -191,7 +192,8 @@ def footer():
         <p class="foot-h">Company</p>
         <ul class="foot-list">
           <li><a href="/about/">About us</a></li><li><a href="/how-it-works/">How it works</a></li>
-          <li><a href="/what-we-buy/">What we buy</a></li><li><a href="/how-weve-helped/">How we&rsquo;ve helped</a></li>
+          <li><a href="/what-we-buy/">What we buy</a></li><li><a href="/situations/">Situations we handle</a></li>
+          <li><a href="/how-weve-helped/">How we&rsquo;ve helped</a></li>
           <li><a href="/resources/">Resources</a></li><li><a href="/contact/">Contact</a></li>
         </ul>
       </div>

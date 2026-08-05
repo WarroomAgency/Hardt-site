@@ -41,6 +41,14 @@ a bug, not a style preference.
   it's Peter's work — portrait, before/after, project-1..4 — stays illustrated
   until his real photos land. Sources logged in `photos-in/SOURCES.md`. The
   cliché bans in `PHOTO-BRIEF.md` still apply in full.
+- **Never publish a property address.** No street addresses anywhere on
+  the site (Michael, Aug 2026): not on project cards, not in story
+  headings, not in image alt text. Work is shown by what was done
+  (kitchen, exterior, bathroom), and stories are told by situation. City
+  and county are fine; street and number are not.
+- **Show the work, never count the projects.** The showcase demonstrates
+  the standard we hold. It must never read as an inventory ("five recent
+  projects") — that frames a young company as small rather than careful.
 - **The proof point is a policy, never a statistic.** Write it exactly:
   *"We don't assign contracts. If it doesn't close, we buy it ourselves."*
   Never convert it to a percentage. (Was "I buy it myself" — changed to team
