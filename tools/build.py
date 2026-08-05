@@ -59,7 +59,18 @@ def rev(path):
     except OSError:
         return path
 
-SITE = "https://hardtrealestate.com"
+# ─── The canonical origin ────────────────────────────────────────────────
+# Every absolute URL on the site is built from this: canonical, og:url and
+# og:image. It MUST be a host that actually serves the site, because link
+# previews fetch og:image over the network. Pointing it at a domain that is
+# still parked is what made iMessage fall back to scraping a random photo
+# off the page instead of showing the share card.
+#
+# AT DNS CUTOVER, do both of these together:
+#   1. set SITE below to https://hardtrealestate.com
+#   2. delete the site-wide noindex block at the end of netlify.toml
+# Or override without editing:  HARDT_SITE_URL=https://hardtrealestate.com python3 tools/pages.py
+SITE = os.environ.get("HARDT_SITE_URL", "https://hardt-site.warroomagency.com").rstrip("/")
 PHONE_DISPLAY = "(707) 489-6236"
 PHONE_E164 = "+1-707-489-6236"
 PHONE_HREF = "tel:+17074896236"

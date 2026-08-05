@@ -39,3 +39,13 @@
   for = "/thank-you/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+# ── PRE-LAUNCH ONLY — delete this block at DNS cutover ────────────────
+# The site is currently served from a temporary agency subdomain. Without
+# this, Google can index the temp host and the real domain launches
+# competing against a duplicate of itself. Remove this at the same time
+# SITE changes in tools/build.py.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
