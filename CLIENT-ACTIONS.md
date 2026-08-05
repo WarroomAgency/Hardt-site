@@ -163,3 +163,9 @@ You paid for those shoots, so ask LCA Cinema for the un-watermarked
 originals with permission to use them on hardtrealestate.com. That's
 usually a five-minute email. The moment they land, three more project
 cards and a real hero photo go live.
+
+One technical note while you're at it: what you shared are reduced-size
+exports (roughly 768x1024 to 1536x2048), not camera originals. They're
+fine at the sizes the site uses them, but a full-width hero photo needs
+the untouched originals. When you send anything else, use "Actual Size"
+rather than a resized export, or share straight from the Photos app.

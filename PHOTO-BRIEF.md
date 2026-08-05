@@ -18,6 +18,11 @@ LCA Cinema. Do **not** crop or edit the watermark out to get around it.
 The `before` folders and everything from Graphic Street are Peter's own
 phone photos and are clean.
 
+Note the files in Drive are reduced-size exports (768x1024 to 1536x2048),
+not camera originals. Fine for the card, slider and headshot slots, which
+render smaller than that. Not enough for a full-bleed hero, which is why
+`hero` still runs on licensed free stock. Ask for actual-size originals.
+
 
 Every image on the site is currently an original illustration. The site is
 built so photographs can replace them **one at a time**, with no markup
