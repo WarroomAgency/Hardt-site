@@ -26,7 +26,7 @@
 <link rel="preload" href="/assets/fonts/red-hat-display-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css?v=aa82d71a">
-<link rel="stylesheet" href="/assets/site.css?v=f09df668">
+<link rel="stylesheet" href="/assets/site.css?v=9263f20b">
 <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
 
 </head>
@@ -55,30 +55,13 @@
   <p class="mn-h">Reach us</p><div class="mn-sub"><a href="tel:+17074896236">(707) 489-6236</a><a href="mailto:peter@hardtrealestate.com">peter@hardtrealestate.com</a></div>
 </div>
 <main id="main">
-<section class="hero hero--art" data-hero>
+<section class="hero hero--art hero--banner" data-hero>
   <div class="hero__bg"><picture><source type="image/webp" srcset="/assets/img/hero.webp 1x, /assets/img/hero@2x.webp 2x"><img src="/assets/img/hero.jpg" srcset="/assets/img/hero.jpg 1x, /assets/img/hero@2x.jpg 2x" alt="" width="1800" height="1150" fetchpriority="high"></picture></div>
   <div class="shell">
     <p class="eyebrow">San&nbsp;Diego &middot; Riverside &middot; San&nbsp;Bernardino &middot; Kern</p>
     <h1 class="h-hero">Sell your house as&#8209;is, anywhere in Southern California.</h1>
     <p class="hero__promise">One walkthrough. One honest number. And every option on the table, including the ones that don&rsquo;t involve us.</p>
-    <form class="lead-mini" action="/contact/" method="get">
-      <label class="sr-only" for="hero-address">Property address</label>
-      <input type="text" id="hero-address" name="address" placeholder="Property address"
-        autocomplete="street-address">
-      <button class="btn btn--primary btn--lg" type="submit">Get my offer</button>
-    </form>
-    <p class="hero__alt"><a href="/how-it-works/">Or see how the process works first</a></p>
-  </div>
-</section>
-
-<section class="band band--tight">
-  <div class="shell">
-    <div class="trust trust--band" data-reveal>
-      <div class="trust__i"><span class="trust__k">Since 2021</span><span class="trust__v">Buying and renovating across Southern California</span></div>
-      <div class="trust__i"><span class="trust__k">Four counties</span><span class="trust__v">San Diego, Riverside, San Bernardino and Kern</span></div>
-      <div class="trust__i"><span class="trust__k">~14 days</span><span class="trust__v">Typical time from first call to close</span></div>
-      <div class="trust__i"><span class="trust__k">No assignments</span><span class="trust__v">We don&rsquo;t sell your contract to somebody else</span></div>
-    </div>
+    <div class="btnrow"><a class="btn btn--ghost" href="#offer">Skip ahead and get my offer</a></div>
   </div>
 </section>
 
@@ -119,6 +102,29 @@
   </div>
 </section>
 
+<section class="band paper" id="offer">
+  <div class="shell shell--narrow" style="text-align:center">
+    <p class="eyebrow" data-reveal>Start here</p>
+    <h2 class="h-sect" data-reveal style="margin-inline:auto">Where&rsquo;s the house?</h2>
+    <p class="lede" data-reveal style="margin-inline:auto">That&rsquo;s the only question we need to begin. No obligation, and nobody else gets your information.</p>
+    <form class="lead-mini lead-mini--wide" action="/contact/" method="get" data-reveal>
+      <label class="sr-only" for="hero-address">Property address</label>
+      <input type="text" id="hero-address" name="address" placeholder="Property address"
+        autocomplete="street-address">
+      <button class="btn btn--primary btn--lg" type="submit">Get my offer</button>
+    </form>
+    <p class="hero__alt" data-reveal style="margin-top:16px"><a href="/how-it-works/">Or see how the process works first</a></p>
+  </div>
+  <div class="shell" style="margin-top:clamp(40px,5vw,60px)">
+    <div class="trust trust--band" data-reveal>
+      <div class="trust__i"><span class="trust__k">Since 2021</span><span class="trust__v">Buying and renovating across Southern California</span></div>
+      <div class="trust__i"><span class="trust__k">Four counties</span><span class="trust__v">San Diego, Riverside, San Bernardino and Kern</span></div>
+      <div class="trust__i"><span class="trust__k">~14 days</span><span class="trust__v">Typical time from first call to close</span></div>
+      <div class="trust__i"><span class="trust__k">No assignments</span><span class="trust__v">We don&rsquo;t sell your contract to somebody else</span></div>
+    </div>
+  </div>
+</section>
+
 <section class="band dark">
   <div class="shell">
     <p class="eyebrow" data-reveal>How it works</p>
@@ -129,24 +135,6 @@
       <div data-reveal data-reveal-delay="180"><span class="step__n">Step 03</span><h3 class="h-card">One honest number</h3><p>With the math shown. Take it, leave it, or take it to somebody else to check.</p></div>
     </div>
     <div class="btnrow"><a class="btn btn--ghost" href="/how-it-works/">The full process</a></div>
-  </div>
-</section>
-
-<section class="band paper">
-  <div class="shell">
-    <p class="eyebrow" data-reveal>The honest math</p>
-    <h2 class="h-sect" data-reveal>Sometimes listing it is the better answer. When it is, we&rsquo;ll tell you.</h2>
-    <p class="lede" data-reveal>A cash sale isn&rsquo;t right for every house or every person. Here&rsquo;s how we&rsquo;d think about it if it were our own family.</p>
-    <div class="compare" style="margin-top:42px" data-reveal>
-      <div class="compare__col">
-        <p class="h-kicker" style="color:var(--bronze-ink)">List it on the open market when</p>
-        <ul><li>You have the time to wait for the right buyer</li><li>The house is in good condition and doesn&rsquo;t need repairs</li><li>You want the highest gross price on paper, and you&rsquo;re fine paying commissions, title and escrow fees, and any repairs the buyer asks for out of that number</li></ul>
-      </div>
-      <div class="compare__col">
-        <p class="h-kicker">Talk to us when</p>
-        <ul><li>The house needs work you don&rsquo;t want to pay for or manage</li><li>The timeline matters more than the last few thousand dollars</li><li>There are tenants, contents, liens, or a probate in the middle of it</li><li>You want one number and one person, start to finish</li></ul>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -171,38 +159,7 @@
   </div>
 </section>
 
-<section class="band paper">
-  <div class="shell">
-    <p class="eyebrow" data-reveal>The work</p>
-    <h2 class="h-sect" data-reveal>What a finished HARDT house looks like.</h2>
-    <p class="lede" data-reveal>We don&rsquo;t flip contracts, so every house we buy is one we have to finish ourselves. This is the standard, and it&rsquo;s the same whether the house came to us spotless or full.</p>
-    <div class="showcase" style="margin-top:44px"><figure class="shot-card" data-reveal data-reveal-delay="0"><div class="media media--4x3"><picture><source type="image/webp" srcset="/assets/img/project-1.webp"><img src="/assets/img/project-1.jpg" srcset="/assets/img/project-1.jpg" alt="kitchen in a house renovated by HARDT" width="1000" height="750" loading="lazy" decoding="async"></picture></div><figcaption><span class="shot-card__k">Kitchen</span><span class="shot-card__v">Cabinets, counters, appliances and floor, replaced as one job.</span></figcaption></figure><figure class="shot-card" data-reveal data-reveal-delay="70"><div class="media media--4x3"><picture><source type="image/webp" srcset="/assets/img/project-2.webp"><img src="/assets/img/project-2.jpg" srcset="/assets/img/project-2.jpg" alt="exterior in a house renovated by HARDT" width="1000" height="750" loading="lazy" decoding="async"></picture></div><figcaption><span class="shot-card__k">Exterior</span><span class="shot-card__v">Paint, roofline and frontage brought back from bare and tired.</span></figcaption></figure><figure class="shot-card" data-reveal data-reveal-delay="140"><div class="media media--4x3"><picture><source type="image/webp" srcset="/assets/img/project-3.webp"><img src="/assets/img/project-3.jpg" srcset="/assets/img/project-3.jpg" alt="bathroom in a house renovated by HARDT" width="1000" height="750" loading="lazy" decoding="async"></picture></div><figcaption><span class="shot-card__k">Bathroom</span><span class="shot-card__v">Taken back to the studs and rebuilt, tile and fixtures included.</span></figcaption></figure><figure class="shot-card" data-reveal data-reveal-delay="0"><div class="media media--4x3"><picture><source type="image/webp" srcset="/assets/img/project-4.webp"><img src="/assets/img/project-4.jpg" srcset="/assets/img/project-4.jpg" alt="living space in a house renovated by HARDT" width="1000" height="750" loading="lazy" decoding="async"></picture></div><figcaption><span class="shot-card__k">Living space</span><span class="shot-card__v">Floors, walls and light throughout the main rooms.</span></figcaption></figure><figure class="shot-card" data-reveal data-reveal-delay="70"><div class="media media--4x3"><picture><source type="image/webp" srcset="/assets/img/project-5.webp"><img src="/assets/img/project-5.jpg" srcset="/assets/img/project-5.jpg" alt="grounds in a house renovated by HARDT" width="1000" height="750" loading="lazy" decoding="async"></picture></div><figcaption><span class="shot-card__k">Grounds</span><span class="shot-card__v">Driveway, yard and the parts most buyers walk away from.</span></figcaption></figure><figure class="shot-card" data-reveal data-reveal-delay="140"><div class="media media--4x3"><picture><source type="image/webp" srcset="/assets/img/project-6.webp"><img src="/assets/img/project-6.jpg" srcset="/assets/img/project-6.jpg" alt="kitchen detail in a house renovated by HARDT" width="1000" height="750" loading="lazy" decoding="async"></picture></div><figcaption><span class="shot-card__k">Kitchen detail</span><span class="shot-card__v">The finish level we hold, whatever the house cost us.</span></figcaption></figure></div>
-    <div class="btnrow" data-reveal><a class="btn btn--ghost" href="/how-weve-helped/">How we&rsquo;ve helped homeowners</a></div>
-  </div>
-</section>
 
-<section class="band">
-  <div class="shell">
-    <p class="eyebrow" data-reveal>Where we buy</p>
-    <h2 class="h-sect" data-reveal>Four counties, and we drive to all of them.</h2>
-    <p class="lede" data-reveal>Boots on the ground from the border to Bakersfield, and we do the walkthrough in person in every one of them.</p>
-    <div class="grid grid--4" style="margin-top:42px">
-      <a class="county" href="/san-diego-county/" data-reveal data-reveal-delay="0" style="padding:0;overflow:hidden">
-        <div class="media media--4x3"><picture><source type="image/webp" srcset="/assets/img/county-san-diego.webp"><img src="/assets/img/county-san-diego.jpg" srcset="/assets/img/county-san-diego.jpg" alt="A residential street in San Diego County" width="1000" height="750" loading="lazy" decoding="async"></picture></div>
-        <div style="padding:22px 24px 26px"><p class="county__name">San Diego County</p><p class="county__cities">San Diego, Chula Vista, Escondido, El Cajon, La Mesa, Santee, Lemon Grove, National City and Ramona</p>
-        <span class="card__link" style="margin-top:14px;display:inline-block">Selling here</span></div></a><a class="county" href="/riverside-county/" data-reveal data-reveal-delay="70" style="padding:0;overflow:hidden">
-        <div class="media media--4x3"><picture><source type="image/webp" srcset="/assets/img/county-riverside.webp 1x, /assets/img/county-riverside@2x.webp 2x"><img src="/assets/img/county-riverside.jpg" srcset="/assets/img/county-riverside.jpg 1x, /assets/img/county-riverside@2x.jpg 2x" alt="A residential street in Riverside County" width="1000" height="750" loading="lazy" decoding="async"></picture></div>
-        <div style="padding:22px 24px 26px"><p class="county__name">Riverside County</p><p class="county__cities">Riverside, Temecula, Murrieta and Perris</p>
-        <span class="card__link" style="margin-top:14px;display:inline-block">Selling here</span></div></a><a class="county" href="/san-bernardino-county/" data-reveal data-reveal-delay="140" style="padding:0;overflow:hidden">
-        <div class="media media--4x3"><picture><source type="image/webp" srcset="/assets/img/county-san-bernardino.webp"><img src="/assets/img/county-san-bernardino.jpg" srcset="/assets/img/county-san-bernardino.jpg" alt="A residential street in San Bernardino County" width="1000" height="750" loading="lazy" decoding="async"></picture></div>
-        <div style="padding:22px 24px 26px"><p class="county__name">San Bernardino County</p><p class="county__cities">San Bernardino, Fontana, Rancho Cucamonga, Redlands and Highland</p>
-        <span class="card__link" style="margin-top:14px;display:inline-block">Selling here</span></div></a><a class="county" href="/kern-county/" data-reveal data-reveal-delay="210" style="padding:0;overflow:hidden">
-        <div class="media media--4x3"><picture><source type="image/webp" srcset="/assets/img/county-kern.webp 1x, /assets/img/county-kern@2x.webp 2x"><img src="/assets/img/county-kern.jpg" srcset="/assets/img/county-kern.jpg 1x, /assets/img/county-kern@2x.jpg 2x" alt="A residential street in Kern County" width="1000" height="750" loading="lazy" decoding="async"></picture></div>
-        <div style="padding:22px 24px 26px"><p class="county__name">Kern County</p><p class="county__cities">Bakersfield, Shafter, Wasco, Tehachapi and Ridgecrest</p>
-        <span class="card__link" style="margin-top:14px;display:inline-block">Selling here</span></div></a>
-    </div>
-  </div>
-</section>
 
 <section class="band band--tight"><div class="shell">
   <div class="cta-strip" data-reveal>

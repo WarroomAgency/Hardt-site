@@ -84,34 +84,49 @@ def ba_img(slot, alt):
 TEL = f'<a class="tel" href="{PHONE_HREF}">{PHONE_ICON}{PHONE_DISPLAY}</a>'
 
 # ══════════════════════════════════════════════ HOME
+# ── Homepage sections Peter asked to hide, Aug 2026 ─────────────────────
+# Kept rather than deleted: he wants to see the leaner order first, and
+# both are likely to come back somewhere. Flip to True to restore them
+# exactly where they were, between the founder band and the closing CTA.
+SHOW_HOME_EXTRA = False
+_HOME_EXTRA = """<section class="band paper">
+  <div class="shell">
+    <p class="eyebrow" data-reveal>The work</p>
+    <h2 class="h-sect" data-reveal>What a finished HARDT house looks like.</h2>
+    <p class="lede" data-reveal>We don&rsquo;t flip contracts, so every house we buy is one we have to finish ourselves. This is the standard, and it&rsquo;s the same whether the house came to us spotless or full.</p>
+    <div class="showcase" style="margin-top:44px">{showcase()}</div>
+    <div class="btnrow" data-reveal><a class="btn btn--ghost" href="/how-weve-helped/">How we&rsquo;ve helped homeowners</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="shell">
+    <p class="eyebrow" data-reveal>Where we buy</p>
+    <h2 class="h-sect" data-reveal>Four counties, and we drive to all of them.</h2>
+    <p class="lede" data-reveal>Boots on the ground from the border to Bakersfield, and we do the walkthrough in person in every one of them.</p>
+    <div class="grid grid--4" style="margin-top:42px">
+      {"".join(f'''<a class="county" href="/{s}/" data-reveal data-reveal-delay="{i*70}" style="padding:0;overflow:hidden">
+        {pic(f"county-{img}", f"A residential street in {n}", "media media--4x3", w=1000, h=750)}
+        <div style="padding:22px 24px 26px"><p class="county__name">{n}</p><p class="county__cities">{c}</p>
+        <span class="card__link" style="margin-top:14px;display:inline-block">Selling here</span></div></a>''' for i,(s,n,img,c) in enumerate(COUNTIES))}
+    </div>
+  </div>
+</section>
+
+"""
+HOME_EXTRA = _HOME_EXTRA if SHOW_HOME_EXTRA else ""
+
 P.append(dict(
     url="/", title="Sell Your House As-Is in Southern California | HARDT",
     desc="Founder-led home buying across San Diego, Riverside, San Bernardino and Kern counties. We don't assign contracts. One walkthrough, one honest number.",
     body=f"""
-<section class="hero hero--art" data-hero>
+<section class="hero hero--art hero--banner" data-hero>
   <div class="hero__bg">{hero_img()}</div>
   <div class="shell">
     <p class="eyebrow">San&nbsp;Diego &middot; Riverside &middot; San&nbsp;Bernardino &middot; Kern</p>
     <h1 class="h-hero">Sell your house as&#8209;is, anywhere in Southern California.</h1>
     <p class="hero__promise">One walkthrough. One honest number. And every option on the table, including the ones that don&rsquo;t involve us.</p>
-    <form class="lead-mini" action="/contact/" method="get">
-      <label class="sr-only" for="hero-address">Property address</label>
-      <input type="text" id="hero-address" name="address" placeholder="Property address"
-        autocomplete="street-address">
-      <button class="btn btn--primary btn--lg" type="submit">Get my offer</button>
-    </form>
-    <p class="hero__alt"><a href="/how-it-works/">Or see how the process works first</a></p>
-  </div>
-</section>
-
-<section class="band band--tight">
-  <div class="shell">
-    <div class="trust trust--band" data-reveal>
-      <div class="trust__i"><span class="trust__k">Since 2021</span><span class="trust__v">Buying and renovating across Southern California</span></div>
-      <div class="trust__i"><span class="trust__k">Four counties</span><span class="trust__v">San Diego, Riverside, San Bernardino and Kern</span></div>
-      <div class="trust__i"><span class="trust__k">~14 days</span><span class="trust__v">Typical time from first call to close</span></div>
-      <div class="trust__i"><span class="trust__k">No assignments</span><span class="trust__v">We don&rsquo;t sell your contract to somebody else</span></div>
-    </div>
+    <div class="btnrow"><a class="btn btn--ghost" href="#offer">Skip ahead and get my offer</a></div>
   </div>
 </section>
 
@@ -152,6 +167,29 @@ P.append(dict(
   </div>
 </section>
 
+<section class="band paper" id="offer">
+  <div class="shell shell--narrow" style="text-align:center">
+    <p class="eyebrow" data-reveal>Start here</p>
+    <h2 class="h-sect" data-reveal style="margin-inline:auto">Where&rsquo;s the house?</h2>
+    <p class="lede" data-reveal style="margin-inline:auto">That&rsquo;s the only question we need to begin. No obligation, and nobody else gets your information.</p>
+    <form class="lead-mini lead-mini--wide" action="/contact/" method="get" data-reveal>
+      <label class="sr-only" for="hero-address">Property address</label>
+      <input type="text" id="hero-address" name="address" placeholder="Property address"
+        autocomplete="street-address">
+      <button class="btn btn--primary btn--lg" type="submit">Get my offer</button>
+    </form>
+    <p class="hero__alt" data-reveal style="margin-top:16px"><a href="/how-it-works/">Or see how the process works first</a></p>
+  </div>
+  <div class="shell" style="margin-top:clamp(40px,5vw,60px)">
+    <div class="trust trust--band" data-reveal>
+      <div class="trust__i"><span class="trust__k">Since 2021</span><span class="trust__v">Buying and renovating across Southern California</span></div>
+      <div class="trust__i"><span class="trust__k">Four counties</span><span class="trust__v">San Diego, Riverside, San Bernardino and Kern</span></div>
+      <div class="trust__i"><span class="trust__k">~14 days</span><span class="trust__v">Typical time from first call to close</span></div>
+      <div class="trust__i"><span class="trust__k">No assignments</span><span class="trust__v">We don&rsquo;t sell your contract to somebody else</span></div>
+    </div>
+  </div>
+</section>
+
 <section class="band dark">
   <div class="shell">
     <p class="eyebrow" data-reveal>How it works</p>
@@ -162,24 +200,6 @@ P.append(dict(
       <div data-reveal data-reveal-delay="180"><span class="step__n">Step 03</span><h3 class="h-card">One honest number</h3><p>With the math shown. Take it, leave it, or take it to somebody else to check.</p></div>
     </div>
     <div class="btnrow"><a class="btn btn--ghost" href="/how-it-works/">The full process</a></div>
-  </div>
-</section>
-
-<section class="band paper">
-  <div class="shell">
-    <p class="eyebrow" data-reveal>The honest math</p>
-    <h2 class="h-sect" data-reveal>Sometimes listing it is the better answer. When it is, we&rsquo;ll tell you.</h2>
-    <p class="lede" data-reveal>A cash sale isn&rsquo;t right for every house or every person. Here&rsquo;s how we&rsquo;d think about it if it were our own family.</p>
-    <div class="compare" style="margin-top:42px" data-reveal>
-      <div class="compare__col">
-        <p class="h-kicker" style="color:var(--bronze-ink)">List it on the open market when</p>
-        <ul><li>You have the time to wait for the right buyer</li><li>The house is in good condition and doesn&rsquo;t need repairs</li><li>You want the highest gross price on paper, and you&rsquo;re fine paying commissions, title and escrow fees, and any repairs the buyer asks for out of that number</li></ul>
-      </div>
-      <div class="compare__col">
-        <p class="h-kicker">Talk to us when</p>
-        <ul><li>The house needs work you don&rsquo;t want to pay for or manage</li><li>The timeline matters more than the last few thousand dollars</li><li>There are tenants, contents, liens, or a probate in the middle of it</li><li>You want one number and one person, start to finish</li></ul>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -204,29 +224,7 @@ P.append(dict(
   </div>
 </section>
 
-<section class="band paper">
-  <div class="shell">
-    <p class="eyebrow" data-reveal>The work</p>
-    <h2 class="h-sect" data-reveal>What a finished HARDT house looks like.</h2>
-    <p class="lede" data-reveal>We don&rsquo;t flip contracts, so every house we buy is one we have to finish ourselves. This is the standard, and it&rsquo;s the same whether the house came to us spotless or full.</p>
-    <div class="showcase" style="margin-top:44px">{showcase()}</div>
-    <div class="btnrow" data-reveal><a class="btn btn--ghost" href="/how-weve-helped/">How we&rsquo;ve helped homeowners</a></div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="shell">
-    <p class="eyebrow" data-reveal>Where we buy</p>
-    <h2 class="h-sect" data-reveal>Four counties, and we drive to all of them.</h2>
-    <p class="lede" data-reveal>Boots on the ground from the border to Bakersfield, and we do the walkthrough in person in every one of them.</p>
-    <div class="grid grid--4" style="margin-top:42px">
-      {"".join(f'''<a class="county" href="/{s}/" data-reveal data-reveal-delay="{i*70}" style="padding:0;overflow:hidden">
-        {pic(f"county-{img}", f"A residential street in {n}", "media media--4x3", w=1000, h=750)}
-        <div style="padding:22px 24px 26px"><p class="county__name">{n}</p><p class="county__cities">{c}</p>
-        <span class="card__link" style="margin-top:14px;display:inline-block">Selling here</span></div></a>''' for i,(s,n,img,c) in enumerate(COUNTIES))}
-    </div>
-  </div>
-</section>
+{HOME_EXTRA}
 
 {cta("Tell us about the house.", "Three questions, no obligation, and nobody else gets your information.")}
 """))
@@ -536,6 +534,25 @@ P.append(dict(
     </form>
   </div>
 </section>
+
+<section class="band">
+  <div class="shell">
+    <p class="eyebrow" data-reveal>The honest math</p>
+    <h2 class="h-sect" data-reveal>Sometimes listing it is the better answer. When it is, we&rsquo;ll tell you.</h2>
+    <p class="lede" data-reveal>A cash sale isn&rsquo;t right for every house or every person. Here&rsquo;s how we&rsquo;d think about it if it were our own family.</p>
+    <div class="compare" style="margin-top:42px" data-reveal>
+      <div class="compare__col">
+        <p class="h-kicker" style="color:var(--bronze-ink)">List it on the open market when</p>
+        <ul><li>You have the time to wait for the right buyer</li><li>The house is in good condition and doesn&rsquo;t need repairs</li><li>You want the highest gross price on paper, and you&rsquo;re fine paying commissions, title and escrow fees, and any repairs the buyer asks for out of that number</li></ul>
+      </div>
+      <div class="compare__col">
+        <p class="h-kicker">Talk to us when</p>
+        <ul><li>The house needs work you don&rsquo;t want to pay for or manage</li><li>The timeline matters more than the last few thousand dollars</li><li>There are tenants, contents, liens, or a probate in the middle of it</li><li>You want one number and one person, start to finish</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="band">
   <div class="shell">
