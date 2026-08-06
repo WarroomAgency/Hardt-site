@@ -86,33 +86,59 @@ def _tracked(d, xy, text, font, fill, track):
     return x
 
 
-def _mark(d, x, y, s=54):
-    """The H mark: two uprights and a centre bar, same geometry as the
-    site's inline SVG, drawn at card scale."""
-    u = s / 100.0
-    for ox in (20 * u, 67 * u):
-        d.rounded_rectangle([x + ox, y + 14 * u, x + ox + 13 * u, y + 86 * u],
-                            radius=1.5, fill=CREAM)
-    d.rectangle([x + 39 * u, y + 44 * u, x + 61 * u, y + 56 * u], fill=CREAM)
+def _mark(d, x, cy, m):
+    """The H mark, traced from the site's inline SVG rather than approximated.
+
+    Same viewBox geometry (0..100), same angled shoulders on both uprights,
+    and the same 3-unit stroke the SVG carries, which fattens every shape by
+    1.5 units a side. Drawn centred on cy so it shares an axis with the
+    hairline and the wordmark, exactly as .lockup does with align-items:center.
+    """
+    u = m / 100.0
+    top = cy - 50 * u                       # glyph spans 0..100 in the viewBox
+    P = lambda pts: [(x + px * u, top + py * u) for px, py in pts]
+    sw = max(1, round(3 * u))
+    left  = [(20, 21), (27, 14), (33, 14), (33, 86), (27, 86), (20, 79)]
+    right = [(80, 21), (73, 14), (67, 14), (67, 86), (73, 86), (80, 79)]
+    for poly in (left, right):
+        d.polygon(P(poly), fill=CREAM, outline=CREAM, width=sw)
+    d.rectangle(P([(39, 44), (61, 56)]), fill=CREAM, outline=CREAM, width=sw)
+
+
+def _lockup(d, x, cy, m=62):
+    """Mark, bronze hairline, wordmark: one horizontal lockup on a shared
+    centre line. Every proportion is the site's own, scaled from the mark:
+    gap 14/30, hairline 1x26/30, wordmark 20/30 at .27em tracking."""
+    k = m / 30.0                            # the site draws the mark at 30px
+    gap, hair_w, hair_h = 14 * k, max(1, round(1 * k)), 26 * k
+    size = round(20 * k)
+    f = ImageFont.truetype(DISPLAY, size)
+    track = 0.27 * size
+
+    _mark(d, x, cy, m)
+    hx = x + m + gap
+    d.rectangle([hx, cy - hair_h / 2, hx + hair_w, cy + hair_h / 2], fill=BRONZE)
+
+    wx = hx + hair_w + gap + 2 * k          # .lockup__word padding-left:2px
+    # centre the wordmark by its own ink box, not by its line box
+    x0, y0, x1, y1 = f.getbbox("HARDT")
+    _tracked(d, (wx, cy - (y0 + y1) / 2), "HARDT", f, CREAM, track)
+    return cy + hair_h / 2
 
 
 def build(slot, photo, line, is_place):
     im = _compose(_bg(photo))
     d = ImageDraw.Draw(im)
-    f_word = ImageFont.truetype(DISPLAY, 56)
     f_line = ImageFont.truetype(SERIF, 34)
     f_place = ImageFont.truetype(DISPLAY, 38)
     f_url = ImageFont.truetype(DISPLAY, 20)
 
     x = 74
-    # lockup: mark, bronze hairline, wordmark
-    my = 158
-    _mark(d, x, my, 54)
-    d.rectangle([x + 78, my + 8, x + 79, my + 46], fill=BRONZE)
-    _tracked(d, (x + 100, my + 4), "HARDT", f_word, CREAM, 13)
+    lock_cy = 196                    # lockup sits on this centre line
+    _lockup(d, x, lock_cy, 62)
 
     # one line: the serif tagline, or the place name in display caps
-    ly = my + 104
+    ly = lock_cy + 62
     if is_place:
         d.text((x, ly), line.upper(), font=f_place, fill=CREAM)
         d.text((x, ly + 58), "We buy houses here, as-is.",
