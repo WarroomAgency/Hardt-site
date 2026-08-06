@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /thank-you/
 
-Sitemap: https://hardt-site.warroomagency.com/sitemap.xml
+Sitemap: https://hardtrealestate.com/sitemap.xml

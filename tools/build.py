@@ -66,11 +66,10 @@ def rev(path):
 # still parked is what made iMessage fall back to scraping a random photo
 # off the page instead of showing the share card.
 #
-# AT DNS CUTOVER, do both of these together:
-#   1. set SITE below to https://hardtrealestate.com
-#   2. delete the site-wide noindex block at the end of netlify.toml
-# Or override without editing:  HARDT_SITE_URL=https://hardtrealestate.com python3 tools/pages.py
-SITE = os.environ.get("HARDT_SITE_URL", "https://hardt-site.warroomagency.com").rstrip("/")
+# Cutover completed Aug 2026: the domain resolves to Netlify with a valid
+# certificate, so this is the live origin and the staging noindex is gone.
+# Override for a preview build:  HARDT_SITE_URL=https://example.com python3 tools/pages.py
+SITE = os.environ.get("HARDT_SITE_URL", "https://hardtrealestate.com").rstrip("/")
 PHONE_DISPLAY = "(707) 489-6236"
 PHONE_E164 = "+1-707-489-6236"
 PHONE_HREF = "tel:+17074896236"
