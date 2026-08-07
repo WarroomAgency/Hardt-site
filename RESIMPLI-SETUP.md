@@ -141,12 +141,19 @@ sources of alerts.
 > the rest of the Zap against real data.
 
 
-Netlify → the site → **Forms** → **Form notifications** → Add
-notification → **Outgoing webhook**
+Netlify → the site → **Project configuration** → **Notifications**.
 
-- Event: *New form submission*
-- URL: the Catch Hook URL from Step 3
-- Form: **hardt-lead** (not "any form")
+That page has three separate notification blocks, each with its own
+*Add notification* button. Scroll past **Deploy notifications** to the
+one headed **Form submission notifications** — using the deploy block
+by mistake is the easy error, because both dropdowns look identical.
+
+**Form submission notifications** → *Add notification* →
+**HTTP POST request** (Netlify's current name for an outgoing webhook)
+
+- URL to notify: the Catch Hook URL from Step 3
+- Form: **hardt-lead** if it offers a picker, rather than any form
+- JWS secret token: leave blank
 
 ## Step 5 — Test the whole chain
 
