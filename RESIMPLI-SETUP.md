@@ -135,6 +135,12 @@ sources of alerts.
 
 ## Step 4 — Point Netlify at the Zap
 
+> Do this **before** you build the action steps. Zapier cannot show you
+> field names to map until it has caught one real submission, so the
+> order is: make the trigger, wire Netlify to it, fire a test, then build
+> the rest of the Zap against real data.
+
+
 Netlify → the site → **Forms** → **Form notifications** → Add
 notification → **Outgoing webhook**
 
