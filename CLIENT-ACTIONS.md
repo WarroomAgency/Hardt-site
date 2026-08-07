@@ -75,7 +75,7 @@ RESimpli has no native web-form capture, so it needs a hop:
 
 1. **Path A (Zapier):** Netlify Forms trigger → new `hardt-lead`
    submission → two actions:
-   - SMS to Peter's (707) 489-6236 (Zapier SMS or Twilio)
+   - SMS to Peter's (619) 558-0369 (Zapier SMS or Twilio)
    - RESimpli "create lead" — set **lead source: website**,
      **campaign: website**
 2. **Path B (webhook):** Netlify outgoing webhook on form submission →
@@ -122,7 +122,7 @@ reviews beats zero, and the GBP rename preserves them.
    - Does the peter@hardtrealestate.com mailbox actually exist yet? The
      site publishes it; if it isn't live, leads are bouncing silently.
    - Mailers/ads may carry different phone numbers per your intake note.
-     Fine offline, but the (707) 489-6236 number must be the only one
+     Fine offline, but the (619) 558-0369 number must be the only one
      that ever appears online, anywhere, or the citations fracture.
    - Your intake said DBA "Hardt or Hardt Properties"; Michael says
      plain "HARDT". Confirm the final SOS/county filing wording so the

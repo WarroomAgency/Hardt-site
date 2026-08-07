@@ -91,7 +91,7 @@ that makes the county hubs defensible.
 5. **Photos.** He has before/during/after of all five projects, per his intake.
    Six of thirteen slots, free, already in his phone.
 
-**Peter's phone is (707) 489-6236** and it's live sitewide including JSON-LD.
+**Peter's phone is (619) 558-0369** and it's live sitewide including JSON-LD.
 That's the canonical NAP — the GBP and every citation must match that exact
 format, character for character.
 

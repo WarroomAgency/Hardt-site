@@ -25,7 +25,7 @@ failures**, no tap target under 24px. Dark coverage is 17% — inside the brand'
 
 ## Placeholders — must be replaced before launch
 
-**Phone number — RESOLVED.** Now `(707) 489-6236` / `+1-707-489-6236` sitewide,
+**Phone number — RESOLVED.** Now `(619) 558-0369` / `+1-619-558-0369` sitewide,
 including the JSON-LD. **This is the canonical NAP.** It must appear in exactly
 this format on the Google Business Profile and every citation, character for
 character. Changing the format later means re-doing every listing.

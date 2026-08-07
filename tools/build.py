@@ -70,9 +70,9 @@ def rev(path):
 # certificate, so this is the live origin and the staging noindex is gone.
 # Override for a preview build:  HARDT_SITE_URL=https://example.com python3 tools/pages.py
 SITE = os.environ.get("HARDT_SITE_URL", "https://hardtrealestate.com").rstrip("/")
-PHONE_DISPLAY = "(707) 489-6236"
-PHONE_E164 = "+1-707-489-6236"
-PHONE_HREF = "tel:+17074896236"
+PHONE_DISPLAY = "(619) 558-0369"
+PHONE_E164 = "+1-619-558-0369"
+PHONE_HREF = "tel:+16195580369"
 EMAIL = "peter@hardtrealestate.com"
 
 SERVICES = [
