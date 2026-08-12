@@ -70,6 +70,12 @@ def rev(path):
 # certificate, so this is the live origin and the staging noindex is gone.
 # Override for a preview build:  HARDT_SITE_URL=https://example.com python3 tools/pages.py
 SITE = os.environ.get("HARDT_SITE_URL", "https://hardtrealestate.com").rstrip("/")
+# GA4 measurement ID. Set to "" to strip analytics from every page in one
+# edit. Loaded async and placed after the fonts and stylesheet so it never
+# sits on the critical render path: the whole point of self-hosting the
+# faces was keeping third parties out of the way of first paint.
+GA_ID = "G-VYFJCJKCR5"
+
 PHONE_DISPLAY = "(619) 558-0369"
 PHONE_E164 = "+1-619-558-0369"
 PHONE_HREF = "tel:+16195580369"
@@ -103,6 +109,21 @@ PHONE_ICON = ('<svg width="15" height="15" viewBox="0 0 24 24" fill="none" strok
  '19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 '
  '.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 '
  '1.7 2Z"/></svg>')
+
+
+def ga():
+    """Google Analytics 4, or nothing at all if GA_ID is blank."""
+    if not GA_ID:
+        return ""
+    return f"""<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', '{GA_ID}');
+</script>
+"""
 
 
 # ───────────────────────────────────────────── shell
@@ -139,7 +160,7 @@ def head(p):
 <link rel="stylesheet" href="{rev("/assets/fonts.css")}">
 <link rel="stylesheet" href="{rev("/assets/site.css")}">
 <noscript><style>[data-reveal]{{opacity:1!important;transform:none!important}}</style></noscript>
-{extra}
+{ga()}{extra}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
