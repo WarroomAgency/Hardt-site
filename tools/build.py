@@ -363,8 +363,12 @@ def cta(head_, sub, label="Get my offer", href="/contact/"):
 
 
 def render(p):
-    return (head(p) + header(p.get("active", "")) + crumbs(p.get("trail"))
-            + '<main id="main">' + p["body"] + "</main>" + footer() + graph(p)
+    # Landing pages (e.g. /hello/, the job-site sign QR target) pass their own
+    # stripped-down chrome. Everything else gets the shared header and footer.
+    top = p["chrome_top"] if "chrome_top" in p else header(p.get("active", "")) + crumbs(p.get("trail"))
+    bottom = p["chrome_bottom"] if "chrome_bottom" in p else footer()
+    return (head(p) + top
+            + '<main id="main">' + p["body"] + "</main>" + bottom + graph(p)
             + "\n</body>\n</html>\n")
 
 

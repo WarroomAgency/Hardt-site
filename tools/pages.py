@@ -6,6 +6,7 @@ from build import (write, cta, faq_block, pic, og_img, SERVICES, COUNTIES,
                    PHONE_DISPLAY, PHONE_HREF, EMAIL, PHONE_ICON, SITE)
 from research import RESEARCH, TENANT, FORECLOSURE_STATE, CHECKED, sources_line
 from matrix import M, FAQ_EXTRA, NARR_EXTRA
+import hello  # /hello/ — job-site sign QR landing page
 
 P = []
 
@@ -1449,6 +1450,9 @@ P.append(dict(
 </section>
 {cta("Want our line of this table for your house?", "One walkthrough, one number, with the math shown, and no hard feelings if listing wins.")}
 """))
+
+# ══════════════════════════════════════════════ HELLO (sign QR landing)
+P.extend(hello.PAGES)
 
 # ══════════════════════════════════════════════ THANK YOU
 P.append(dict(

@@ -263,3 +263,11 @@ Blocking (all on Peter — see CLIENT-ACTIONS.md for the chase email):
 reconciled numbers, LA County yes/no, hours conflict, DBA filing + Blair's
 legal read, his project photos. Ops: Netlify form notifications + the
 RESimpli hop are documented in CLIENT-ACTIONS.md and not yet set up.
+
+**`/hello/` — job-site sign QR landing** (Oct 2026). Content in
+`tools/hello.py`. Noindexed, out of the sitemap, stripped-down chrome
+(`chrome_top`/`chrome_bottom` overrides in `build.render`). Shows the
+*sign* number (661) 493-9127, not the canonical NAP — that's deliberate,
+it matches the printed sign. Own Netlify form `property-inquiry` →
+`/hello/thanks/`; enable its notifications in the Netlify UI. GA4 event
+`hello_choice` records which option a scanner picks.
