@@ -150,6 +150,7 @@ def head(p):
 <meta property="og:image:alt" content="{p.get('ogalt', 'HARDT. Every situation has a way forward.')}">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{SITE}{og}">
 <meta name="twitter:image:alt" content="{p.get('ogalt', 'HARDT. Every situation has a way forward.')}">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml">

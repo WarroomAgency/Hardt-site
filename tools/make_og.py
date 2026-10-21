@@ -34,6 +34,7 @@ CARDS = {
     "og-home":                 ("project-5", "Every situation has a way forward."),
     "og-situations":           ("project-1", "However you got here, there is a way through it."),
     "og-helped":               ("after",     "Houses we bought, fixed, and put back into use."),
+    "og-hello":                ("project-6", "What can we help you with?"),   # /hello/ — sign QR landing
     "og-san-diego-county":     ("county-san-diego", "San Diego County"),
     "og-riverside-county":     ("county-riverside", "Riverside County"),
     "og-san-bernardino-county":("county-san-bernardino", "San Bernardino County"),

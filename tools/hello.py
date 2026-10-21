@@ -17,7 +17,7 @@ Deliberately different from every other page:
     the Netlify UI (Forms → property-inquiry), same as hardt-lead.
   * GA4 event `hello_choice` records which option people pick.
 """
-from build import MARK_DARK, PHONE_ICON, rev
+from build import MARK_DARK, PHONE_ICON, rev, og_img
 
 SIGN_PHONE_DISPLAY = "(661) 493-9127"
 SIGN_PHONE_TEL = "tel:+16614939127"
@@ -99,29 +99,30 @@ HELLO = dict(
     title="What Can We Help You With? | HARDT Southern California",
     desc=("You scanned a HARDT sign. Sell a house, ask about the property the sign is on, "
           "call or text our team directly, or see how we work. One tap, no pressure."),
+    og=og_img("og-hello"), ogalt="HARDT. What can we help you with?",
     head=CSS, chrome_top=TOP, chrome_bottom=bottom("Another quality project."),
     body=f"""
 <section class="hello-hero">
   <div class="shell">
-    <p class="eyebrow" data-reveal>Thanks for scanning</p>
-    <h1 data-reveal>What can we help you with?</h1>
-    <p class="lede" data-reveal>Pick whichever fits. You&rsquo;ll reach our team directly, not a call centre.</p>
+    <p class="eyebrow">Thanks for scanning</p>
+    <h1>What can we help you with?</h1>
+    <p class="lede">Pick whichever fits. You&rsquo;ll reach our team directly, not a call centre.</p>
   </div>
 </section>
 
 <section>
   <div class="shell choices">
-    <a class="choice choice--primary" href="/contact/" data-choice="sell" data-reveal>
+    <a class="choice choice--primary" href="/contact/" data-choice="sell">
       <p class="choice__num">01</p>
       <h2 class="choice__title">I want to sell my house {ARROW_R}</h2>
       <p>Get a cash offer on your own property. Three quick questions, no obligation.</p>
     </a>
-    <a class="choice" href="#ask" data-choice="ask" data-reveal data-reveal-delay="60">
+    <a class="choice" href="#ask" data-choice="ask">
       <p class="choice__num">02</p>
       <h2 class="choice__title">Ask about this property {ARROW_D}</h2>
       <p>Curious about the house this sign is on, the work being done, or when it&rsquo;s available? Send us a note.</p>
     </a>
-    <div class="choice" data-reveal data-reveal-delay="120">
+    <div class="choice">
       <p class="choice__num">03</p>
       <h2 class="choice__title">Talk to Peter</h2>
       <p>Call or text. It comes straight to us. Mon&ndash;Sat, 8am&ndash;6pm.</p>
@@ -130,7 +131,7 @@ HELLO = dict(
         <a class="btn btn--ghost" href="{SIGN_PHONE_SMS}" data-choice="text">Text</a>
       </div>
     </div>
-    <div class="choice" data-reveal data-reveal-delay="180">
+    <div class="choice">
       <p class="choice__num">04</p>
       <h2 class="choice__title">See how we work</h2>
       <p>Just looking? Here&rsquo;s how we buy, and some of the people we&rsquo;ve helped.</p>
@@ -181,13 +182,14 @@ HELLO_THANKS = dict(
     title="Thanks, We've Got Your Question | HARDT Southern California",
     desc=("Your question about the property is in. We usually reply within 15 minutes between "
           "8am and 6pm, Monday to Saturday, and first thing next morning otherwise."),
+    og=og_img("og-hello"), ogalt="HARDT. What can we help you with?",
     head=CSS, chrome_top=TOP, chrome_bottom=bottom("Every situation has a way forward."),
     body=f"""
 <section class="hello-hero">
   <div class="shell shell--narrow">
-    <p class="eyebrow" data-reveal>Got it</p>
-    <h1 data-reveal>Thanks. We&rsquo;ve got your question.</h1>
-    <p class="lede" data-reveal>We usually reply within 15 minutes between 8am and 6pm, Monday to Saturday. Later than that, first thing the next morning.</p>
+    <p class="eyebrow">Got it</p>
+    <h1>Thanks. We&rsquo;ve got your question.</h1>
+    <p class="lede">We usually reply within 15 minutes between 8am and 6pm, Monday to Saturday. Later than that, first thing the next morning.</p>
     <p style="margin-top:28px"><strong>Need us sooner?</strong> Call or text <a href="{SIGN_PHONE_TEL}" style="white-space:nowrap">{SIGN_PHONE_DISPLAY}</a>.</p>
     <div class="btnrow">
       <a class="btn btn--ghost" href="/hello/">Back</a>
